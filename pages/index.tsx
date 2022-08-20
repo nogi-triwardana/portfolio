@@ -1,9 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '/styles/Home.module.css'
+import { GetServerSideProps } from 'next'
+import { NextFetchEvent } from 'next/server'
 
+export default function Home({ data }: any) {
+  
+  console.log(data);
 
-export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +26,7 @@ export default function Home() {
           <code className={styles.code}>pages/index.js</code>
         </p>
 
-        <p className={styles.description}>
+        <p className="text-xl text-blue-500">
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
@@ -72,4 +76,14 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+
+export const getServerSideProps: GetServerSideProps = async (ctx: any) => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const data = await response.json();
+
+  return {
+    props: { data }
+  };
 }
