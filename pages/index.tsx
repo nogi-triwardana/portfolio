@@ -7,7 +7,9 @@ import Introduction from 'components/kayouts/partials/introduction'
 import Education from 'components/kayouts/partials/education'
 import Experience from 'components/kayouts/partials/experience'
 
-export default function Home() {
+export default function Home({ data }: any) {
+
+	console.log(data);
 
   return (
     <motion.div
@@ -55,7 +57,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx: any) => {
 
   return {
     props: { 
-      data: UA 
+      data: data 
     }
   };
 }
