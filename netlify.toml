@@ -3,6 +3,7 @@
   command = ""
   functions = "out_functions"
   publish = "out_publish"
+	environment = { NETLIFY_NEXT_PLUGIN_SKIP = true }
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
