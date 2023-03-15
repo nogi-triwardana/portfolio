@@ -1,5 +1,5 @@
 import Head from 'next/head'
-// import { GetServerSideProps } from 'next'
+import { GetServerSideProps } from 'next'
 import { motion } from 'framer-motion'
 import Layout from 'components/kayouts'
 import Header from 'components/headers'
@@ -7,9 +7,9 @@ import Introduction from 'components/kayouts/partials/introduction'
 import Education from 'components/kayouts/partials/education'
 import Experience from 'components/kayouts/partials/experience'
 
-export default function Home() {
+export default function Home({ data }: any) {
 
-	// console.log(data);
+	console.log(data);
 
   return (
     <motion.div
@@ -48,16 +48,16 @@ export default function Home() {
 }
 
 
-// export const getServerSideProps: GetServerSideProps = async (ctx: any) => {
-//   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-//   const data = await response.json();
-//   const UA = ctx?.req?.headers['user-agent'];
-//   const forwarded = ctx?.req?.headers;
-//   const isMobile = Boolean(UA.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i));
+export const getServerSideProps: GetServerSideProps = async (ctx: any) => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const data = await response.json();
+  const UA = ctx?.req?.headers['user-agent'];
+  const forwarded = ctx?.req?.headers;
+  const isMobile = Boolean(UA.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i));
 
-//   return {
-//     props: { 
-//       data: data 
-//     }
-//   };
-// }
+  return {
+    props: { 
+      data: data 
+    }
+  };
+}
