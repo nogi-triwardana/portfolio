@@ -1,11 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
+			keyframes: {
+				scanning: {
+					'0%': { width: '100%', height: '100%', backgroundColor: '#444B55', position: 'absolute' },
+					'25%': { width: '75%', height: '100%', backgroundColor: '#444B55', position: 'absolute' },
+					'50%': { width: '50%', height: '100%', backgroundColor: '#444B55', position: 'absolute' },
+					'75%': { width: '25%', height: '100%', backgroundColor: '#444B55', position: 'absolute' },
+					'100%': { width: '0%', height: '100%', backgroundColor: '#444B55', position: 'absolute' }
+				} 
+			},
+			animation: {
+				'scanning' : 'scanning 1s linear',
+			},
       colors: {
         paletteText: {
           primary: '#444B55',
@@ -14,7 +27,7 @@ module.exports = {
           error: '#EE3124',
           active: '#0092AC'
         }
-      }
+      },
     },
   },
   plugins: [],

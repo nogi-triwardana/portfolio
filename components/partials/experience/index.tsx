@@ -8,7 +8,7 @@ export default function Experience() {
 
   return (
 		<FadeWhenVisible>
-			<div className={`flex flex-col justify-center w-full space-y-16 relative`}>
+			<div className={`flex flex-col justify-center w-full space-y-16 relative py-16`}>
 				<div className={`text-paletteText-primary font-bold text-center text-3xl`}>Experience</div>
 				<div className={`flex flex-col w-1/2 mx-auto justify-center text-paletteText-primary`}>
 					{
@@ -17,16 +17,16 @@ export default function Experience() {
 							(item: any, key: any) => {
 								return (
 									<div className={`
-										flex divide-x ${key === experience.length - 1 ? 
+										flex divide-x-4 ${key === experience.length - 1 ? 
 											`divide-transparent` : `divide-dashed`}
 									`}>
 										<div className={``} />
 										<div className={`relative pb-4 pl-6`}>
-											<div className={`absolute -left-1.5 w-3 h-3 ${key === 0 ? `bg-[#0092ac] animate-ping` : `bg-gray-200`} rounded-full`}></div>
-											<div className={`absolute -left-1.5 w-3 h-3 ${key === 0 ? `bg-[#0092ac]` : `bg-gray-200`} rounded-full`}></div>
+											<div className={`absolute -left-2.5 w-4 h-4 ${key === 0 ? `bg-[#0092ac] animate-ping` : `bg-gray-200`} rounded-full`}></div>
+											<div className={`absolute -left-2.5 w-4 h-4 ${key === 0 ? `bg-[#0092ac]` : `bg-gray-200`} rounded-full`}></div>
 											<div className="flex flex-col">
 												<div className={`px-2 ${key === 0 ? `font-bold` : `font-semibold`}`}>{item?.office}</div>
-												<div className="flex divide-x-2">
+												<div className="flex divide-x-4">
 													<div className={`font-medium text-sm px-2`}>{item?.role}</div>
 													<div className={`font-medium text-sm px-2`}>{item?.time}</div>
 												</div>
