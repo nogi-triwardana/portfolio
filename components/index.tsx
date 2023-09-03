@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { LayoutContext } from 'src/static/context';
 import { initialValue } from 'src/static/initial';
 
-export default function Layout({ children }: any) {
+type PropsType = {
+	children: ReactNode
+}
+
+export default function Layout({ children }: PropsType) {
 	const [isDarkMode, setIsDarkMode] = useState(false);
 
 	const changeThemeType = (value: boolean) => {
@@ -15,12 +19,15 @@ export default function Layout({ children }: any) {
 		headers_title: initialValue.headers_title,
 		identity: initialValue.identity,
 		education: initialValue.education,
-		experience: initialValue.experience
+		experience: initialValue.experience,
+		projects: initialValue.projects,
+		skills: initialValue.skills,
+		contact: initialValue.contact,
 	};
 
   return (
     <LayoutContext.Provider value={contextValue}>
-      <div className="">
+      <div>
         {children}
       </div>
     </LayoutContext.Provider>

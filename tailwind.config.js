@@ -17,7 +17,7 @@ module.exports = {
 				} 
 			},
 			animation: {
-				'scanning' : 'scanning 1s linear',
+				'scanning' : 'scanning 0.25s linear',
 			},
       colors: {
         paletteText: {

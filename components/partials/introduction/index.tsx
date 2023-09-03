@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, forwardRef } from 'react';
 import { LayoutContext } from 'src/static/context';
 import PasPhoto from 'public/assets/img/pas_photo.jpg';
 
-export default function Introduction() {
+const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref<HTMLDivElement>) {
   const { identity, setIsDarkMode, isDarkMode } = useContext(LayoutContext);
 
   return (
-    <div className={`grid grid-cols-2 w-full p-8 relative`}>
+    <div className={`grid grid-cols-2 w-full p-8 relative`} ref={ref}>
       <div className={`flex justify-end w-full`}>
         <img src={PasPhoto.blurDataURL} className={`w-64 h-64 rounded-full`} />
       </div>
@@ -17,4 +17,6 @@ export default function Introduction() {
       </div>
     </div>
   );
-}
+});
+
+export default Introduction;
