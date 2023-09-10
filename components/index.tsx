@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react';
+import React, { useEffect, useState, ReactNode } from 'react';
 import { LayoutContext } from 'src/static/context';
 import { initialValue } from 'src/static/initial';
 
@@ -9,13 +9,26 @@ type PropsType = {
 export default function Layout({ children }: PropsType) {
 	const [isDarkMode, setIsDarkMode] = useState(false);
 
-	const changeThemeType = (value: boolean) => {
-		setIsDarkMode(value);
-	}
+	/** Change theme mode based from user browser */
+	useEffect(() => {
+		const darkModeMediaQuery = window.matchMedia(`(prefers-color-scheme: dark)`);
+
+		const handleDarkModeMediaQuery = (e: any) => {
+			setIsDarkMode(e.matches);
+		}
+
+		darkModeMediaQuery.addEventListener('change', handleDarkModeMediaQuery);
+		setIsDarkMode(darkModeMediaQuery.matches)
+
+		return () => {
+			darkModeMediaQuery.removeEventListener('change', handleDarkModeMediaQuery);
+		}
+
+	},[]);
 
 	const contextValue = {
-		isDarkMode: isDarkMode,
-		setIsDarkMode: changeThemeType,
+		isDarkMode,
+		setIsDarkMode,
 		headers_title: initialValue.headers_title,
 		identity: initialValue.identity,
 		education: initialValue.education,

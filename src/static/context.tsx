@@ -8,8 +8,8 @@ interface objIdentity {
 }
 
 interface InterfaceLayoutContext {
-	isDarkMode?: boolean;
-	setIsDarkMode?: (darkMode: boolean) => void;
+	isDarkMode?: any;
+	setIsDarkMode?: any;
   headers_title: Array<string>;
   identity: objIdentity;
   education: Array<object>;

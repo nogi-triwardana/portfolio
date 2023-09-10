@@ -11,6 +11,8 @@ import { MdEmail } from 'react-icons/md';
 import { FaWhatsappSquare } from 'react-icons/fa';
 
 export const initialValue = {
+  isDarkMode: false,
+  setIsDarkMode: (darkMode: any) => {},
   headers_title: [
     "Home",
     "Experience",
@@ -159,7 +161,7 @@ export const initialValue = {
       icon: <AiFillLinkedin />
     },
     {
-      link: 'https://instagram.com',
+      link: 'mailto:nogitriwardana@gmail.com',
       icon: <MdEmail />
     },
     {
