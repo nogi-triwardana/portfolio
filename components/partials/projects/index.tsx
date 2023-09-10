@@ -33,27 +33,27 @@ function Projects(props: any, ref: any) {
 
 	return (
 		<div className={`relative ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`}`}>
-    	<div className={`flex flex-col justify-center w-full space-y-16 relative py-16`} ref={ref}>
-				<div className={`h-14 ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} font-bold text-center text-3xl`} ref={firstRef}>
+    	<div className={`flex flex-col justify-center w-full space-y-8 sm:space-y-16 relative py-16`} ref={ref}>
+				<div className={`h-14 ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`} ref={firstRef}>
 					<span className="relative">
 						<span className={`${firstPort ? `animate-scanning` : `bg-paletteText-primary w-full h-full absolute rounded-full`}`} />
 						Projects
 					</span>
 				</div>
-				<div className={`flex flex-col w-1/2 h-[400px] mx-auto justify-start ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
+				<div className={`flex flex-col p-4 w-auto sm:w-1/2 h-[400px] mx-auto justify-start ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
 					<div className={`flex flex-col space-y-4 justify-center`}>
 						{
 							_.map(
 								projects,
 								(item: any, key: any) => (
 									<div className={`space-y-2`} key={"PROJECT-" + key}>
-										<div className={`font-bold text-lg`}>
+										<div className={`font-bold text-base sm:text-lg`}>
 											<div className={`relative inline-block`}>
 												<span className={`${firstPort ? `animate-scanning` : `bg-paletteText-primary absolute rounded-md inline w-full h-full`}`} />
 												{key + 1}. {item?.title}
 											</div>
 										</div>
-										<div className={`relative inline-block`}>
+										<div className={`relative inline-block text-sm sm:text-base`}>
 											<span className={`${firstPort ? `animate-scanning` : `bg-paletteText-primary absolute rounded-md inline w-full h-full`}`} />
 											{item?.description}
 										</div>

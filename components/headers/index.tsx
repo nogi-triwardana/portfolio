@@ -3,30 +3,38 @@ import _ from 'lodash';
 import { LayoutContext } from 'src/static/context';
 import Switch from "react-switch";
 import { BsSun, BsMoonStars } from "react-icons/bs";
+import { PiListBold } from "react-icons/pi";
 
 type TypeProps = {
 	scrollSection?: React.MouseEventHandler
 };
 
 export default function Header({ scrollSection }: TypeProps): JSX.Element {
+	const [toggleDropdown, setToggleDropdown] = useState(false);
 	const { headers_title, isDarkMode, setIsDarkMode } = useContext(LayoutContext);
-	const [switchDarkMode, setSwitchDarkMode] = useState(false);	
 
 	return (   
-		<div className={`flex justify-between w-full ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`} z-[9999] sticky top-0 p-4 h-16 shadow-lg`}>
-				<div className=""></div>
-				<ul className={`flex space-x-4 text-lg font-semibold ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
+		<div className={`flex relative justify-between w-full ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`} z-[9999] sticky top-0 p-4 h-16 shadow-lg`}>
+				<div>
+					<div 
+						onClick={() => setToggleDropdown(!toggleDropdown)}
+						className={`${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} flex items-center justify-center self-center text-xl sm:hidden`}
+					>
+						<PiListBold className={`self-center`} />
+					</div>
+				</div>
+				<ul className={`${toggleDropdown ? `block` : `hidden`} sm:flex absolute sm:static top-full inset-x-0 w-full sm:w-auto text-center sm:text-left shadow-lg sm:shadow-none divide-y sm:divide-y-0 ${isDarkMode ? `divide-[#dce3de]` : `divide-paletteText-primary`} space-x-0 sm:space-x-4 text-lg font-semibold ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
 					{_.map(headers_title, (item: any, key: any) => (
 						<li 
 							key={key}
-							className={`cursor-pointer`}
+							className={`cursor-pointer w-full p-4 sm:p-0 ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`}`}
 							onClick={scrollSection}
 						>
 							{item}
 						</li>													
 					))}
 				</ul>
-				<div className="">
+				<div>
 					<Switch 
 						checked={isDarkMode} 
 						onChange={() => setIsDarkMode(!isDarkMode)} 
