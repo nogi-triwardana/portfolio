@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect, useContext } from 'react'
+import React, { useRef, useState, useEffect, useContext } from 'react'
 import { motion } from 'framer-motion'
 import Header from 'components/headers'
 import Introduction from 'components/partials/introduction'
@@ -12,6 +12,7 @@ import Layout from 'components'
 import { LayoutContext } from 'src/static/context'
 
 export default function Home(): JSX.Element {
+  const [toggleDropdown, setToggleDropdown] = useState(false);
   const introductionRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -20,6 +21,7 @@ export default function Home(): JSX.Element {
 
   const handleScroll = (ref: any) => {
     if(ref?.current) ref?.current?.scrollIntoView({ behavior: "smooth" });
+    setToggleDropdown(false);
   }
   
   const scrollSection = (section: string) => {
@@ -55,6 +57,8 @@ export default function Home(): JSX.Element {
         transition={{ delay: 1 }}
       > 
         <Header 
+          toggleDropdown={toggleDropdown}
+          setToggleDropdown={setToggleDropdown}
           scrollSection={(e: any) => scrollSection(e?.target?.innerText)}
         />
         <Introduction ref={introductionRef} />

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import _ from 'lodash';
 import { LayoutContext } from 'src/static/context';
 import Switch from "react-switch";
@@ -7,10 +7,11 @@ import { PiListBold } from "react-icons/pi";
 
 type TypeProps = {
 	scrollSection?: React.MouseEventHandler
+	toggleDropdown?: any
+	setToggleDropdown?: any
 };
 
-export default function Header({ scrollSection }: TypeProps): JSX.Element {
-	const [toggleDropdown, setToggleDropdown] = useState(false);
+export default function Header({ scrollSection, toggleDropdown, setToggleDropdown }: TypeProps): JSX.Element {
 	const { headers_title, isDarkMode, setIsDarkMode } = useContext(LayoutContext);
 
 	return (   
@@ -23,7 +24,7 @@ export default function Header({ scrollSection }: TypeProps): JSX.Element {
 						<PiListBold className={`self-center`} />
 					</div>
 				</div>
-				<ul className={`${toggleDropdown ? `block` : `hidden`} sm:flex absolute sm:static top-full inset-x-0 w-full sm:w-auto text-center sm:text-left shadow-lg sm:shadow-none divide-y sm:divide-y-0 ${isDarkMode ? `divide-[#dce3de]` : `divide-paletteText-primary`} space-x-0 sm:space-x-4 text-lg font-semibold ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
+				<ul className={`${toggleDropdown ? `transition duration-300 ease-out -translate-x-full` : `transition duration-300 ease-out translate-x-0`} sm:flex absolute sm:static top-full inset-x-0 w-full sm:w-auto text-center sm:text-left shadow-lg sm:shadow-none divide-y sm:divide-y-0 ${isDarkMode ? `divide-[#dce3de]` : `divide-paletteText-primary`} space-x-0 sm:space-x-4 text-lg font-semibold ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
 					{_.map(headers_title, (item: any, key: any) => (
 						<li 
 							key={key}
