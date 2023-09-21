@@ -29,8 +29,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/static/menus.tsxx",
-    ".next/types/**/*.ts"
+    "src/static/menus.tsx",
+    ".next/types/**/*.ts",
+    "constants/*.tsx"
   ],
   "exclude": [
     "node_modules"

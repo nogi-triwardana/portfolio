@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
 			keyframes: {
-				scanning: {
+				scanningText: {
 					'0%': { width: '100%', height: '100%', backgroundColor: '#444B55', position: 'absolute' },
 					'25%': { width: '75%', height: '100%', backgroundColor: '#444B55', position: 'absolute' },
 					'50%': { width: '50%', height: '100%', backgroundColor: '#444B55', position: 'absolute' },
@@ -17,7 +17,7 @@ module.exports = {
 				} 
 			},
 			animation: {
-				'scanning' : 'scanning 1s linear',
+				'scanning' : 'scanningText 0.25s linear',
 			},
       colors: {
         paletteText: {

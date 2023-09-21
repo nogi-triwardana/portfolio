@@ -1,26 +1,46 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, ReactNode } from 'react';
 import { LayoutContext } from 'src/static/context';
-import { initialValue } from 'src/static/initial';
+import { constants } from '../constants';
 
-export default function Layout({ children }: any) {
+type PropsType = {
+	children: ReactNode
+}
+
+export default function Layout({ children }: PropsType) {
 	const [isDarkMode, setIsDarkMode] = useState(false);
 
-	const changeThemeType = (value: boolean) => {
-		setIsDarkMode(value);
-	}
+	/** Change theme mode based from user browser */
+	useEffect(() => {
+		const darkModeMediaQuery = window.matchMedia(`(prefers-color-scheme: dark)`);
+
+		const handleDarkModeMediaQuery = (e: any) => {
+			setIsDarkMode(e.matches);
+		}
+
+		darkModeMediaQuery.addEventListener('change', handleDarkModeMediaQuery);
+		setIsDarkMode(darkModeMediaQuery.matches)
+
+		return () => {
+			darkModeMediaQuery.removeEventListener('change', handleDarkModeMediaQuery);
+		}
+
+	},[]);
 
 	const contextValue = {
-		isDarkMode: isDarkMode,
-		setIsDarkMode: changeThemeType,
-		headers_title: initialValue.headers_title,
-		identity: initialValue.identity,
-		education: initialValue.education,
-		experience: initialValue.experience
+		isDarkMode,
+		setIsDarkMode,
+		headers_title: constants.headers_title,
+		identity: constants.identity,
+		education: constants.education,
+		experience: constants.experience,
+		projects: constants.projects,
+		skills: constants.skills,
+		contact: constants.contact,
 	};
 
   return (
     <LayoutContext.Provider value={contextValue}>
-      <div className="">
+      <div>
         {children}
       </div>
     </LayoutContext.Provider>
