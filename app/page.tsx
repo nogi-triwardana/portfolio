@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useEffect, useContext } from 'react'
+import React, { useRef, useState, useEffect, useLayoutEffect, useContext } from 'react'
 import { motion } from 'framer-motion'
 import Header from 'components/headers'
 import Introduction from 'components/partials/introduction'
@@ -18,6 +18,22 @@ export default function Home(): JSX.Element {
   const projectsRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+
+  const onResizeWindow = () => {
+    if(typeof window !== "undefined") {
+      if(window.innerWidth < 640) {
+        setToggleDropdown(true);
+      } else setToggleDropdown(false);
+    }
+  }
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', onResizeWindow);
+    onResizeWindow();
+
+    return () => window.removeEventListener('resize', onResizeWindow);
+
+  },[]);
 
   const handleScroll = (ref: any) => {
     if(ref?.current) ref?.current?.scrollIntoView({ behavior: "smooth" });

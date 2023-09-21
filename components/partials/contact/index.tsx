@@ -13,7 +13,7 @@ const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivEl
             Contact
           </span>
         </div>
-        <div className={`grid grid-cols-${contact.length} w-2/3 h-[400px] mx-auto justify-center ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
+        <div className={`grid grid-cols-4 w-2/3 h-[400px] mx-auto justify-center ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
           {_.map(contact, (item: any, key: any) => (
             <a href={item?.link} target="_blank" className={`flex justify-center focus:outline-none `} key={'CONTACT-' + key}>
               <div className={`text-4xl sm:text-6xl`}> 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ReactNode } from 'react';
 import { LayoutContext } from 'src/static/context';
-import { initialValue } from 'src/static/initial';
+import { constants } from '../constants';
 
 type PropsType = {
 	children: ReactNode
@@ -29,13 +29,13 @@ export default function Layout({ children }: PropsType) {
 	const contextValue = {
 		isDarkMode,
 		setIsDarkMode,
-		headers_title: initialValue.headers_title,
-		identity: initialValue.identity,
-		education: initialValue.education,
-		experience: initialValue.experience,
-		projects: initialValue.projects,
-		skills: initialValue.skills,
-		contact: initialValue.contact,
+		headers_title: constants.headers_title,
+		identity: constants.identity,
+		education: constants.education,
+		experience: constants.experience,
+		projects: constants.projects,
+		skills: constants.skills,
+		contact: constants.contact,
 	};
 
   return (

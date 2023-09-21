@@ -23,10 +23,10 @@ function Projects(props: any, ref: any) {
 
 		}, option);
 
-		if(firstRef.current) observer.observe(firstRef.current);
+		if(firstRef?.current) observer.observe(firstRef?.current);
 
 		return () => {
-			if(firstRef.current) observer.unobserve(firstRef.current)
+			if(firstRef?.current) observer.unobserve(firstRef?.current)
 		}
 
 	},[firstRef, option]);
@@ -36,11 +36,11 @@ function Projects(props: any, ref: any) {
     	<div className={`flex flex-col justify-center w-full space-y-8 sm:space-y-16 relative py-16`} ref={ref}>
 				<div className={`h-14 ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`} ref={firstRef}>
 					<span className="relative">
-						<span className={`${firstPort ? `animate-scanning` : `bg-paletteText-primary w-full h-full absolute rounded-full`}`} />
+						<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} w-full h-full absolute rounded-full`}`} />
 						Projects
 					</span>
 				</div>
-				<div className={`flex flex-col p-4 w-auto sm:w-1/2 h-[400px] mx-auto justify-start ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
+				<div className={`flex flex-col p-4 w-auto sm:w-2/3 mx-auto justify-start ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
 					<div className={`flex flex-col space-y-4 justify-center`}>
 						{
 							_.map(
@@ -49,14 +49,58 @@ function Projects(props: any, ref: any) {
 									<div className={`space-y-2`} key={"PROJECT-" + key}>
 										<div className={`font-bold text-base sm:text-lg`}>
 											<div className={`relative inline-block`}>
-												<span className={`${firstPort ? `animate-scanning` : `bg-paletteText-primary absolute rounded-md inline w-full h-full`}`} />
+												<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
 												{key + 1}. {item?.title}
 											</div>
 										</div>
 										<div className={`relative inline-block text-sm sm:text-base`}>
-											<span className={`${firstPort ? `animate-scanning` : `bg-paletteText-primary absolute rounded-md inline w-full h-full`}`} />
+											<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
 											{item?.description}
 										</div>
+										{!_.isEmpty(item?.responsibilities) && (
+											<div className={``}>
+												<div className={`relative inline-block text-sm sm:text-base`}>
+													<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+													Responsibilites:
+												</div>
+												<ul>
+													{_.map(
+														item?.responsibilities,
+														(val: any, key: any) => (
+															<li 
+																key={'responsibilities-'+key}
+																className={`relative inline-block text-sm sm:text-base`}
+															>
+																<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+																&bull; {val}
+															</li>
+														)
+													)}
+												</ul>
+											</div>
+										)}
+										{!_.isEmpty(item?.technologies) && (
+											<div className={``}>
+												<div className={`relative inline-block text-sm sm:text-base`}>
+													<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+													Technologies:
+												</div>
+												<ul>
+													{_.map(
+														item?.technologies,
+														(val: any, key: any) => (
+															<li 
+																key={'technologies-'+key}
+																className={`relative inline-block text-sm sm:text-base`}
+															>
+																<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+																{key === item?.technologies?.length - 1 ? val : val.concat(",", "&nbsp;")}
+															</li>
+														)
+													)}
+												</ul>
+											</div>
+										)}
 									</div>
 								)
 							)
