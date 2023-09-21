@@ -1,4 +1,5 @@
 import React, { useContext, forwardRef } from 'react';
+import Image from 'next/image';
 import { LayoutContext } from 'src/static/context';
 import PasPhoto from 'public/assets/img/pas_photo.jpg';
 
@@ -9,9 +10,16 @@ const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref
     <div className={`relative ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`}`}>
       <div className={`grid grid-rows-2 sm:grid-rows-none grid-cols-none sm:grid-cols-2 w-full p-8 relative`} ref={ref}>
         <div className={`flex justify-end w-full`}>
-          <img src={PasPhoto.blurDataURL} className={`w-64 h-64 mx-auto sm:mx-0 rounded-full`} />
+          <div className={`relative w-48 h-48 sm:w-64 sm:h-64 rounded-full mx-auto sm:mx-0`}>
+            <Image 
+              src={PasPhoto} 
+              className={`object-cover rounded-full`} 
+              alt={""}
+              fill
+            />
+          </div>
         </div>
-        <div className={`text-xl ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} ml-0 sm:ml-8 space-y-2 font-semibold items-center sm:items-start flex flex-col justify-center`}>
+        <div className={`text-xl ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} ml-0 sm:ml-8 space-y-2 font-semibold items-center sm:items-start flex flex-col justify-center text-center`}>
           <h1>{identity?.name}</h1>
           <h1>{identity?.role}</h1>
           <p className={`text-sm font-medium whitespace-normal sm:whitespace-pre-line text-center sm:text-left`}>{identity?.desc}</p>
