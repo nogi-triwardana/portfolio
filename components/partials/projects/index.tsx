@@ -1,40 +1,30 @@
-import React, { useState, useEffect, useRef, useContext, forwardRef } from 'react';
+import React, { useState, useEffect, useRef, useContext, forwardRef, Ref, RefObject } from 'react';
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
-import FadeWhenVisible from 'components/wrapper/fader';
-import { FaBeer } from 'react-icons/fa';
-import { BsFillAirplaneFill } from 'react-icons/bs';
 
-function Projects(props: any, ref: any) {
+function Projects(props: any, ref: Ref<any>) {
 
 	const [firstPort, setFirstPort] = useState(false);
-	const firstRef = useRef(null);
-	const option = {
-		root: null,
-		rootMargin: '0px',
-		threshold: 1.0
-	};
+	const observerRef = useRef<IntersectionObserver | null>(null);
 	const { projects, isDarkMode } = useContext(LayoutContext);
 
 	useEffect(() => {
-		const observer = new IntersectionObserver((entries) => {
-			const [ entry ] = entries;
-			if(entry.isIntersecting) setFirstPort(true);
+		observerRef.current = new IntersectionObserver(([entries]) => setFirstPort(entries?.isIntersecting))
+	}, []);
 
-		}, option);
-
-		if(firstRef?.current) observer.observe(firstRef?.current);
+	useEffect(() => {
+		if(ref && 'current' in ref)
+			observerRef.current?.observe(ref?.current);
 
 		return () => {
-			if(firstRef?.current) observer.unobserve(firstRef?.current)
+			observerRef?.current?.disconnect();
 		}
-
-	},[firstRef, option]);
+	}, [ref]);
 
 	return (
 		<div className={`relative ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`}`}>
     	<div className={`flex flex-col justify-center w-full space-y-8 sm:space-y-16 relative py-16`} ref={ref}>
-				<div className={`h-14 ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`} ref={firstRef}>
+				<div className={`h-14 ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}>
 					<span className="relative">
 						<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} w-full h-full absolute rounded-full`}`} />
 						Projects
@@ -52,7 +42,7 @@ function Projects(props: any, ref: any) {
 												<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
 												{key + 1}. {item?.title}
 											</div>
-										</div>
+										</div>	
 										<div className={`relative inline-block text-sm sm:text-base`}>
 											<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
 											{item?.description}
@@ -80,25 +70,15 @@ function Projects(props: any, ref: any) {
 											</div>
 										)}
 										{!_.isEmpty(item?.technologies) && (
-											<div className={``}>
+											<div className={`space-x-2`}>
 												<div className={`relative inline-block text-sm sm:text-base`}>
 													<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
 													Technologies:
 												</div>
-												<ul>
-													{_.map(
-														item?.technologies,
-														(val: any, key: any) => (
-															<li 
-																key={'technologies-'+key}
-																className={`relative inline-block text-sm sm:text-base`}
-															>
-																<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-																{key === item?.technologies?.length - 1 ? val : val.concat(",", "&nbsp;")}
-															</li>
-														)
-													)}
-												</ul>
+												<div className={`relative inline-block text-sm sm:text-base`}>
+													<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+													{item?.technologies.join(", ")}
+												</div>
 											</div>
 										)}
 									</div>
