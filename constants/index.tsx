@@ -18,14 +18,10 @@ export const constants = {
     name: 'Nogi Ragil Triwardana',
     role: 'Frontend Developer',
 		desc: `
-			Fullstack developer with two years
-			of experience working with
-			Javascript, HTML/CSS, PHP and
-			MySQL to serve customers. Adapt at
-			contributing to highly collaborative
-			work environment, finding
-			solutions, and accentuating
-			customer satisfaction.
+      Frontend developer with three years of experience working with Javascript, 
+      HTML, CSS and the others to serve customers. Adapt at contributing to 
+      highly collaborative work environment, finding solutions, and accentuating 
+      customer satisfaction.
 		`
   },
   education: educationConstants,

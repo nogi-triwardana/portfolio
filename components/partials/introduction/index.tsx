@@ -9,7 +9,7 @@ const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref
     <div className={`relative ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`}`}>
       <div className={`grid grid-rows-2 sm:grid-rows-none grid-cols-none sm:grid-cols-2 w-full p-8 relative`} ref={ref}>
         <div className={`flex justify-end w-full`}>
-          <img src={PasPhoto.blurDataURL} className={`w-64 h-64 mx-auto sm:mx-0 rounded-full`} />
+          <img src={PasPhoto.src} className={`w-64 h-64 mx-auto sm:mx-0 rounded-full object-cover`} />
         </div>
         <div className={`text-xl ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} ml-0 sm:ml-8 space-y-2 font-semibold items-center sm:items-start flex flex-col justify-center`}>
           <h1>{identity?.name}</h1>

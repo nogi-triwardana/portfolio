@@ -69,9 +69,9 @@ function Projects(props: any, ref: any) {
 														(val: any, key: any) => (
 															<li 
 																key={'responsibilities-'+key}
-																className={`relative inline-block text-sm sm:text-base`}
+																className={`relative inline-block text-sm sm:text-base min-w-full sm:min-w-[500px]`}
 															>
-																<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+																<div className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
 																&bull; {val}
 															</li>
 														)
@@ -85,20 +85,14 @@ function Projects(props: any, ref: any) {
 													<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
 													Technologies:
 												</div>
-												<ul>
-													{_.map(
-														item?.technologies,
-														(val: any, key: any) => (
-															<li 
-																key={'technologies-'+key}
-																className={`relative inline-block text-sm sm:text-base`}
-															>
-																<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-																{key === item?.technologies?.length - 1 ? val : val.concat(",", "&nbsp;")}
-															</li>
-														)
-													)}
-												</ul>
+												<div>
+													<div 
+														className={`relative inline-block text-sm sm:text-base`}
+													>
+														<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+														{item?.technologies}
+													</div>
+												</div>
 											</div>
 										)}
 									</div>
