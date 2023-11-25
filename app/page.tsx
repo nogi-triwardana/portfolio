@@ -1,17 +1,21 @@
 'use client';
 
-import React, { useRef, useState, useEffect, useLayoutEffect, useContext } from 'react'
-import { motion } from 'framer-motion'
-import Header from 'components/headers'
-import Introduction from 'components/partials/introduction'
-import Experience from 'components/partials/experience'
-import Projects from 'components/partials/projects'
-import Skills from 'components/partials/skills'
-import Contact from 'components/partials/contact'
-import Layout from 'components'
-import { LayoutContext } from 'src/static/context'
+import React, { useRef, useState, useLayoutEffect, Suspense, lazy } from 'react'
+import dynamic from 'next/dynamic';
+import 'styles/Home.module.css'
+import 'styles/globals.css'
+import "nprogress/nprogress.css"
 
-export default function Home(): JSX.Element {
+import LazyLoad from 'components/loader/LazyLoad';
+const Header = lazy(() => import('components/headers'));
+const Introduction = lazy(() => import('components/partials/introduction'));
+const Experience = lazy(() => import('components/partials/experience'));
+const Projects = lazy(() => import('components/partials/projects'));
+const Skills = lazy(() => import('components/partials/skills'));
+const Contact = lazy(() => import('components/partials/contact'));
+const Layout = lazy(() => import('components'));
+
+function Home(): JSX.Element {
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const introductionRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
@@ -68,10 +72,8 @@ export default function Home(): JSX.Element {
   };
 
   return (
-    <Layout>
-      <motion.div
-        transition={{ delay: 1 }}
-      > 
+    <Suspense fallback={<LazyLoad />}>
+      <Layout>
         <Header 
           toggleDropdown={toggleDropdown}
           setToggleDropdown={setToggleDropdown}
@@ -82,7 +84,14 @@ export default function Home(): JSX.Element {
         <Projects ref={projectsRef} />
         <Skills ref={skillsRef} />
         <Contact ref={contactRef} />
-      </motion.div>
-    </Layout>
+      </Layout>
+    </Suspense>
   )
 }
+
+const NoSSRGlobalComponent = dynamic(() => Promise.resolve(Home), {
+  ssr: false
+})
+
+
+export default NoSSRGlobalComponent;

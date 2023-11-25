@@ -1,5 +1,6 @@
-import 'styles/Home.module.css'
-import 'styles/globals.css'
+'use client';
+
+import React from 'react';
 
 export const metadata = {
   title: "Nogi Ragil Triwardana's Portfolio",
