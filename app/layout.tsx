@@ -1,6 +1,3 @@
-import 'styles/Home.module.css'
-import 'styles/globals.css'
-
 export const metadata = {
   title: "Nogi Ragil Triwardana's Portfolio",
 }
