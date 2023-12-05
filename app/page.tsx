@@ -8,6 +8,7 @@ import "nprogress/nprogress.css"
 
 import LazyLoad from 'components/loader/LazyLoad';
 const Header = lazy(() => import('components/headers'));
+const Footer = lazy(() => import('components/footers'));
 const Introduction = lazy(() => import('components/partials/introduction'));
 const Experience = lazy(() => import('components/partials/experience'));
 const Projects = lazy(() => import('components/partials/projects'));
@@ -84,6 +85,7 @@ function Home(): JSX.Element {
         <Projects ref={projectsRef} />
         <Skills ref={skillsRef} />
         <Contact ref={contactRef} />
+        <Footer />
       </Layout>
     </Suspense>
   )
