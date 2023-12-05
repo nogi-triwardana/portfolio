@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect, useLayoutEffect, useContext } from 'react'
 import { motion } from 'framer-motion'
 import Header from 'components/headers'
+import Footer from 'components/footers'
 import Introduction from 'components/partials/introduction'
 import Experience from 'components/partials/experience'
 import Projects from 'components/partials/projects'
@@ -82,6 +83,7 @@ export default function Home(): JSX.Element {
         <Projects ref={projectsRef} />
         <Skills ref={skillsRef} />
         <Contact ref={contactRef} />
+        <Footer />
       </motion.div>
     </Layout>
   )
