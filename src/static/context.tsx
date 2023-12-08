@@ -27,6 +27,7 @@ interface InterfaceLayoutContext {
   education: Array<object>;
 	experience: Array<object>;
   projects: Array<object>;
+  certificate: Array<object>;
   skills: skillsType;
   contact : Array<object>;
 }

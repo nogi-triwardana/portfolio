@@ -34,6 +34,7 @@ export default function Layout({ children }: PropsType) {
 		education: constants.education,
 		experience: constants.experience,
 		projects: constants.projects,
+		certificate: constants.certificate,
 		skills: constants.skills,
 		contact: constants.contact,
 	};

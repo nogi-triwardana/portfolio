@@ -3,6 +3,7 @@ import { projectsConstant } from './projects-constants';
 import { skillConstants } from './skills-constants';
 import { experienceConstants } from './experience-constants';
 import { contactConstant } from './contact-constants';
+import { certificateConstant } from './certificate-constanst';
 
 export const constants = {
   isDarkMode: false,
@@ -11,6 +12,7 @@ export const constants = {
     "Home",
     "Experience",
     "Projects",
+    "Certificate",
     "Skills",
     "Contact"
   ],
@@ -26,6 +28,7 @@ export const constants = {
   },
   education: educationConstants,
   projects: projectsConstant,
+  certificate: certificateConstant,
 	experience: experienceConstants,
   skills: skillConstants,
   contact: contactConstant

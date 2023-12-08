@@ -12,6 +12,7 @@ const Footer = lazy(() => import('components/footers'));
 const Introduction = lazy(() => import('components/partials/introduction'));
 const Experience = lazy(() => import('components/partials/experience'));
 const Projects = lazy(() => import('components/partials/projects'));
+const Certificate = lazy(() => import('components/partials/certificate'));
 const Skills = lazy(() => import('components/partials/skills'));
 const Contact = lazy(() => import('components/partials/contact'));
 const Layout = lazy(() => import('components'));
@@ -21,6 +22,7 @@ function Home(): JSX.Element {
   const introductionRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const certificateRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
@@ -59,6 +61,10 @@ function Home(): JSX.Element {
         return (
           handleScroll(projectsRef)
         );
+      case 'Certificate': 
+        return (
+          handleScroll(certificateRef)
+        );
       case 'Skills':
         return (
           handleScroll(skillsRef)
@@ -83,6 +89,7 @@ function Home(): JSX.Element {
         <Introduction ref={introductionRef} />
         <Experience ref={experienceRef} />
         <Projects ref={projectsRef} />
+        <Certificate ref={certificateRef} />
         <Skills ref={skillsRef} />
         <Contact ref={contactRef} />
         <Footer />
