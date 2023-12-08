@@ -55,7 +55,7 @@ function Projects(props: any, ref: any) {
 										</div>
 										<div className={`relative inline-block text-sm sm:text-base`}>
 											<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-											{item?.description}
+											{item?.description}.
 										</div>
 										{!_.isEmpty(item?.responsibilities) && (
 											<div className={``}>
