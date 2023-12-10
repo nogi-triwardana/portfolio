@@ -49,7 +49,7 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
               <a href={item.link} target="_blank" rel="noopener noreferrer" className="flex justify-center">
                 <div className="relative inline-block">
                   <span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-[#dce3de]` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-                  <div className="relative !w-[270px] xs:w-[320px] sm:w-[360px] h-fit">
+                  <div className="relative w-[270px] xs:w-[320px] sm:w-[480px] h-fit">
                     <div className="pb-[70%]">
                       <img src={item.image.src} className='w-full h-full object-cover absolute rounded-lg' />
                     </div>
