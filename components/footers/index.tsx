@@ -10,7 +10,7 @@ export default function Footer() {
 				&copy; Copyright 2023.
 			</div>
 			<div className={`${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
-				All rights reserverd. Made with {`</>`} by Nogi
+				All rights reserved. Made with {`</>`} by Nogi
 			</div>
 		</div>
 	)
