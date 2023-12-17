@@ -2,6 +2,13 @@ import React, { useState, useContext, forwardRef, useEffect, useRef } from 'reac
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
 
+declare global {
+  interface Window{
+      gtag:any,
+      fcWidget:any
+  }
+}
+
 const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<HTMLDivElement>) {
   const [firstPort, setFirstPort] = useState(false);
   const { certificate, isDarkMode } = useContext(LayoutContext);
@@ -27,6 +34,14 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
 
 	},[firstRef, option]);
 
+  const sendEventImgCertificateHandler = (param: any) => {
+    if(typeof window !== "undefined") {
+      window.gtag("event", "click_image_certificate", {
+        certificate_name: param.name
+      })
+    }
+  }
+
   return (
     <div className={`relative ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`}`}>
       <svg 
@@ -46,7 +61,13 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
         <div className={`flex flex-col w-2/3 mx-auto space-y-16 ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
           {_.map(certificate, (item: any, key: any) => (
             <div className="flex flex-col md:flex-row space-x-0 md:space-x-4">
-              <a href={item.link} target="_blank" rel="noopener noreferrer" className="flex justify-center">
+              <a 
+                href={item.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex justify-center"
+                onClick={() => sendEventImgCertificateHandler(item)}
+              >
                 <div className="relative inline-block">
                     <div className="relative w-[270px] xs:w-[320px] sm:w-[480px] h-fit">
                       <div className="pb-[70%]">
