@@ -2,6 +2,7 @@ import CertificateThumbnail1 from 'public/assets/img/thumbnail-certificate-1.png
 import CertificateThumbnail2 from 'public/assets/img/thumbnail-certificate-2.png';
 import CertificateThumbnail3 from 'public/assets/img/thumbnail-certificate-3.png';
 import CertificateThumbnail4 from 'public/assets/img/thumbnail-certificate-4.png';
+import CertificateThumbnail5 from 'public/assets/img/thumbnail-certificate-5.png';
 
 export const certificateConstant = [
   {
@@ -27,5 +28,11 @@ export const certificateConstant = [
     link: 'https://www.udemy.com/certificate/UC-4ca4a0d2-953b-446b-bb93-098923cbaa12/',
     image: CertificateThumbnail4,
     description: "I'am join a course of mobile development with React Native from basic to expert at udemy platform."
+  },
+  {
+    name: 'Belajar Pemrograman Prosedural dengan Python',
+    link: 'https://www.dicoding.com/certificates/6RPNVG4W4Z2M',
+    image: CertificateThumbnail5,
+    description: "At this course I'am learn how about a basic programming with procedural paradigm using python at dicoding platform."
   },
 ];
