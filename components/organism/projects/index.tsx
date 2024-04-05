@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext, forwardRef } from 'react';
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
-import FadeWhenVisible from 'components/wrapper/fader';
+import FadeWhenVisible from 'components/organism/fader';
 import { FaBeer } from 'react-icons/fa';
 import { BsFillAirplaneFill } from 'react-icons/bs';
 
