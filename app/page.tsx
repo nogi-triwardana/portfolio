@@ -6,16 +6,16 @@ import 'styles/Home.module.css'
 import 'styles/globals.css'
 import "nprogress/nprogress.css"
 
-import LazyLoad from 'components/loader/LazyLoad';
-const Header = lazy(() => import('components/headers'));
-const Footer = lazy(() => import('components/footers'));
-const Introduction = lazy(() => import('components/partials/introduction'));
-const Experience = lazy(() => import('components/partials/experience'));
-const Projects = lazy(() => import('components/partials/projects'));
-const Certificate = lazy(() => import('components/partials/certificate'));
-const Skills = lazy(() => import('components/partials/skills'));
-const Contact = lazy(() => import('components/partials/contact'));
-const Layout = lazy(() => import('components'));
+import LazyLoad from 'components/atomic/loader/LazyLoad';
+const Header = lazy(() => import('components/organism/headers'));
+const Footer = lazy(() => import('components/atomic/footers'));
+const Introduction = lazy(() => import('components/organism/introduction'));
+const Experience = lazy(() => import('components/organism/experience'));
+const Projects = lazy(() => import('components/organism/projects'));
+const Certificate = lazy(() => import('components/organism/certificate'));
+const Skills = lazy(() => import('components/organism/skills'));
+const Contact = lazy(() => import('components/organism/contact'));
+const Layout = lazy(() => import('components/templates/layout'));
 
 function Home(): JSX.Element {
   const [toggleDropdown, setToggleDropdown] = useState(false);

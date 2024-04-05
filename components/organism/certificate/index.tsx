@@ -60,7 +60,10 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
         </div>
         <div className={`flex flex-col w-2/3 mx-auto space-y-16 ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}>
           {_.map(certificate, (item: any, key: any) => (
-            <div className="flex flex-col md:flex-row space-x-0 md:space-x-4">
+            <div 
+              key={"CERTIFICATE-" + key}
+              className="flex flex-col md:flex-row space-x-0 md:space-x-4"
+            >
               <a 
                 href={item.link} 
                 target="_blank" 
