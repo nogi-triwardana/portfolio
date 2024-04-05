@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ReactNode } from 'react';
 import { LayoutContext } from 'src/static/context';
-import { constants } from '../constants';
+import { constants } from '../../../constants';
 
 type PropsType = {
 	children: ReactNode
