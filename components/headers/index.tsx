@@ -15,11 +15,11 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
 	const { headers_title, isDarkMode, setIsDarkMode } = useContext(LayoutContext);
 	
 	return (   
-		<div className={`flex relative justify-between w-full ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`} z-[9999] sticky top-0 p-4 h-16 shadow-lg`}>
+		<div className={`flex relative justify-between w-full ${isDarkMode ? `bg-dark-900` : `bg-light-900`} z-[9999] sticky top-0 p-4 h-16 shadow-lg`}>
 				<div>
 					<div 
 						onClick={() => setToggleDropdown(!toggleDropdown)}
-						className={`${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} flex items-center justify-center self-center text-xl sm:hidden`}
+						className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`} flex items-center justify-center self-center text-xl sm:hidden`}
 					>
 						<PiListBold className={`self-center`} />
 					</div>
@@ -28,7 +28,7 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
 					{_.map(headers_title, (item: any, key: any) => (
 						<li 
 							key={key}
-							className={`cursor-pointer w-full p-4 sm:p-0 ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`}`}
+							className={`cursor-pointer w-full p-4 sm:p-0 ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}
 							onClick={scrollSection}
 						>
 							{item}

@@ -20,9 +20,9 @@ function Skills(props: any, ref: any) {
 
 
   return (
-    <div className={`relative ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`}`}>
+    <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
       <div className={`flex flex-col justify-center w-full space-y-8 relative py-16`} ref={ref}>
-        <div className={`h-14 ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}>
+        <div className={`h-14 ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}>
           <span className="relative">
             Skills
           </span>
@@ -30,8 +30,8 @@ function Skills(props: any, ref: any) {
         <div className={`flex flex-col space-y-16`}>
           {_.map(Object.entries(skills), (item, key) => (
             <>
-              <div className={`${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} font-bold text-center text-2xl`}>{snakeCaseToTitleCase(item[0])}</div>
-              <div className={`flex flex-wrap gap-12 w-full px-8 sm:w-2/3 mx-auto justify-center ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
+              <div className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl`}>{snakeCaseToTitleCase(item[0])}</div>
+              <div className={`flex flex-wrap gap-12 w-full px-8 sm:w-2/3 mx-auto justify-center ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}>
                 {_.map(item[1], (item: any, key: any) => (
                   <div 
                     key={'SKILL-'+key} 

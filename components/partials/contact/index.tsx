@@ -14,14 +14,14 @@ const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivEl
   }
 
   return (
-    <div className={`relative ${isDarkMode ? `bg-[#424543]` : `bg-[#f7f7f5]`}`}>
+    <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
       <div className={`flex flex-col justify-center w-full space-y-8 relative py-16`} ref={ref}>
-        <div className={`h-14 ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}>
+        <div className={`h-14 ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}>
           <span className={`relative`}>
             Contact
           </span>
         </div>
-        <div className={`grid grid-cols-4 pb-16 w-2/3 h-fit mx-auto justify-center ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
+        <div className={`grid grid-cols-4 pb-16 w-2/3 h-fit mx-auto justify-center ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}>
           {_.map(contact, (item: any, key: any) => (
             <a 
               href={item?.link} 

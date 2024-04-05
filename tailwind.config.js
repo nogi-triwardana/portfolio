@@ -36,6 +36,14 @@ module.exports = {
           placeholder: '#8F95B2',
           error: '#EE3124',
           active: '#0092AC'
+        },
+        dark: {
+          800: '#1f0a4d',
+          900: '#170739'
+        },
+        light: {
+          800: '#dce3de',
+          900: '#f7f7f5'
         }
       },
     }
