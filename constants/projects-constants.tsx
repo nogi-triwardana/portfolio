@@ -7,7 +7,7 @@ export const projectsConstant = [
       "Slicing and Implement API CRUD all of feature", 
       "Implement printing report several type of data at cooperative from API"
     ],
-    technologies: "Lumen,\xa0MySQL, \xa0ReactJS, \xa0TailwindCSS"
+    technologies: "Lumen,\xa0MySQL, \xa0ReactJS, \xa0Axios, \xa0TailwindCSS"
   },
   {
     key: 1,
@@ -17,7 +17,7 @@ export const projectsConstant = [
       "Slicing page and Implement API all of feature at buyer platform", "Create feature like implement cart at all of page, add to cart, checkout, payment, transaction, general setting user and message chat to admin/owner store.",
       "Slicing page and Implement API all of requirement data for CMS as superadmin from owner store", "Support backend for adjust requirement API and database like add new query for additional API"
     ],
-    technologies: "Lumen, \xa0MySQL, \xa0NextJS, \xa0ReactJS, \xa0TailwindCSS, \xa0Socket.io, \xa0Redis"
+    technologies: "Lumen, \xa0MySQL, \xa0NextJS, \xa0ReactJS, \xa0Axios, \xa0TailwindCSS, \xa0Socket.io, \xa0Redis"
   },
   {
     key: 2,
@@ -39,7 +39,7 @@ export const projectsConstant = [
       "Create general setting for requirement landing page owned by invinitee",
       "Build a special feature owned by invinitee like check-in guest from customer, broadcast email & whatsapp, and buy a theme for invitation customer for sending to candidate guest"
     ],
-    technologies: "NextJS, \xa0Laravel, \xa0MySQL, \xa0TailwindCSS"
+    technologies: "NextJS, \xa0Laravel, \xa0MySQL, \xa0Axios, \xa0TailwindCSS"
   },
   {
     key: 4,
@@ -49,7 +49,7 @@ export const projectsConstant = [
       "Slicing page with Single Application Page(SPA) and implement API for all feature like fetch every questions and post answer participant",
       "Create all over API for all feature and connecting with database"
     ],
-    technologies: "ReactJS, \xa0Laravel, \xa0MySQL, \xa0CSS3"
+    technologies: "ReactJS, \xa0Laravel, \xa0Axios, \xa0MySQL, \xa0CSS3"
   },
   {
     key: 5,
@@ -60,7 +60,7 @@ export const projectsConstant = [
       "Maintenance CMS and fixing bugs which found by QA",
       "Slicing and implement/Adjust API for a feature"
     ],
-    technologies: "React JS, \xa0NodeJS, \xa0Mysql, \xa0Minio, \xa0Styled Component, \xa0MaterialUI"
+    technologies: "React JS, \xa0NodeJS, \xa0Mysql, \xa0Axios, \xa0Redux, \xa0Minio, \xa0Styled Component, \xa0MaterialUI"
   },
   {
     key: 6,
@@ -70,7 +70,7 @@ export const projectsConstant = [
       "Slicing page and implement API for all requirement at user and admin side", "Support backend for adjust of fixing backend source code and database",
       "Setup deployment with firebase hosting for staging"
     ],
-    technologies: "ReactJS, \xa0Firebase, \xa0TailwindCSS"
+    technologies: "ReactJS, \xa0Firebase, \xa0Axios, \xa0TailwindCSS"
   },
   {
     key: 7,
@@ -85,7 +85,7 @@ export const projectsConstant = [
       "Become PIC to review, approve, and merge code from other developer before deploy to staging and production",
       "Guide to understanding workflow code to new developer joined"
     ],
-    technologies: "NextJS, \xa0TailwindCSS, \xa0Jest, \xa0Docker, \xa0Datadog, \xa0Jenkins, \xa0Rancher"
+    technologies: "NextJS, \xa0TailwindCSS, \xa0Jest, \xa0Axios, \xa0Docker, \xa0Datadog, \xa0Jenkins, \xa0Rancher"
   },
   {
     key: 8,
@@ -97,6 +97,6 @@ export const projectsConstant = [
       "Become PIC to review, approve, and merge code from other developer for deployment",
       "Guide to understanding workflow code to new developer joined"
     ],
-    technologies: "ReactJS, \xa0TailwindCSS, \xa0Gitlab CI/CD"
+    technologies: "ReactJS, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0Gitlab CI/CD"
   },
 ];
