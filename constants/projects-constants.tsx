@@ -53,7 +53,7 @@ export const projectsConstant = [
   },
   {
     key: 5,
-    title: 'Pagii',
+    title: 'Pagii HR',
     description: 'Attendance Apps management for multiple organization of office',
     responsibilities: [
       "Create new feature of parent organization for manage child organization",
@@ -85,7 +85,7 @@ export const projectsConstant = [
       "Become PIC to review, approve, and merge code from other developer before deploy to staging and production",
       "Guide to understanding workflow code to new developer joined"
     ],
-    technologies: "NextJS, \xa0TailwindCSS, \xa0Jest, \xa0Axios, \xa0Docker, \xa0Datadog, \xa0Jenkins, \xa0Rancher"
+    technologies: "NextJS, \xa0Redux Toolkit, \xa0TailwindCSS, \xa0Jest, \xa0Axios, \xa0Docker, \xa0Datadog, \xa0Jenkins, \xa0Rancher"
   },
   {
     key: 8,
@@ -97,6 +97,6 @@ export const projectsConstant = [
       "Become PIC to review, approve, and merge code from other developer for deployment",
       "Guide to understanding workflow code to new developer joined"
     ],
-    technologies: "ReactJS, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0Gitlab CI/CD"
+    technologies: "ReactJS, \xa0Redux Toolkit, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0Gitlab CI/CD"
   },
 ];
