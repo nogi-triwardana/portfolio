@@ -82,6 +82,9 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
               </a>
               <div className="pb-0 md:pb-8">
                 <div className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`} text-center md:text-left font-bold text-base sm:text-lg`}>{item.name}</div>
+                <div className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`} text-center md:text-left font-medium text-sm sm:text-base`}>
+                  {item.platform} | {item.years}
+                </div>
                 <div className={`relative inline-block text-center md:text-left text-sm sm:text-base`}>
                   <span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-light-800` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
                   {item.description}
