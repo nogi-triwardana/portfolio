@@ -3,6 +3,7 @@ import CertificateThumbnail2 from 'public/assets/img/thumbnail-certificate-2.png
 import CertificateThumbnail3 from 'public/assets/img/thumbnail-certificate-3.png';
 import CertificateThumbnail4 from 'public/assets/img/thumbnail-certificate-4.png';
 import CertificateThumbnail5 from 'public/assets/img/thumbnail-certificate-5.png';
+import CertificateThumbnail6 from 'public/assets/img/thumbnail-certificate-6.png';
 
 export const certificateConstant = [
   {
@@ -35,4 +36,10 @@ export const certificateConstant = [
     image: CertificateThumbnail5,
     description: "At this course I'am learn how about a basic programming with procedural paradigm using python at dicoding platform."
   },
+  {
+    name: 'Javascript Basic',
+    link: 'https://www.hackerrank.com/certificates/9ea9ea441c5a',
+    image: CertificateThumbnail6,
+    description: "This is a test about Javascript Basic which covers topics like Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling."
+  }
 ];
