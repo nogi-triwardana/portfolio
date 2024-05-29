@@ -81,7 +81,8 @@ export const projectsConstant = [
       "Implement and maintenance unit test with jest library",
       "Implement datadog at frontend service",
       "Maintenance deployment to staging and production",
-      "Implement integration to external service like sendbird, google analytics, google tag manager, amplitude, zendesk, freshchat, adding PaDi web to mobile view other vendor and adding PaDi web to iFrame LKPP",
+      "Improvement SEO for product detail page at google search engine",
+      "Implement integration to external service like sendbird, google analytics, captcha, google tag manager, amplitude, zendesk, freshchat, adding PaDi web to mobile view other vendor and adding PaDi web to iFrame LKPP",
       "Become PIC to review, approve, and merge code from other developer before deploy to staging and production",
       "Guide to understanding workflow code to new developer joined"
     ],
