@@ -100,4 +100,14 @@ export const projectsConstant = [
     ],
     technologies: "ReactJS, \xa0Redux Toolkit, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0Gitlab CI/CD"
   },
+  {
+    key: 8,
+    title: 'Pagii Ordering',
+    description: "An application provided by pagii for ordering or shopping like food, drink, item, etc to merchant",
+    responsibilities: [
+      "Fixing bug from user experience and user interface to several pages at customer platform and merchant platform",
+      "Doing deployment using gitlab CI/CD"
+    ],
+    technologies: "ReactJS, \xa0NextJS, \xa0Zustand, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0MaterialUI, \xa0Gitlab CI/CD"
+  },
 ];
