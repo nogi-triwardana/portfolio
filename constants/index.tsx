@@ -22,7 +22,7 @@ export const constants = {
 		desc: `
       I’m a fullstack developer with almost five years of experience working with
       Javascript, PHP and the others to serve customers. I can adapt at
-      contributing to highly collaborative work environment, enjoying finding
+      contributing to highly collaborative work environment, enjoy finding
       solution to various problems, enthusiastic to learning new things
       and prioritize customer satisfaction.
 		`
