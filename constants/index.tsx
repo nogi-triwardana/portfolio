@@ -20,10 +20,11 @@ export const constants = {
     name: 'Nogi Ragil Triwardana',
     role: 'Fullstack Developer',
 		desc: `
-      Fullstack developer with almost five years of experience working with Javascript, 
-      PHP and the others to serve customers. Adapt at contributing to 
-      highly collaborative work environment, finding solutions, and accentuating 
-      customer satisfaction.
+      I’m a fullstack developer with almost five years of experience working with
+      Javascript, PHP and the others to serve customers. I can adapt at
+      contributing to highly collaborative work environment, enjoy finding
+      solution to various problems, enthusiastic to learning new things
+      and prioritize customer satisfaction.
 		`
   },
   education: educationConstants,
