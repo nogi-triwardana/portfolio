@@ -14,7 +14,7 @@ const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref
         <div className={`text-xl ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} ml-0 sm:ml-8 space-y-2 font-semibold items-center sm:items-start flex flex-col justify-center`}>
           <h1>{identity?.name}</h1>
           <h1>{identity?.role}</h1>
-          <p className={`text-sm font-medium whitespace-normal sm:whitespace-pre-line text-center sm:text-left`}>{identity?.desc}</p>
+          <p className={`text-sm sm:text-base font-medium whitespace-normal sm:whitespace-pre-line text-center sm:text-left`}>{identity?.desc}</p>
         </div>
       </div>
       <svg 

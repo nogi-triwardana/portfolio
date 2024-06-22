@@ -94,6 +94,7 @@ export const projectsConstant = [
     description: "An application management of environmental funds for supporting vision preserving indonesia's environment",
     responsibilities: [
       "Slicing page and implement API CRUD which integration internal to database for building a menu at CMS and enduser repository",
+      "Using methodology atomic design pattern when creating or modifying component",
       "Doing deployment using gitlab CI/CD",
       "Become PIC to review, approve, and merge code from other developer for deployment",
       "Guide to understanding workflow code to new developer joined"
