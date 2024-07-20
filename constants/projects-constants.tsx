@@ -56,9 +56,10 @@ export const projectsConstant = [
     title: 'Pagii HR',
     description: 'Attendance Apps management for multiple organization of office',
     responsibilities: [
-      "Create new feature of parent organization for manage child organization",
-      "Maintenance CMS and fixing bugs which found by QA",
-      "Slicing and implement/Adjust API for a feature"
+      "Maintaining scalibility application and fixing bugs which found by QA",
+      "Guiding and giving tasks for internship team which join as a part of Pagii HR team",
+      "Slicing UI and implement/adjust API for a feature",
+      "Doing deployment using gitlab CI/CD"
     ],
     technologies: "React JS, \xa0NodeJS, \xa0Mysql, \xa0Axios, \xa0Redux, \xa0Minio, \xa0Styled Component, \xa0MaterialUI"
   },
@@ -106,9 +107,10 @@ export const projectsConstant = [
     title: 'Pagii Ordering',
     description: "An application provided by pagii for ordering or shopping like food, drink, item, etc to merchant",
     responsibilities: [
-      "Fixing bug from user experience and user interface to several pages at customer platform and merchant platform",
-      "Doing deployment using gitlab CI/CD"
+      "Fixing bug from UI/UX to several pages at customer platform and merchant platform",
+      "Slicing UI and implement/adjust API for a feature",
+      "Doing deployment from SSH and Git"
     ],
-    technologies: "ReactJS, \xa0NextJS, \xa0Zustand, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0MaterialUI, \xa0Gitlab CI/CD"
+    technologies: "ReactJS, \xa0NextJS, \xa0Zustand, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0MaterialUI"
   },
 ];
