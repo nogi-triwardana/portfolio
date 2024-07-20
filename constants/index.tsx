@@ -18,10 +18,10 @@ export const constants = {
   ],
   identity: {
     name: 'Nogi Ragil Triwardana',
-    role: 'Fullstack Developer',
+    role: 'Frontend Developer',
 		desc: `
-      I’m a fullstack developer with almost five years of experience working with
-      Javascript, PHP and the others to serve customers. I can adapt at
+      I’m a Frontend Developer with almost five years of experience working with
+      Javascript, Typescript and the others. I can adapt at
       contributing to highly collaborative work environment, enjoy finding
       solution to various problems, enthusiastic to learning new things
       and prioritizing stakeholders satisfaction.
