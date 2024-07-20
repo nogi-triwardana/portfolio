@@ -105,7 +105,7 @@ export const projectsConstant = [
   {
     key: 8,
     title: 'Pagii Ordering',
-    description: "An application provided by pagii for ordering or shopping like food, drink, item, etc to merchant",
+    description: "An application provided by pagii for ordering or shopping like food, drink, item, etc from merchant to customer",
     responsibilities: [
       "Fixing bug from UI/UX to several pages at customer platform and merchant platform",
       "Slicing UI and implement/adjust API for a feature",
