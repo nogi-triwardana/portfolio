@@ -24,7 +24,7 @@ export const constants = {
       Javascript, PHP and the others to serve customers. I can adapt at
       contributing to highly collaborative work environment, enjoy finding
       solution to various problems, enthusiastic to learning new things
-      and prioritize customer satisfaction.
+      and prioritizing stakeholders satisfaction.
 		`
   },
   education: educationConstants,
