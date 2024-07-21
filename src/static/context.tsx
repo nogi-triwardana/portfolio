@@ -1,5 +1,11 @@
 import { createContext } from "react";
 import { constants } from "../../constants";
+import { StaticImageData } from "next/image";
+
+type ItemSkillType = {
+  title: string;
+  image: StaticImageData;
+}
 
 interface objIdentity {
   name: string;
@@ -8,15 +14,16 @@ interface objIdentity {
 }
 
 interface skillsType {
-  frontend_framework: Array<object>;
-  backend_framework: Array<object>;
-  mobile_framework: Array<object>;
-  css_framework: Array<object>;
-  state_management: Array<object>;
-  data_fetching: Array<object>;
-  database: Array<object>;
-  repository_control: Array<object>;
-  container: Array<object>;
+  "Back-End Framework": ItemSkillType[];
+  "Front-End Framework": ItemSkillType[];
+  "Mobile Framework": ItemSkillType[];
+  "CSS Framework": ItemSkillType[];
+  "CI/CD": ItemSkillType[];
+  "State Management": ItemSkillType[];
+  "Data Fetching": ItemSkillType[];
+  "Database": ItemSkillType[];
+  "Repository Control": ItemSkillType[];
+  "Container": ItemSkillType[];
 }
 
 interface InterfaceLayoutContext {
