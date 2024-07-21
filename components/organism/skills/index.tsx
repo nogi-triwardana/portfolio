@@ -30,7 +30,7 @@ function Skills(props: any, ref: any) {
         <div className={`flex flex-col space-y-16`}>
           {_.map(Object.entries(skills), (item, key) => (
             <Fragment key={'SKILLS-' + key}>
-              <div className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl`}>{snakeCaseToTitleCase(item[0])}</div>
+              <div className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl`}>{item[0]}</div>
               <div className={`flex flex-wrap gap-12 w-full px-8 sm:w-2/3 mx-auto justify-center ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}>
                 {_.map(item[1], (item: any, key: any) => (
                   <div 
