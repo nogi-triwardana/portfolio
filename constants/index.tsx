@@ -18,9 +18,9 @@ export const constants = {
   ],
   identity: {
     name: 'Nogi Ragil Triwardana',
-    role: 'Front-End Developer',
+    role: 'Front End Developer',
 		desc: `
-      I’m a Front-End Developer with almost five years of experience working with
+      I’m a Front End Developer with almost five years of experience working with
       Javascript, Typescript and the others. I can adapt at
       contributing to highly collaborative work environment, enjoy finding
       solution to various problems, enthusiastic to learning new things
