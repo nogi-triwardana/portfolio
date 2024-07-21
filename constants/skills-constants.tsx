@@ -37,7 +37,7 @@ import Html5 from 'public/assets/icon/html5.svg';
 import Typescript from 'public/assets/icon/typescript.svg';
 
 export const skillConstants = {
-  backend_framework: [
+  "Back-End Framework": [
     {
       title: 'Laravel',
       image: LaravelIcon
@@ -55,7 +55,7 @@ export const skillConstants = {
       image: FlaskIcon
     },
   ],
-  frontend_framework: [
+  "Front-End Framework": [
     {
       title: 'NextJS',
       image: NextJs
@@ -69,13 +69,13 @@ export const skillConstants = {
       image: VueJS
     },
   ],
-  mobile_framework: [
+  "Mobile Framework": [
     {
       title: 'React Native',
       image: ReactJs
     },
   ],
-  css_framework: [
+  "CSS Framework": [
     {
       title: 'MaterialUI',
       image: MaterialUIIcon
@@ -99,7 +99,7 @@ export const skillConstants = {
       image: JenkinsIcon
     }
   ],
-  state_management: [
+  "State Management": [
     {
       title: 'Redux',
       image: ReduxIcon
@@ -113,7 +113,7 @@ export const skillConstants = {
       image: ReactJs
     },
   ],
-  data_fetching: [
+  "Data Fetching": [
     {
       title: 'Axios',
       image: AxiosIcon
@@ -131,7 +131,7 @@ export const skillConstants = {
       image: ReduxIcon
     },
   ],
-  database: [
+  "Database": [
     {
       title: 'MySQL',
       image: MySqlIcon
@@ -145,7 +145,7 @@ export const skillConstants = {
       image: MongoDBIcon
     },
   ],
-  repository_control: [
+  "Repository Control": [
     {
       title: 'Git',
       image: GitIcon
@@ -159,7 +159,7 @@ export const skillConstants = {
       image: YarnIcon
     },
   ],
-  container: [
+  "Container": [
     {
       title: 'Docker',
       image: DockerIcon
