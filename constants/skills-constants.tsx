@@ -24,6 +24,7 @@ import SWRIcon from 'public/assets/icon/swr.svg';
 import MySqlIcon from 'public/assets/icon/MySQL.svg';
 import PostgreSqlIcon from 'public/assets/icon/postgresql.svg';
 import MongoDBIcon from 'public/assets/icon/mongodb.svg';
+import FirebaseIcon from 'public/assets/icon/firebase.svg';
 
 import GitIcon from 'public/assets/icon/git.png';
 import NpmIcon from 'public/assets/icon/npm.png';
@@ -143,6 +144,10 @@ export const skillConstants = {
     {
       title: 'MongoDB',
       image: MongoDBIcon
+    },
+    {
+      title: 'Firebase',
+      image: FirebaseIcon
     },
   ],
   "Repository Control": [
