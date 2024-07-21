@@ -38,7 +38,7 @@ import Html5 from 'public/assets/icon/html5.svg';
 import Typescript from 'public/assets/icon/typescript.svg';
 
 export const skillConstants = {
-  "Back-End Framework": [
+  "Back End Framework": [
     {
       title: 'Laravel',
       image: LaravelIcon
@@ -56,7 +56,7 @@ export const skillConstants = {
       image: FlaskIcon
     },
   ],
-  "Front-End Framework": [
+  "Front End Framework": [
     {
       title: 'NextJS',
       image: NextJs

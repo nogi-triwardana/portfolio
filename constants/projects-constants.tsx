@@ -15,7 +15,7 @@ export const projectsConstant = [
     description: 'A modern and large shoes store stocking a wide range of locally made shoes and bags for both men and women',
     responsibilities: [
       "Slicing page and Implement API all of feature at buyer platform", "Create feature like implement cart at all of page, add to cart, checkout, payment, transaction, general setting user and message chat to admin/owner store.",
-      "Slicing page and Implement API all of requirement data for CMS as superadmin from owner store", "Support back-end for adjust requirement API and database like add new query for additional API"
+      "Slicing page and Implement API all of requirement data for CMS as superadmin from owner store", "Support back end for adjust requirement API and database like add new query for additional API"
     ],
     technologies: "Lumen, \xa0MySQL, \xa0NextJS, \xa0ReactJS, \xa0Axios, \xa0TailwindCSS, \xa0Socket.io, \xa0Redis"
   },
@@ -25,7 +25,7 @@ export const projectsConstant = [
     description: 'Create landing page website with system of recommendation products for user',
     responsibilities: [
       "Slicing page and implement API for all requirement at user and admin side", "Create overall API for requirement of application",
-      "Create system of recommendation products with algorithm of collaborative filtering based machine learning from back-end side"
+      "Create system of recommendation products with algorithm of collaborative filtering based machine learning from back end side"
     ],
     technologies: "PHP Native, \xa0MySQL, \xa0Boostrap"
   },
@@ -68,7 +68,7 @@ export const projectsConstant = [
     title: 'E-Basa',
     description: 'Create web for management garbage disposal which user can swap poin after throw waste regularly with a item',
     responsibilities: [
-      "Slicing page and implement API for all requirement at user and admin side", "Support back-end for adjust of fixing back-end source code and database",
+      "Slicing page and implement API for all requirement at user and admin side", "Support back end for adjust of fixing back end source code and database",
       "Setup deployment with firebase hosting for staging"
     ],
     technologies: "ReactJS, \xa0Firebase, \xa0Axios, \xa0TailwindCSS"
@@ -80,7 +80,7 @@ export const projectsConstant = [
     responsibilities: [
       "Slicing page and implement API CRUD which integration internal to database for create a feature",
       "Implement and maintenance unit test with jest library",
-      "Implement datadog at front-end service",
+      "Implement datadog at front end service",
       "Maintenance deployment to staging and production",
       "Improvement SEO for product detail page at google search engine",
       "Implement integration to external service like sendbird, google analytics, captcha, google tag manager, amplitude, zendesk, freshchat, adding PaDi web to mobile view other vendor and adding PaDi web to iFrame LKPP",

@@ -14,8 +14,8 @@ interface objIdentity {
 }
 
 interface skillsType {
-  "Back-End Framework": ItemSkillType[];
-  "Front-End Framework": ItemSkillType[];
+  "Back End Framework": ItemSkillType[];
+  "Front End Framework": ItemSkillType[];
   "Mobile Framework": ItemSkillType[];
   "CSS Framework": ItemSkillType[];
   "CI/CD": ItemSkillType[];

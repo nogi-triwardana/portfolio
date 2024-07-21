@@ -15,7 +15,7 @@ export const certificateConstant = [
     years: 'Augustus 2020'
   },
   {
-    name: 'Belajar Fundamental Front-End Web Development',
+    name: 'Belajar Fundamental Front End Web Development',
     link: 'https://www.dicoding.com/certificates/N72ZD1MNJXYW',
     image: CertificateThumbnail2,
     description: "From this course I'am learn how to developing Front-End Web from fundamental with dicoding platform.",
