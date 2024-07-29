@@ -4,6 +4,7 @@ import CertificateThumbnail3 from 'public/assets/img/thumbnail-certificate-3.png
 import CertificateThumbnail4 from 'public/assets/img/thumbnail-certificate-4.png';
 import CertificateThumbnail5 from 'public/assets/img/thumbnail-certificate-5.png';
 import CertificateThumbnail6 from 'public/assets/img/thumbnail-certificate-6.png';
+import CertificateThumbnail7 from 'public/assets/img/thumbnail-certificate-7.png';
 
 export const certificateConstant = [
   {
@@ -53,5 +54,13 @@ export const certificateConstant = [
     description: "This is a test about Javascript Basic which covers topics like Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling.",
     platform: 'HackerRank',
     years: 'May 2024'
+  },
+  {
+    name: 'Secure Programming of Web Applications - Developers and TPMs',
+    link: 'https://www.udemy.com/certificate/UC-67b4587d-18db-4256-a2b2-93dba6630dc0/',
+    image: CertificateThumbnail7,
+    description: "Learn how to build web development from security perspective.",
+    platform: 'Udemy',
+    years: 'July 2024'
   }
 ];
