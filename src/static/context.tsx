@@ -7,7 +7,7 @@ type ItemSkillType = {
   image: StaticImageData;
 }
 
-interface objIdentity {
+export interface objIdentity {
   name: string;
   role: string;
 	desc: string;
