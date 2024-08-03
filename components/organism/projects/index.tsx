@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef, useContext, forwardRef } from 'react';
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
-import FadeWhenVisible from 'components/organism/fader';
-import { FaBeer } from 'react-icons/fa';
-import { BsFillAirplaneFill } from 'react-icons/bs';
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
+import { createPortal } from 'react-dom';
 
 function Projects(props: any, ref: any) {
 
@@ -31,6 +31,10 @@ function Projects(props: any, ref: any) {
 
 	},[firstRef, option]);
 
+	const redirectUrlProject = (project: any) => {
+		window.open(project.url, '_blank');
+	}
+	
 	return (
 		<div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
     	<div className={`flex flex-col justify-center w-full space-y-8 sm:space-y-16 relative py-16`} ref={ref}>
@@ -46,56 +50,77 @@ function Projects(props: any, ref: any) {
 							_.map(
 								projects,
 								(item: any, key: any) => (
-									<div className={`space-y-2`} key={"PROJECT-" + key}>
-										<div className={`font-bold text-base sm:text-lg`}>
-											<div className={`relative inline-block`}>
+									<>
+										<div className={`space-y-2`} key={"PROJECT-" + key}>
+											<div 
+												onClick={() => redirectUrlProject(item)}
+												className={`font-bold text-base sm:text-lg`}
+											>
+												<div 
+													data-tooltip-id={"tooltip-title-project-detail"}
+													data-tooltip-content={"Unknown URL, because it was just requested to create code and give it to the client. But I can pass the source code URL at github if you want to see it."}
+													data-tooltip-place={'right'}
+													data-tooltip-is-show={String(item?.is_true_real_url)}
+													className={`relative inline-block group hover:cursor-pointer hover:underline hover:text-blue-400`}
+												>
+													<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+													{key + 1}. {item?.title}
+												</div>
+											</div>
+											<div className={`relative inline-block text-sm sm:text-base`}>
 												<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-												{key + 1}. {item?.title}
+												{item?.description}.
 											</div>
-										</div>
-										<div className={`relative inline-block text-sm sm:text-base`}>
-											<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-											{item?.description}.
-										</div>
-										{!_.isEmpty(item?.responsibilities) && (
-											<div className={``}>
-												<div className={`relative inline-block text-sm sm:text-base`}>
-													<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-													Responsibilites:
-												</div>
-												<ul>
-													{_.map(
-														item?.responsibilities,
-														(val: any, key: any) => (
-															<li 
-																key={'responsibilities-'+key}
-																className={`relative inline-block text-sm sm:text-base min-w-full sm:min-w-[500px]`}
-															>
-																<div className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-																&bull; {val}
-															</li>
-														)
-													)}
-												</ul>
-											</div>
-										)}
-										{!_.isEmpty(item?.technologies) && (
-											<div className={``}>
-												<div className={`relative inline-block text-sm sm:text-base`}>
-													<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-													Technologies:
-												</div>
-												<div>
-													<div 
-														className={`relative inline-block text-sm sm:text-base`}
-													>
+											{!_.isEmpty(item?.responsibilities) && (
+												<div className={``}>
+													<div className={`relative inline-block text-sm sm:text-base`}>
 														<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-														{item?.technologies}
+														Responsibilites:
+													</div>
+													<ul>
+														{_.map(
+															item?.responsibilities,
+															(val: any, key: any) => (
+																<li 
+																	key={'responsibilities-'+key}
+																	className={`relative inline-block text-sm sm:text-base min-w-full sm:min-w-[500px]`}
+																>
+																	<div className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+																	&bull; {val}
+																</li>
+															)
+														)}
+													</ul>
+												</div>
+											)}
+											{!_.isEmpty(item?.technologies) && (
+												<div className={``}>
+													<div className={`relative inline-block text-sm sm:text-base`}>
+														<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+														Technologies:
+													</div>
+													<div>
+														<div 
+															className={`relative inline-block text-sm sm:text-base`}
+														>
+															<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+															{item?.technologies}
+														</div>
 													</div>
 												</div>
-											</div>
+											)}
+										</div>
+										{createPortal(
+											<Tooltip 
+												id={"tooltip-title-project-detail"}  
+												render={(({ content, activeAnchor }) => (
+													activeAnchor?.getAttribute('data-tooltip-is-show') === "false" ? <div className="max-w-[400px]">{content}</div> : null
+												))}
+											/>,
+											document.body,
+											'tooltip-title-project'
 										)}
-									</div>
+									</>
 								)
 							)
 						}

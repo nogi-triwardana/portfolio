@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import 'styles/Home.module.css'
 import 'styles/globals.css'
 import "nprogress/nprogress.css"
+import 'react-tooltip/dist/react-tooltip.css'
 
 import LazyLoad from 'components/atomic/loader/LazyLoad';
 const Header = lazy(() => import('components/organism/headers'));
