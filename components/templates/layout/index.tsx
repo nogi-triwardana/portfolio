@@ -66,6 +66,7 @@ export default function Layout({ children }: PropsType) {
 		certificate: constants.certificate,
 		skills: constants.skills,
 		contact: constants.contact,
+		honors: constants.honors,
 	};
 
   return (

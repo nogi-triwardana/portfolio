@@ -36,7 +36,8 @@ interface InterfaceLayoutContext {
   projects: Array<object>;
   certificate: Array<object>;
   skills: skillsType;
-  contact : Array<object>;
+  contact: Array<object>;
+  honors: Array<object>;
 }
 
 export const LayoutContext = createContext<InterfaceLayoutContext>(constants);

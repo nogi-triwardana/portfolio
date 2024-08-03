@@ -4,6 +4,7 @@ import { skillConstants } from './skills-constants';
 import { experienceConstants } from './experience-constants';
 import { contactConstant } from './contact-constants';
 import { certificateConstant } from './certificate-constanst';
+import { honorsConstant } from './honors-constant';
 
 export const constants = {
   isDarkMode: false,
@@ -13,6 +14,7 @@ export const constants = {
     "Experience",
     "Projects",
     "Certificate",
+    "Honors",
     "Skills",
     "Contact"
   ],
@@ -32,5 +34,6 @@ export const constants = {
   certificate: certificateConstant,
 	experience: experienceConstants,
   skills: skillConstants,
-  contact: contactConstant
+  contact: contactConstant,
+  honors: honorsConstant,
 };
