@@ -80,6 +80,10 @@ function Home(): JSX.Element {
         return (
           handleScroll(contactRef)
         );
+      case 'Download':
+        return (
+          handleScroll(contactRef)
+        );
       default:
         return null;
     }
