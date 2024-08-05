@@ -3,7 +3,7 @@ import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
 
 const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivElement>) {
-  const { contact, isDarkMode } = useContext(LayoutContext);
+  const { contact, isDarkMode, utilities } = useContext(LayoutContext);
 
   const sendEventClickContactHandler = (param: any) => {
     if(typeof window !== "undefined") {
@@ -11,6 +11,10 @@ const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivEl
         category_contact: param.name
       })
     }
+  }
+
+  const onClickRedirectFile = () => {
+    window.open(utilities.button_download_file.link, '_blank');
   }
 
   return (
@@ -36,6 +40,16 @@ const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivEl
             </a>
           ))}
         </div>
+        {utilities?.button_download_file?.is_on && (
+          <div className="flex justify-center items-center pb-16">
+            <button 
+              onClick={onClickRedirectFile}
+              className={`${isDarkMode ? 'bg-[#1f0a4d]' : 'bg-paletteText-primary'} text-light-800 font-semibold p-4 h-full rounded-lg text-lg shadow-lg`}
+            >
+              {utilities.button_download_file.text_button}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

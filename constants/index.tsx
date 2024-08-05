@@ -36,4 +36,11 @@ export const constants = {
   skills: skillConstants,
   contact: contactConstant,
   honors: honorsConstant,
+  utilities: {
+    button_download_file: {
+      "is_on": true,
+      "link": "https://drive.google.com/drive/folders/1a-Htq-rqbUAjatAKCBNhmymmt4cOyawv?usp=drive_link",
+      "text_button": "Download Resume"
+    }
+  }
 };

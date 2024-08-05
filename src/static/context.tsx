@@ -26,6 +26,14 @@ interface skillsType {
   "Container": ItemSkillType[];
 }
 
+export interface utilitiesType {
+  button_download_file: {
+    is_on: boolean
+    link: string
+    text_button: string
+  }
+}
+
 interface InterfaceLayoutContext {
 	isDarkMode?: any;
 	setIsDarkMode?: any;
@@ -38,6 +46,7 @@ interface InterfaceLayoutContext {
   skills: skillsType;
   contact: Array<object>;
   honors: Array<object>;
+  utilities: utilitiesType;
 }
 
 export const LayoutContext = createContext<InterfaceLayoutContext>(constants);

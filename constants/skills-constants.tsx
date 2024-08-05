@@ -48,11 +48,11 @@ export const skillConstants = {
       image: ExpressJSIcon
     },
     {
-      title: 'NestJS',
+      title: 'NestJS (Basic)',
       image: NestJSIcon
     },
     {
-      title: 'Flask',
+      title: 'Flask (Basic)',
       image: FlaskIcon
     },
   ],
@@ -134,15 +134,15 @@ export const skillConstants = {
   ],
   "Database": [
     {
-      title: 'MySQL',
+      title: 'MySQL (Basic)',
       image: MySqlIcon
     },
     {
-      title: 'PostgreSQL',
+      title: 'PostgreSQL (Basic)',
       image: PostgreSqlIcon
     },
     {
-      title: 'MongoDB',
+      title: 'MongoDB (Basic)',
       image: MongoDBIcon
     },
     {

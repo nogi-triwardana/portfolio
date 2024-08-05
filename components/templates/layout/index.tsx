@@ -1,5 +1,5 @@
 import React, { useEffect, useState, ReactNode } from 'react';
-import { LayoutContext, objIdentity } from 'src/static/context';
+import { LayoutContext, objIdentity, utilitiesType } from 'src/static/context';
 import { constants } from '../../../constants';
 import { db } from 'core/firebase';
 import { onValue, ref } from "firebase/database";
@@ -12,6 +12,14 @@ export default function Layout({ children }: PropsType) {
 	const [isDarkMode, setIsDarkMode] = useState(false);
 	const [projects, setProjects] = useState([]);
 	const [identity, setIdentity] = useState<objIdentity>({name: '', role: '', desc: ''});
+	const [headersTitle, setHeadersTitle] = useState([]);
+	const [utilities, setUtilities] = useState<utilitiesType>({
+		button_download_file: {
+			is_on: false,
+			link: '',
+			text_button: ''
+		}
+	});
 
 	/** Change theme mode based from user browser */
 	useEffect(() => {
@@ -38,17 +46,12 @@ export default function Layout({ children }: PropsType) {
 			if (snapshot.exists()) {
 				const data = snapshot.val();
 
-				if(data?.projects) {
-					setProjects(data?.projects);
-				}
-				
-				if(data?.identity) {
-					setIdentity(data?.identity);
-				}
+				if(data?.projects) setProjects(data?.projects);				
+				if(data?.identity) setIdentity(data?.identity);
+				if(data?.header_title) setHeadersTitle(data?.header_title);
+				if(data?.utilities) setUtilities(data?.utilities);
 			}
 		}, (err) => console.log(err));
-		
-		// subscribe();
 				
 		return () => {
 			subscribe();
@@ -58,7 +61,7 @@ export default function Layout({ children }: PropsType) {
 	const contextValue = {
 		isDarkMode,
 		setIsDarkMode,
-		headers_title: constants.headers_title,
+		headers_title: headersTitle,
 		identity: identity,
 		education: constants.education,
 		experience: constants.experience,
@@ -67,6 +70,7 @@ export default function Layout({ children }: PropsType) {
 		skills: constants.skills,
 		contact: constants.contact,
 		honors: constants.honors,
+		utilities: utilities
 	};
 
   return (
