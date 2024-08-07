@@ -1,6 +1,5 @@
 import React, { useContext, forwardRef } from 'react';
 import { LayoutContext } from 'src/static/context';
-import PasPhoto from 'public/assets/img/pas_photo_2.jpg';
 
 const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref<HTMLDivElement>) {
   const { identity, setIsDarkMode, isDarkMode } = useContext(LayoutContext);
@@ -9,7 +8,7 @@ const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref
     <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
       <div className={`grid grid-rows-2 sm:grid-rows-none grid-cols-none sm:grid-cols-2 w-full p-8 relative`} ref={ref}>
         <div className={`flex justify-end w-full`}>
-          <img src={PasPhoto.src} className={`w-64 h-64 bg-top mx-auto sm:mx-0 rounded-full object-cover`} />
+          <img src={identity.img} className={`w-64 h-64 bg-top mx-auto sm:mx-0 rounded-full object-cover`} />
         </div>
         <div className={`text-xl ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} ml-0 sm:ml-8 space-y-2 font-semibold items-center sm:items-start flex flex-col justify-center`}>
           <h1>{identity?.name}</h1>

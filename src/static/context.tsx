@@ -11,6 +11,7 @@ export interface objIdentity {
   name: string;
   role: string;
 	desc: string;
+  img: StaticImageData | string | any;
 }
 
 interface skillsType {

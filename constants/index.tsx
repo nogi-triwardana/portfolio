@@ -5,6 +5,7 @@ import { experienceConstants } from './experience-constants';
 import { contactConstant } from './contact-constants';
 import { certificateConstant } from './certificate-constanst';
 import { honorsConstant } from './honors-constant';
+import PasPhoto from 'public/assets/img/pas_photo_2.jpg';
 
 export const constants = {
   isDarkMode: false,
@@ -27,7 +28,8 @@ export const constants = {
       contributing to highly collaborative work environment, enjoy finding
       solution to various problems, enthusiastic to learning new things
       and prioritizing stakeholders satisfaction.
-		`
+		`,
+    img: PasPhoto,
   },
   education: educationConstants,
   projects: projectsConstant,
