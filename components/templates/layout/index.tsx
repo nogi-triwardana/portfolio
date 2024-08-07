@@ -11,7 +11,7 @@ type PropsType = {
 export default function Layout({ children }: PropsType) {
 	const [isDarkMode, setIsDarkMode] = useState(false);
 	const [projects, setProjects] = useState([]);
-	const [identity, setIdentity] = useState<objIdentity>({name: '', role: '', desc: ''});
+	const [identity, setIdentity] = useState<objIdentity>({name: '', role: '', desc: '', img: ''});
 	const [headersTitle, setHeadersTitle] = useState([]);
 	const [utilities, setUtilities] = useState<utilitiesType>({
 		button_download_file: {
