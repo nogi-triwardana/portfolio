@@ -12,12 +12,12 @@ export const constants = {
   setIsDarkMode: (darkMode: any) => {},
   headers_title: [
     "Home",
-    "Experience",
+    "Experiences",
     "Projects",
-    "Certificate",
+    "Certificates",
     "Honors",
     "Skills",
-    "Contact"
+    "Contacts"
   ],
   identity: {
     name: 'Nogi Ragil Triwardana',

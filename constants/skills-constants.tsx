@@ -37,6 +37,9 @@ import Html5 from 'public/assets/icon/html5.svg';
 
 import Typescript from 'public/assets/icon/typescript.svg';
 
+import SassLogo from 'public/assets/icon/sass-logo.png';
+import LessLogo from 'public/assets/icon/less-logo.svg';
+
 export const skillConstants = {
   "Back End Framework": [
     {
@@ -74,6 +77,16 @@ export const skillConstants = {
     {
       title: 'React Native',
       image: ReactJs
+    },
+  ],
+  "Preprocessor CSS": [
+    {
+      title: 'Sass',
+      image: SassLogo
+    },
+    {
+      title: 'LESS',
+      image: LessLogo
     },
   ],
   "CSS Framework": [
