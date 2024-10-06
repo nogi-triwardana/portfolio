@@ -1,9 +1,17 @@
-import React, { useContext, forwardRef } from 'react';
+import React, { useContext, forwardRef, useEffect } from 'react';
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
+import {
+  Ripple,
+  initTWE,
+} from "tw-elements";
 
 const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivElement>) {
   const { contact, isDarkMode, utilities } = useContext(LayoutContext);
+
+  useEffect(() => {
+    initTWE({ Ripple });
+  }, []);
 
   const sendEventClickContactHandler = (param: any) => {
     if(typeof window !== "undefined") {
@@ -43,6 +51,8 @@ const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivEl
         {utilities?.button_download_file?.is_on && (
           <div className="flex justify-center items-center pb-16">
             <button 
+              type="button"
+              data-twe-ripple-init
               onClick={onClickRedirectFile}
               className={`${isDarkMode ? 'bg-[#1f0a4d]' : 'bg-paletteText-primary'} text-light-800 font-semibold p-4 h-full rounded-lg text-lg shadow-lg`}
             >

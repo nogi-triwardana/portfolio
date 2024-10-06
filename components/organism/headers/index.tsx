@@ -1,9 +1,13 @@
-import React, { useEffect, useState, useRef, useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import _ from 'lodash';
 import { LayoutContext } from 'src/static/context';
 import Switch from "react-switch";
 import { BsSun, BsMoonStars } from "react-icons/bs";
 import { PiListBold } from "react-icons/pi";
+import {
+  Ripple,
+  initTWE,
+} from "tw-elements";
 
 type TypeProps = {
 	scrollSection?: React.MouseEventHandler
@@ -13,6 +17,10 @@ type TypeProps = {
 
 export default function Header({ scrollSection, toggleDropdown, setToggleDropdown }: TypeProps): JSX.Element {
 	const { headers_title, isDarkMode, setIsDarkMode } = useContext(LayoutContext);
+
+	useEffect(() => {
+		initTWE({ Ripple });
+	}, [Ripple]);
 
 	return (   
 		<div className={`flex relative justify-between w-full ${isDarkMode ? `bg-dark-900` : `bg-light-900`} z-[9999] sticky top-0 p-4 h-16 shadow-lg`}>
@@ -28,7 +36,8 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
 					{_.map(headers_title, (item: any, key: any) => (
 						<li 
 							key={key}
-							className={`cursor-pointer w-full p-4 sm:p-0 ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}
+							data-twe-ripple-init
+							className={`cursor-pointer ripple w-full p-4 sm:p-0 ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}
 							onClick={scrollSection}
 						>
 							{item}

@@ -1,6 +1,10 @@
 import React, { useState, useContext, forwardRef, useEffect, useRef } from 'react';
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
+import {
+  Ripple,
+  initTWE,
+} from "tw-elements";
 
 declare global {
   interface Window{
@@ -48,6 +52,10 @@ const Honors = forwardRef(function Honors(props: any, ref: React.Ref<HTMLDivElem
     }
   }
 
+  useEffect(() => {
+    initTWE({ Ripple });
+  }, [Ripple]);
+
   return (
     <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
       <svg 
@@ -75,6 +83,7 @@ const Honors = forwardRef(function Honors(props: any, ref: React.Ref<HTMLDivElem
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex justify-center"
+                data-twe-ripple-init
                 onClick={() => sendEventImgHonorHandler(item)}
               >
                 <div className="relative inline-block">
