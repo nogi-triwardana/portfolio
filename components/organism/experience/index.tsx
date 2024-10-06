@@ -7,7 +7,7 @@ function Experience( props: any, ref: React.Ref<HTMLDivElement>) {
   const { experience, isDarkMode } = useContext(LayoutContext);
 
   return (
-		<div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
+		<div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`} h-screen`}>
 			<svg 
 				xmlns="http://www.w3.org/2000/svg" 
 				viewBox="0 0 1440 320"

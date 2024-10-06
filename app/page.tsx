@@ -7,7 +7,8 @@ import 'styles/globals.css'
 import "nprogress/nprogress.css"
 import 'react-tooltip/dist/react-tooltip.css'
 
-import LazyLoad from 'components/atomic/loader/LazyLoad';
+import LazyLoad from 'components/atomic/loader/ChildLoad';
+import ParentLoad from 'components/atomic/loader/ParentLoad';
 const Header = lazy(() => import('components/organism/headers'));
 const Footer = lazy(() => import('components/atomic/footers'));
 const Introduction = lazy(() => import('components/organism/introduction'));
@@ -21,6 +22,7 @@ const Layout = lazy(() => import('components/templates/layout'));
 
 function Home(): JSX.Element {
   const [toggleDropdown, setToggleDropdown] = useState(false);
+  const [slideActive, setSlideActive] = useState('Home');
   const introductionRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -44,66 +46,32 @@ function Home(): JSX.Element {
     return () => window.removeEventListener('resize', onResizeWindow);
 
   },[]);
-
-  const handleScroll = (ref: any) => {
-    if(ref?.current) ref?.current?.scrollIntoView({ behavior: "smooth" });
-    setToggleDropdown(false);
-  }
   
   const scrollSection = (section: string) => {
-    switch(section) {
-      case 'Home':
-        return (
-          handleScroll(introductionRef)
-        );
-      case 'Experience':
-        return (
-          handleScroll(experienceRef)
-        );
-      case 'Projects':
-        return (
-          handleScroll(projectsRef)
-        );
-      case 'Certificate': 
-        return (
-          handleScroll(certificateRef)
-        );
-      case 'Honors': 
-        return (
-          handleScroll(honorsRef)
-      );
-      case 'Skills':
-        return (
-          handleScroll(skillsRef)
-        );
-      case 'Contact':
-        return (
-          handleScroll(contactRef)
-        );
-      case 'Download':
-        return (
-          handleScroll(contactRef)
-        );
-      default:
-        return null;
-    }
+    setSlideActive(section);
+    if(window.innerWidth < 640) setToggleDropdown(true);
+    else setToggleDropdown(false);
   };
 
   return (
-    <Suspense fallback={<LazyLoad />}>
+    <Suspense fallback={<ParentLoad />}>
       <Layout>
         <Header 
           toggleDropdown={toggleDropdown}
           setToggleDropdown={setToggleDropdown}
           scrollSection={(e: any) => scrollSection(e?.target?.innerText)}
         />
-        <Introduction ref={introductionRef} />
-        <Experience ref={experienceRef} />
-        <Projects ref={projectsRef} />
-        <Certificate ref={certificateRef} />
-        <Honors ref={honorsRef} />
-        <Skills ref={skillsRef} />
-        <Contact ref={contactRef} />
+        <Suspense fallback={<LazyLoad />}>
+          {slideActive === 'Home' && <Introduction ref={introductionRef} />}
+          {slideActive === 'Experiences' && <Experience ref={experienceRef} />}
+          {slideActive === 'Projects' && <Projects ref={projectsRef} />}
+          {slideActive === 'Certificates' && <Certificate ref={certificateRef} />}
+          {slideActive === 'Honors' && <Honors ref={honorsRef} />}
+          {slideActive === 'Skills' && <Skills ref={skillsRef} />}
+          {(slideActive === 'Contacts' || slideActive === 'Download') && (
+            <Contact ref={contactRef} />
+          )}
+        </Suspense>
         <Footer />
       </Layout>
     </Suspense>
