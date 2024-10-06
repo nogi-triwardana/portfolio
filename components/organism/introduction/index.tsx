@@ -1,14 +1,32 @@
-import React, { useContext, forwardRef } from 'react';
+import Image from 'next/image';
+import React, { useContext, forwardRef, useEffect } from 'react';
 import { LayoutContext } from 'src/static/context';
+import { initTWE, Ripple } from 'tw-elements';
 
 const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref<HTMLDivElement>) {
   const { identity, setIsDarkMode, isDarkMode } = useContext(LayoutContext);
+
+  useEffect(() => {
+    initTWE({ Ripple });
+  }, [Ripple]);
 
   return (
     <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
       <div className={`grid grid-rows-2 sm:grid-rows-none grid-cols-none sm:grid-cols-2 w-fit py-8 px-8 sm:px-24 relative`} ref={ref}>
         <div className={`flex justify-end w-full`}>
-          <img src={identity.img} className={`w-64 h-64 bg-top mx-auto sm:mx-0 rounded-full object-cover`} />
+          <div 
+            data-twe-ripple-init 
+            className='w-[256px] h-[256px] rounded-full cursor-pointer'
+          >
+            <Image 
+              src={identity.img} 
+              width={'0'}
+              height={'0'}
+              sizes='100vh'
+              className={`bg-top mx-auto sm:mx-0 h-full w-full rounded-full object-cover`} 
+              alt="profile-image"
+            />
+          </div>
         </div>
         <div className={`text-xl ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} ml-0 sm:ml-8 space-y-2 font-semibold items-center sm:items-start flex flex-col justify-center`}>
           <h1>{identity?.name}</h1>

@@ -1,6 +1,7 @@
 import React, { useState, useContext, forwardRef, useEffect, useRef } from 'react';
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
+import { initTWE, Ripple } from 'tw-elements';
 
 declare global {
   interface Window{
@@ -33,6 +34,10 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
 		}
 
 	},[firstRef, option]);
+
+  useEffect(() => {
+    initTWE({ Ripple });
+  }, [Ripple]);
 
   const sendEventImgCertificateHandler = (param: any) => {
     if(typeof window !== "undefined") {
@@ -70,6 +75,7 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
                 rel="noopener noreferrer" 
                 className="flex justify-center"
                 onClick={() => sendEventImgCertificateHandler(item)}
+                data-twe-ripple-init
               >
                 <div className="relative inline-block">
                     <div className="relative w-[270px] xs:w-[320px] sm:w-[480px] h-fit">
