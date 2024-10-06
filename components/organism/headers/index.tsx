@@ -13,7 +13,7 @@ type TypeProps = {
 
 export default function Header({ scrollSection, toggleDropdown, setToggleDropdown }: TypeProps): JSX.Element {
 	const { headers_title, isDarkMode, setIsDarkMode } = useContext(LayoutContext);
-	
+
 	return (   
 		<div className={`flex relative justify-between w-full ${isDarkMode ? `bg-dark-900` : `bg-light-900`} z-[9999] sticky top-0 p-4 h-16 shadow-lg`}>
 				<div>
