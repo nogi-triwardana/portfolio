@@ -1,7 +1,6 @@
 import React, { useState, useContext, forwardRef, useEffect, useRef } from 'react';
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
-import { initTWE, Ripple } from 'tw-elements';
 
 declare global {
   interface Window{
@@ -36,8 +35,13 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
 	},[firstRef, option]);
 
   useEffect(() => {
-    initTWE({ Ripple });
-  }, [Ripple]);
+    const init = async () => {
+      const { Ripple, initTWE } = await import('tw-elements');
+      initTWE({ Ripple });
+    };
+
+    init();
+  }, []);
 
   const sendEventImgCertificateHandler = (param: any) => {
     if(typeof window !== "undefined") {

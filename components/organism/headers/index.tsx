@@ -4,10 +4,6 @@ import { LayoutContext } from 'src/static/context';
 import Switch from "react-switch";
 import { BsSun, BsMoonStars } from "react-icons/bs";
 import { PiListBold } from "react-icons/pi";
-import {
-  Ripple,
-  initTWE,
-} from "tw-elements";
 
 type TypeProps = {
 	scrollSection?: React.MouseEventHandler
@@ -19,8 +15,13 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
 	const { headers_title, isDarkMode, setIsDarkMode } = useContext(LayoutContext);
 
 	useEffect(() => {
-		initTWE({ Ripple });
-	}, [Ripple]);
+    const init = async () => {
+      const { Ripple, initTWE } = await import('tw-elements');
+      initTWE({ Ripple });
+    };
+
+    init();
+  }, []);
 
 	return (   
 		<div className={`flex relative justify-between w-full ${isDarkMode ? `bg-dark-900` : `bg-light-900`} z-[9999] sticky top-0 p-4 h-16 shadow-lg`}>

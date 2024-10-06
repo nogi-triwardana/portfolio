@@ -1,14 +1,18 @@
 import Image from 'next/image';
 import React, { useContext, forwardRef, useEffect } from 'react';
 import { LayoutContext } from 'src/static/context';
-import { initTWE, Ripple } from 'tw-elements';
 
 const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref<HTMLDivElement>) {
   const { identity, setIsDarkMode, isDarkMode } = useContext(LayoutContext);
 
   useEffect(() => {
-    initTWE({ Ripple });
-  }, [Ripple]);
+    const init = async () => {
+      const { Ripple, initTWE } = await import('tw-elements');
+      initTWE({ Ripple });
+    };
+
+    init();
+  }, []);
 
   return (
     <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>

@@ -1,11 +1,6 @@
 import React, { useState, useContext, forwardRef, useEffect, useRef } from 'react';
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
-import {
-  Ripple,
-  initTWE,
-} from "tw-elements";
-
 declare global {
   interface Window{
       gtag:any,
@@ -53,8 +48,13 @@ const Honors = forwardRef(function Honors(props: any, ref: React.Ref<HTMLDivElem
   }
 
   useEffect(() => {
-    initTWE({ Ripple });
-  }, [Ripple]);
+    const init = async () => {
+      const { Ripple, initTWE } = await import('tw-elements');
+      initTWE({ Ripple });
+    };
+
+    init();
+  }, []);
 
   return (
     <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
