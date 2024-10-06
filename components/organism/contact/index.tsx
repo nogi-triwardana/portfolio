@@ -1,16 +1,17 @@
 import React, { useContext, forwardRef, useEffect } from 'react';
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
-import {
-  Ripple,
-  initTWE,
-} from "tw-elements";
 
 const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivElement>) {
   const { contact, isDarkMode, utilities } = useContext(LayoutContext);
 
   useEffect(() => {
-    initTWE({ Ripple });
+    const init = async () => {
+      const { Ripple, initTWE } = await import('tw-elements');
+      initTWE({ Ripple });
+    };
+
+    init();
   }, []);
 
   const sendEventClickContactHandler = (param: any) => {
