@@ -20,7 +20,7 @@ const Skills = lazy(() => import('components/organism/skills'));
 const Contact = lazy(() => import('components/organism/contact'));
 const Layout = lazy(() => import('components/templates/layout'));
 
-function Home(): JSX.Element {
+function Home() {
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [slideActive, setSlideActive] = useState('Home');
   const introductionRef = useRef<HTMLDivElement>(null);
@@ -49,6 +49,10 @@ function Home(): JSX.Element {
   
   const scrollSection = (section: string) => {
     setSlideActive(section);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
     if(window.innerWidth < 640) setToggleDropdown(true);
     else setToggleDropdown(false);
   };
