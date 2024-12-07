@@ -20,7 +20,7 @@ const Skills = lazy(() => import('components/organism/skills'));
 const Contact = lazy(() => import('components/organism/contact'));
 const Layout = lazy(() => import('components/templates/layout'));
 
-function Home(): JSX.Element {
+function Home() {
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [slideActive, setSlideActive] = useState('Home');
   const introductionRef = useRef<HTMLDivElement>(null);

@@ -11,7 +11,7 @@ type TypeProps = {
 	setToggleDropdown?: any
 };
 
-export default function Header({ scrollSection, toggleDropdown, setToggleDropdown }: TypeProps): JSX.Element {
+export default function Header({ scrollSection, toggleDropdown, setToggleDropdown }: TypeProps) {
 	const { headers_title, isDarkMode, setIsDarkMode } = useContext(LayoutContext);
 
 	useEffect(() => {

@@ -7,7 +7,7 @@ type TypeProps = {
 }
 
 export default function FadeWhenVisible({ children }: TypeProps) {
-	const ref = useRef(null);
+	const ref = useRef<any>(null);
 	const isInView = useInView(ref);
 
 	return (
