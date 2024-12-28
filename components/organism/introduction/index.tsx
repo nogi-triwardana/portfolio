@@ -17,8 +17,8 @@ const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref
 
   return (
     <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
-      <div className={`grid grid-rows-2 sm:grid-rows-none grid-cols-none sm:grid-cols-2 w-fit py-8 px-8 sm:px-24 relative`} ref={ref}>
-        <div className={`flex justify-end w-full`}>
+      <div className={`grid gap-8 grid-rows-2 sm:grid-rows-none grid-cols-none sm:grid-cols-2 w-fit py-8 px-8 sm:px-24 relative`} ref={ref}>
+        <div className={`flex justify-center sm:justify-end w-full`}>
           <div 
             data-twe-ripple-init 
             className='w-[256px] h-[256px] rounded-full cursor-pointer'

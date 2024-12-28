@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import _ from 'lodash';
 import { LayoutContext } from 'src/static/context';
 import Switch from "react-switch";
@@ -6,12 +6,13 @@ import { BsSun, BsMoonStars } from "react-icons/bs";
 import { PiListBold } from "react-icons/pi";
 
 type TypeProps = {
-	scrollSection?: React.MouseEventHandler
+	scrollSection: React.MouseEventHandler
 	toggleDropdown?: any
 	setToggleDropdown?: any
 };
 
 export default function Header({ scrollSection, toggleDropdown, setToggleDropdown }: TypeProps) {
+	const [sectionActive, setSectionActive] = useState('');
 	const { headers_title, isDarkMode, setIsDarkMode } = useContext(LayoutContext);
 
 	useEffect(() => {
@@ -22,6 +23,11 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
 
     init();
   }, []);
+
+	const handleChangeSection = (e: any) => {
+		setSectionActive(e?.target?.innerText);
+		scrollSection(e);
+	}
 
 	return (   
 		<div className={`flex relative justify-between w-full ${isDarkMode ? `bg-dark-900` : `bg-light-900`} z-[9999] sticky top-0 p-4 h-16 shadow-lg`}>
@@ -34,14 +40,18 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
 					</div>
 				</div>
 				<ul className={`${toggleDropdown ? `transition duration-300 ease-out -translate-x-full` : `transition duration-300 ease-out translate-x-0`} sm:flex absolute sm:static top-full inset-x-0 w-full sm:w-auto text-center sm:text-left shadow-lg sm:shadow-none divide-y sm:divide-y-0 ${isDarkMode ? `divide-[#dce3de]` : `divide-paletteText-primary`} space-x-0 sm:space-x-4 text-lg font-semibold ${isDarkMode ? `text-[#dce3de]` : `text-paletteText-primary`}`}>
-					{_.map(headers_title, (item: any, key: any) => (
+					{_.map(headers_title, (item: any, key: number) => (
 						<li 
-							key={key}
+							key={'header-' + key}
 							data-twe-ripple-init
-							className={`cursor-pointer ripple w-full p-4 sm:p-0 ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}
-							onClick={scrollSection}
+							className={`cursor-pointer ripple items-center w-full ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}
 						>
-							{item}
+							<button
+								className={`${sectionActive === item ? `bg-black/20` : ``} p-4 sm:p-2 rounded-xl w-full`}
+								onClick={handleChangeSection}
+							>
+								{item}
+							</button>
 						</li>													
 					))}
 				</ul>
