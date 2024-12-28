@@ -47,7 +47,7 @@ export default function Layout({ children }: PropsType) {
 			if (snapshot.exists()) {
 				const data = snapshot.val();
 
-				if(data?.projects) setProjects(data?.projects);				
+				if(data?.projects) setProjects(data?.projects.filter((el: any) => el !== null));				
 				if(data?.identity) setIdentity(data?.identity);
 				if(data?.header_title) setHeadersTitle(data?.header_title);
 				if(data?.utilities) setUtilities(data?.utilities);

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useContext, forwardRef, useEffect } from 'react';
 import { LayoutContext } from 'src/static/context';
+import DefaultImg from "public/assets/img/unknown-people.png";
 
 const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref<HTMLDivElement>) {
   const { identity, setIsDarkMode, isDarkMode } = useContext(LayoutContext);
@@ -23,7 +24,7 @@ const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref
             className='w-[256px] h-[256px] rounded-full cursor-pointer'
           >
             <Image 
-              src={identity.img} 
+              src={identity.img ? identity.img : DefaultImg} 
               width={'0'}
               height={'0'}
               sizes='100vh'
