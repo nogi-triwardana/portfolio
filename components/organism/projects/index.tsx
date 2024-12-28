@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext, forwardRef } from 'react';
+import React, { useState, useEffect, useRef, useContext, forwardRef, Fragment } from 'react';
 import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
 import { Tooltip } from 'react-tooltip'
@@ -49,9 +49,9 @@ function Projects(props: any, ref: any) {
 						{
 							_.map(
 								projects,
-								(item: any, key: any) => (
-									<>
-										<div className={`space-y-2`} key={"PROJECT-" + key}>
+								(item: any) => (
+									<Fragment key={"PROJECT-" + item?.key}>
+										<div className={`space-y-2`}>
 											<div 
 												onClick={() => redirectUrlProject(item)}
 												className={`font-bold text-base sm:text-lg`}
@@ -64,7 +64,7 @@ function Projects(props: any, ref: any) {
 													className={`relative inline-block group hover:cursor-pointer hover:underline hover:text-blue-400`}
 												>
 													<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
-													{key + 1}. {item?.title}
+													{item?.key + 1}. {item?.title}
 												</div>
 											</div>
 											<div className={`relative inline-block text-sm sm:text-base`}>
@@ -120,7 +120,7 @@ function Projects(props: any, ref: any) {
 											document.body,
 											'tooltip-title-project'
 										)}
-									</>
+									</Fragment>
 								)
 							)
 						}
