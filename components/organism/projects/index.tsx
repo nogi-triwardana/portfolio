@@ -67,6 +67,10 @@ function Projects(props: any, ref: any) {
 													{item?.key + 1}. {item?.title}
 												</div>
 											</div>
+											<div className={`relative inline-block text-sm italic`}>
+												<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
+												{item?.identity}
+											</div>
 											<div className={`relative inline-block text-sm sm:text-base`}>
 												<span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`} />
 												{item?.description}.
