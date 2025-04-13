@@ -17,7 +17,7 @@ function Experience( props: any, ref: React.Ref<HTMLDivElement>) {
 			</svg>
 			<FadeWhenVisible>
 				<div className={`flex flex-col justify-center w-full space-y-8 sm:space-y-16 relative py-16`} ref={ref}>
-					<div className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}>Experience</div>
+					<div className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}>Experiences</div>
 					<div className={`flex flex-col w-auto p-4 sm:w-1/2 mx-auto justify-center ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}>
 						{
 							_.map(

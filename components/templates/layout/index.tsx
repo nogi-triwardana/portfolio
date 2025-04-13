@@ -11,6 +11,7 @@ type PropsType = {
 export default function Layout({ children }: PropsType) {
 	const [isDarkMode, setIsDarkMode] = useState(false);
 	const [projects, setProjects] = useState([]);
+	const [experiences, setExperiences] = useState([]);
 	const [identity, setIdentity] = useState<objIdentity>({name: '', role: '', desc: '', img: ''});
 	const [headersTitle, setHeadersTitle] = useState([]);
 	const [utilities, setUtilities] = useState<utilitiesType>({
@@ -46,7 +47,8 @@ export default function Layout({ children }: PropsType) {
 		const subscribe = onValue(query, (snapshot) => {
 			if (snapshot.exists()) {
 				const data = snapshot.val();
-
+				
+				if(data?.experiences) setExperiences(data?.experiences);
 				if(data?.projects) setProjects(data?.projects.filter((el: any) => el !== null));				
 				if(data?.identity) setIdentity(data?.identity);
 				if(data?.header_title) setHeadersTitle(data?.header_title);
@@ -66,7 +68,7 @@ export default function Layout({ children }: PropsType) {
 		headers_title: headersTitle,
 		identity: identity,
 		education: constants.education,
-		experience: constants.experience,
+		experience: experiences,
 		projects: projects,
 		certificate,
 		skills: constants.skills,
