@@ -1,6 +1,6 @@
-import React, { useState, useContext, forwardRef, useEffect, useRef } from 'react';
-import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
+import React, { forwardRef, useContext, useEffect, useMemo, useRef,useState } from 'react';
+import { LayoutContext } from 'src/static/context';
 
 declare global {
   interface Window{
@@ -13,11 +13,13 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
   const [firstPort, setFirstPort] = useState(false);
   const { certificate, isDarkMode } = useContext(LayoutContext);
   const firstRef = useRef(null);
-  const option = {
-		root: null,
-		rootMargin: '0px',
-		threshold: 1.0
-	};
+  const option = useMemo(() => {
+    return {
+      root: null,
+      rootMargin: '0px',
+      threshold: 1.0,
+    };
+	}, []);
 
   useEffect(() => {
 		const observer = new IntersectionObserver((entries) => {
@@ -85,7 +87,8 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
                     <div className="relative w-[270px] xs:w-[320px] sm:w-[480px] h-fit">
                       <div className="pb-[70%]">
                         <span className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-light-800` : `bg-paletteText-primary`} absolute z-10 rounded-md inline w-full h-full`}`} />
-                        <img src={item.image} className='w-full h-full object-cover absolute rounded-lg' />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={item.image} className='w-full h-full object-cover absolute rounded-lg' alt={''} />
                       </div>
                     </div>
                 </div>

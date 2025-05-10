@@ -1,6 +1,5 @@
-import React, { useRef, ReactNode } from 'react';
-import { AnimatePresence, motion, useInView } from 'framer-motion';
-import { LayoutContext } from 'src/static/context';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { ReactNode,useRef } from 'react';
 
 type TypeProps = {
 	children: ReactNode
@@ -8,7 +7,6 @@ type TypeProps = {
 
 export default function FadeWhenVisible({ children }: TypeProps) {
 	const ref = useRef<any>(null);
-	const isInView = useInView(ref);
 
 	return (
 		<AnimatePresence mode='wait'>

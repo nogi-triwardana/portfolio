@@ -1,6 +1,6 @@
-import React, { useContext, forwardRef, useEffect } from 'react';
-import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
+import React, { forwardRef, useContext, useEffect } from 'react';
+import { LayoutContext } from 'src/static/context';
 
 const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivElement>) {
   const { contact, isDarkMode, utilities } = useContext(LayoutContext);
