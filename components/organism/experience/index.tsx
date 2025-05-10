@@ -1,7 +1,7 @@
-import React, { useContext, forwardRef } from 'react';
-import { LayoutContext } from 'src/static/context';
-import _ from 'lodash';
 import FadeWhenVisible from 'components/organism/fader';
+import _ from 'lodash';
+import React, { forwardRef,useContext } from 'react';
+import { LayoutContext } from 'src/static/context';
 
 function Experience( props: any, ref: React.Ref<HTMLDivElement>) {
   const { experience, isDarkMode } = useContext(LayoutContext);

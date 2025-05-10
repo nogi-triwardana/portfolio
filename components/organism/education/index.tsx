@@ -1,9 +1,9 @@
+import _ from 'lodash';
 import React, { useContext } from 'react';
 import { LayoutContext } from 'src/static/context';
-import _ from 'lodash';
 
 export default function Education() {
-  const { experience, isDarkMode } = useContext(LayoutContext);
+  const { experience } = useContext(LayoutContext);
 
   return (
     <div className={`flex justify-center`}>
