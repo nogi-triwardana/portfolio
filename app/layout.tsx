@@ -1,14 +1,17 @@
 export default function RootLayout({
-  children,
+  children
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <head>
         <title>Nogi Ragil Triwardana&apos;s Portfolio</title>
         <link rel="icon" href="/favicon.png" />
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}></script>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        ></script>
         <script
           defer
           dangerouslySetInnerHTML={{
@@ -19,7 +22,7 @@ export default function RootLayout({
               gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
                 page_path: window.location.pathname,
               });
-            `,
+            `
           }}
         />
       </head>
@@ -32,5 +35,5 @@ export default function RootLayout({
         ></script>
       </body>
     </html>
-  )
+  );
 }

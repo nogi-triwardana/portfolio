@@ -23,5 +23,5 @@ export const educationConstants = [
     key: 4,
     school: 'Universitas Islam Negeri Sunan Gunung Djati Bandung',
     years: '2017 - 2022'
-  },
-]
+  }
+];

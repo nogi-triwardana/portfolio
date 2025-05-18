@@ -23,4 +23,4 @@ export const contactConstant = [
     name: 'whatsapp',
     icon: <FaWhatsappSquare />
   }
-]
+];

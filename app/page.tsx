@@ -1,11 +1,17 @@
 'use client';
 
-import React, { useRef, useState, useLayoutEffect, Suspense, lazy } from 'react'
+import React, {
+  useRef,
+  useState,
+  useLayoutEffect,
+  Suspense,
+  lazy
+} from 'react';
 import dynamic from 'next/dynamic';
-import 'styles/Home.module.css'
-import 'styles/globals.css'
-import "nprogress/nprogress.css"
-import 'react-tooltip/dist/react-tooltip.css'
+import 'styles/Home.module.css';
+import 'styles/globals.css';
+import 'nprogress/nprogress.css';
+import 'react-tooltip/dist/react-tooltip.css';
 
 import LazyLoad from 'components/atomic/loader/ChildLoad';
 import ParentLoad from 'components/atomic/loader/ParentLoad';
@@ -32,35 +38,34 @@ function Home() {
   const contactRef = useRef<HTMLDivElement>(null);
 
   const onResizeWindow = () => {
-    if(typeof window !== "undefined") {
-      if(window.innerWidth < 640) {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) {
         setToggleDropdown(true);
       } else setToggleDropdown(false);
     }
-  }
+  };
 
   useLayoutEffect(() => {
     window.addEventListener('resize', onResizeWindow);
     onResizeWindow();
 
     return () => window.removeEventListener('resize', onResizeWindow);
+  }, []);
 
-  },[]);
-  
   const scrollSection = (section: string) => {
     setSlideActive(section);
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
-    })
-    if(window.innerWidth < 640) setToggleDropdown(true);
+      behavior: 'smooth'
+    });
+    if (window.innerWidth < 640) setToggleDropdown(true);
     else setToggleDropdown(false);
   };
 
   return (
     <Suspense fallback={<ParentLoad />}>
       <Layout>
-        <Header 
+        <Header
           toggleDropdown={toggleDropdown}
           setToggleDropdown={setToggleDropdown}
           scrollSection={(e: any) => scrollSection(e?.target?.innerText)}
@@ -69,7 +74,9 @@ function Home() {
           {slideActive === 'Home' && <Introduction ref={introductionRef} />}
           {slideActive === 'Experiences' && <Experience ref={experienceRef} />}
           {slideActive === 'Projects' && <Projects ref={projectsRef} />}
-          {slideActive === 'Certificates' && <Certificate ref={certificateRef} />}
+          {slideActive === 'Certificates' && (
+            <Certificate ref={certificateRef} />
+          )}
           {slideActive === 'Honors' && <Honors ref={honorsRef} />}
           {slideActive === 'Skills' && <Skills ref={skillsRef} />}
           {(slideActive === 'Contacts' || slideActive === 'Download') && (
@@ -79,12 +86,11 @@ function Home() {
         <Footer />
       </Layout>
     </Suspense>
-  )
+  );
 }
 
 const NoSSRGlobalComponent = dynamic(() => Promise.resolve(Home), {
   ssr: false
-})
-
+});
 
 export default NoSSRGlobalComponent;

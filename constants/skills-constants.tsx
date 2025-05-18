@@ -41,7 +41,7 @@ import SassLogo from 'public/assets/icon/sass-logo.png';
 import LessLogo from 'public/assets/icon/less-logo.svg';
 
 export const skillConstants = {
-  "Back End Framework": [
+  'Back End Framework': [
     {
       title: 'Laravel',
       image: LaravelIcon
@@ -57,9 +57,9 @@ export const skillConstants = {
     {
       title: 'Flask (Basic)',
       image: FlaskIcon
-    },
+    }
   ],
-  "Front End Framework": [
+  'Front End Framework': [
     {
       title: 'NextJS',
       image: NextJs
@@ -71,15 +71,15 @@ export const skillConstants = {
     {
       title: 'VueJS',
       image: VueJS
-    },
+    }
   ],
-  "Mobile Framework": [
+  'Mobile Framework': [
     {
       title: 'React Native',
       image: ReactJs
-    },
+    }
   ],
-  "Preprocessor CSS": [
+  'Preprocessor CSS': [
     {
       title: 'Sass',
       image: SassLogo
@@ -87,9 +87,9 @@ export const skillConstants = {
     {
       title: 'LESS',
       image: LessLogo
-    },
+    }
   ],
-  "CSS Framework": [
+  'CSS Framework': [
     {
       title: 'MaterialUI',
       image: MaterialUIIcon
@@ -105,15 +105,15 @@ export const skillConstants = {
     {
       title: 'TailwindCSS',
       image: TailwindCss
-    },
+    }
   ],
-  "CI/CD": [
+  'CI/CD': [
     {
       title: 'Jenkins',
       image: JenkinsIcon
     }
   ],
-  "State Management": [
+  'State Management': [
     {
       title: 'Redux',
       image: ReduxIcon
@@ -125,9 +125,9 @@ export const skillConstants = {
     {
       title: 'React Context',
       image: ReactJs
-    },
+    }
   ],
-  "Data Fetching": [
+  'Data Fetching': [
     {
       title: 'Axios',
       image: AxiosIcon
@@ -143,9 +143,9 @@ export const skillConstants = {
     {
       title: 'RTKQ',
       image: ReduxIcon
-    },
+    }
   ],
-  "Database": [
+  Database: [
     {
       title: 'MySQL (Basic)',
       image: MySqlIcon
@@ -161,9 +161,9 @@ export const skillConstants = {
     {
       title: 'Firebase',
       image: FirebaseIcon
-    },
+    }
   ],
-  "Repository Control": [
+  'Repository Control': [
     {
       title: 'Git',
       image: GitIcon
@@ -175,12 +175,12 @@ export const skillConstants = {
     {
       title: 'Yarn',
       image: YarnIcon
-    },
+    }
   ],
-  "Container": [
+  Container: [
     {
       title: 'Docker',
       image: DockerIcon
-    },
+    }
   ]
 };

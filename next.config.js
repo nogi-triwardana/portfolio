@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: { 
-  //   path: path.resolve(__dirname, 'static'), 
+  // output: {
+  //   path: path.resolve(__dirname, 'static'),
   // },
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.pdf/,
       type: 'asset/resource',
       generator: {
-        filename: 'static/[hash][ext]',
-      },
-    })
+        filename: 'static/[hash][ext]'
+      }
+    });
 
-    return config
+    return config;
   },
   images: {
     remotePatterns: [
@@ -22,6 +22,6 @@ const nextConfig = {
       }
     ]
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

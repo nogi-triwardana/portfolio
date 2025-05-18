@@ -4,18 +4,20 @@ import { Atom } from 'react-loading-indicators';
 import { LayoutContext } from 'src/static/context';
 
 function ChildLoad() {
-  const  { isDarkMode } = useContext(LayoutContext);
+  const { isDarkMode } = useContext(LayoutContext);
   useEffect(() => {
     nprogress.configure({ showSpinner: false });
     nprogress.start();
-    
+
     return () => {
       nprogress.done();
     };
   }, []);
 
   return (
-    <div className={`flex justify-center items-center min-h-screen ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
+    <div
+      className={`flex justify-center items-center min-h-screen ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}
+    >
       <Atom color="#4287f5" size="large" text="" textColor="" />
     </div>
   );
