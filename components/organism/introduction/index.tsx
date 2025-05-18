@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import React, { useContext, forwardRef, useEffect } from 'react';
-import { LayoutContext } from 'src/static/context';
 import DefaultImg from "public/assets/img/unknown-people.png";
+import React, { forwardRef, useContext, useEffect } from 'react';
+import { LayoutContext } from 'src/static/context';
 
 const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref<HTMLDivElement>) {
-  const { identity, setIsDarkMode, isDarkMode } = useContext(LayoutContext);
+  const { identity, isDarkMode } = useContext(LayoutContext);
 
   useEffect(() => {
     const init = async () => {

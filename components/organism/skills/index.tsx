@@ -1,23 +1,9 @@
-import React, { useContext, forwardRef, Fragment } from 'react';
-import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { forwardRef, Fragment,useContext } from 'react';
+import { LayoutContext } from 'src/static/context';
 
 function Skills(props: any, ref: any) {
   const { skills, isDarkMode } = useContext(LayoutContext);
-
-  const snakeCaseToTitleCase = (input: string) => {
-    if(input.includes("_")) {
-      // Split the snake_case string into an array of words
-      const words = _.snakeCase(input).split('_');
-
-      // Capitalize the first letter of each word and join them back into a string
-      const titleCase = words.map(word => _.capitalize(word)).join(' ');
-
-      return titleCase;
-    } else return input;
-  }
-
 
   return (
     <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>

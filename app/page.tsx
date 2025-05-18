@@ -1,7 +1,5 @@
 'use client';
 
-import React, { useRef, useState, useLayoutEffect, Suspense, lazy } from 'react'
-import dynamic from 'next/dynamic';
 import 'styles/Home.module.css'
 import 'styles/globals.css'
 import "nprogress/nprogress.css"
@@ -9,6 +7,8 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 import LazyLoad from 'components/atomic/loader/ChildLoad';
 import ParentLoad from 'components/atomic/loader/ParentLoad';
+import dynamic from 'next/dynamic';
+import React, { lazy,Suspense, useLayoutEffect, useRef, useState } from 'react'
 const Header = lazy(() => import('components/organism/headers'));
 const Footer = lazy(() => import('components/atomic/footers'));
 const Introduction = lazy(() => import('components/organism/introduction'));
