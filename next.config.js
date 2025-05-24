@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: { 
-  //   path: path.resolve(__dirname, 'static'), 
+  // output: {
+  //   path: path.resolve(__dirname, 'static'),
   // },
   webpack: (config, options) => {
     config.module.rules.push({
@@ -10,18 +10,18 @@ const nextConfig = {
       generator: {
         filename: 'static/[hash][ext]',
       },
-    })
+    });
 
-    return config
+    return config;
   },
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'firebasestorage.googleapis.com'
-      }
-    ]
-  }
-}
+        hostname: 'firebasestorage.googleapis.com',
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

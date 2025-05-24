@@ -1,14 +1,14 @@
 'use client';
 
-import 'styles/Home.module.css'
-import 'styles/globals.css'
-import "nprogress/nprogress.css"
-import 'react-tooltip/dist/react-tooltip.css'
+import 'styles/Home.module.css';
+import 'styles/globals.css';
+import 'nprogress/nprogress.css';
+import 'react-tooltip/dist/react-tooltip.css';
 
 import LazyLoad from 'components/atomic/loader/ChildLoad';
 import ParentLoad from 'components/atomic/loader/ParentLoad';
 import dynamic from 'next/dynamic';
-import React, { lazy,Suspense, useLayoutEffect, useRef, useState } from 'react'
+import React, { lazy, Suspense, useLayoutEffect, useRef, useState } from 'react';
 const Header = lazy(() => import('components/organism/headers'));
 const Footer = lazy(() => import('components/atomic/footers'));
 const Introduction = lazy(() => import('components/organism/introduction'));
@@ -32,35 +32,34 @@ function Home() {
   const contactRef = useRef<HTMLDivElement>(null);
 
   const onResizeWindow = () => {
-    if(typeof window !== "undefined") {
-      if(window.innerWidth < 640) {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) {
         setToggleDropdown(true);
       } else setToggleDropdown(false);
     }
-  }
+  };
 
   useLayoutEffect(() => {
     window.addEventListener('resize', onResizeWindow);
     onResizeWindow();
 
     return () => window.removeEventListener('resize', onResizeWindow);
+  }, []);
 
-  },[]);
-  
   const scrollSection = (section: string) => {
     setSlideActive(section);
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
-    })
-    if(window.innerWidth < 640) setToggleDropdown(true);
+    });
+    if (window.innerWidth < 640) setToggleDropdown(true);
     else setToggleDropdown(false);
   };
 
   return (
     <Suspense fallback={<ParentLoad />}>
       <Layout>
-        <Header 
+        <Header
           toggleDropdown={toggleDropdown}
           setToggleDropdown={setToggleDropdown}
           scrollSection={(e: any) => scrollSection(e?.target?.innerText)}
@@ -79,12 +78,11 @@ function Home() {
         <Footer />
       </Layout>
     </Suspense>
-  )
+  );
 }
 
 const NoSSRGlobalComponent = dynamic(() => Promise.resolve(Home), {
-  ssr: false
-})
-
+  ssr: false,
+});
 
 export default NoSSRGlobalComponent;

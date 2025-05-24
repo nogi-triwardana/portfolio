@@ -1,186 +1,172 @@
-import LaravelIcon from 'public/assets/icon/laravel.svg';
-import ExpressJSIcon from 'public/assets/icon/expressjs.svg';
-import NestJSIcon from 'public/assets/icon/nestjs.svg';
-import FlaskIcon from 'public/assets/icon/flask.svg';
-
-import NextJs from 'public/assets/icon/nextjs.svg';
-import ReactJs from 'public/assets/icon/reactjs.svg';
-import VueJS from 'public/assets/icon/vuejs.svg';
-
-import MaterialUIIcon from 'public/assets/icon/material-ui.svg';
-import EmotionIcon from 'public/assets/icon/emotion.png';
-import TailwindCss from 'public/assets/icon/tailwindcss.png';
+import AxiosIcon from 'public/assets/icon/axios.png';
 import Boostrap from 'public/assets/icon/boostrap.svg';
-
+import DockerIcon from 'public/assets/icon/docker.png';
+import EmotionIcon from 'public/assets/icon/emotion.png';
+import ExpressJSIcon from 'public/assets/icon/expressjs.svg';
+import FirebaseIcon from 'public/assets/icon/firebase.svg';
+import FlaskIcon from 'public/assets/icon/flask.svg';
+import GitIcon from 'public/assets/icon/git.png';
 import JenkinsIcon from 'public/assets/icon/jenkins.png';
-
+import LaravelIcon from 'public/assets/icon/laravel.svg';
+import LessLogo from 'public/assets/icon/less-logo.svg';
+import MaterialUIIcon from 'public/assets/icon/material-ui.svg';
+import MongoDBIcon from 'public/assets/icon/mongodb.svg';
+import MySqlIcon from 'public/assets/icon/MySQL.svg';
+import NestJSIcon from 'public/assets/icon/nestjs.svg';
+import NextJs from 'public/assets/icon/nextjs.svg';
+import NpmIcon from 'public/assets/icon/npm.png';
+import PostgreSqlIcon from 'public/assets/icon/postgresql.svg';
+import ReactQueryIcon from 'public/assets/icon/react query.png';
+import ReactJs from 'public/assets/icon/reactjs.svg';
 import ReduxIcon from 'public/assets/icon/redux.svg';
+import SassLogo from 'public/assets/icon/sass-logo.png';
+import SWRIcon from 'public/assets/icon/swr.svg';
+import TailwindCss from 'public/assets/icon/tailwindcss.png';
+import VueJS from 'public/assets/icon/vuejs.svg';
+import YarnIcon from 'public/assets/icon/yarn.svg';
 import ZustandIcon from 'public/assets/icon/zustand.png';
 
-import AxiosIcon from 'public/assets/icon/axios.png';
-import ReactQueryIcon from 'public/assets/icon/react query.png';
-import SWRIcon from 'public/assets/icon/swr.svg';
-
-import MySqlIcon from 'public/assets/icon/MySQL.svg';
-import PostgreSqlIcon from 'public/assets/icon/postgresql.svg';
-import MongoDBIcon from 'public/assets/icon/mongodb.svg';
-import FirebaseIcon from 'public/assets/icon/firebase.svg';
-
-import GitIcon from 'public/assets/icon/git.png';
-import NpmIcon from 'public/assets/icon/npm.png';
-import YarnIcon from 'public/assets/icon/yarn.svg';
-
-import DockerIcon from 'public/assets/icon/docker.png';
-
-import CSS3 from 'public/assets/icon/css3.svg';
-import Html5 from 'public/assets/icon/html5.svg';
-
-import Typescript from 'public/assets/icon/typescript.svg';
-
-import SassLogo from 'public/assets/icon/sass-logo.png';
-import LessLogo from 'public/assets/icon/less-logo.svg';
-
 export const skillConstants = {
-  "Back End Framework": [
+  'Back End Framework': [
     {
       title: 'Laravel',
-      image: LaravelIcon
+      image: LaravelIcon,
     },
     {
       title: 'ExpressJS',
-      image: ExpressJSIcon
+      image: ExpressJSIcon,
     },
     {
       title: 'NestJS (Basic)',
-      image: NestJSIcon
+      image: NestJSIcon,
     },
     {
       title: 'Flask (Basic)',
-      image: FlaskIcon
+      image: FlaskIcon,
     },
   ],
-  "Front End Framework": [
+  'Front End Framework': [
     {
       title: 'NextJS',
-      image: NextJs
+      image: NextJs,
     },
     {
       title: 'ReactJS',
-      image: ReactJs
+      image: ReactJs,
     },
     {
       title: 'VueJS',
-      image: VueJS
+      image: VueJS,
     },
   ],
-  "Mobile Framework": [
+  'Mobile Framework': [
     {
       title: 'React Native',
-      image: ReactJs
+      image: ReactJs,
     },
   ],
-  "Preprocessor CSS": [
+  'Preprocessor CSS': [
     {
       title: 'Sass',
-      image: SassLogo
+      image: SassLogo,
     },
     {
       title: 'LESS',
-      image: LessLogo
+      image: LessLogo,
     },
   ],
-  "CSS Framework": [
+  'CSS Framework': [
     {
       title: 'MaterialUI',
-      image: MaterialUIIcon
+      image: MaterialUIIcon,
     },
     {
       title: 'Emotion',
-      image: EmotionIcon
+      image: EmotionIcon,
     },
     {
       title: 'Boostrap',
-      image: Boostrap
+      image: Boostrap,
     },
     {
       title: 'TailwindCSS',
-      image: TailwindCss
+      image: TailwindCss,
     },
   ],
-  "CI/CD": [
+  'CI/CD': [
     {
       title: 'Jenkins',
-      image: JenkinsIcon
-    }
+      image: JenkinsIcon,
+    },
   ],
-  "State Management": [
+  'State Management': [
     {
       title: 'Redux',
-      image: ReduxIcon
+      image: ReduxIcon,
     },
     {
       title: 'Zustand',
-      image: ZustandIcon
+      image: ZustandIcon,
     },
     {
       title: 'React Context',
-      image: ReactJs
+      image: ReactJs,
     },
   ],
-  "Data Fetching": [
+  'Data Fetching': [
     {
       title: 'Axios',
-      image: AxiosIcon
+      image: AxiosIcon,
     },
     {
       title: 'React Query',
-      image: ReactQueryIcon
+      image: ReactQueryIcon,
     },
     {
       title: 'SWR',
-      image: SWRIcon
+      image: SWRIcon,
     },
     {
       title: 'RTKQ',
-      image: ReduxIcon
+      image: ReduxIcon,
     },
   ],
-  "Database": [
+  Database: [
     {
       title: 'MySQL (Basic)',
-      image: MySqlIcon
+      image: MySqlIcon,
     },
     {
       title: 'PostgreSQL (Basic)',
-      image: PostgreSqlIcon
+      image: PostgreSqlIcon,
     },
     {
       title: 'MongoDB (Basic)',
-      image: MongoDBIcon
+      image: MongoDBIcon,
     },
     {
       title: 'Firebase',
-      image: FirebaseIcon
+      image: FirebaseIcon,
     },
   ],
-  "Repository Control": [
+  'Repository Control': [
     {
       title: 'Git',
-      image: GitIcon
+      image: GitIcon,
     },
     {
       title: 'NPM',
-      image: NpmIcon
+      image: NpmIcon,
     },
     {
       title: 'Yarn',
-      image: YarnIcon
+      image: YarnIcon,
     },
   ],
-  "Container": [
+  Container: [
     {
       title: 'Docker',
-      image: DockerIcon
+      image: DockerIcon,
     },
-  ]
+  ],
 };

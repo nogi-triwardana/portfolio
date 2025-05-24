@@ -13,15 +13,15 @@
 /* ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey; 
 } */
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 5px #9e9d99;
-	background: #9e9d99; 
+  background: #9e9d99;
   border-radius: 8px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #d1d0cd; 
+  background: #d1d0cd;
 }

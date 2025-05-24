@@ -1,10 +1,6 @@
 {
-  "extends": ["next/core-web-vitals", "eslint:recommended"],
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended", "plugin:prettier/recommended"],
   "plugins": ["unused-imports", "simple-import-sort", "prettier"],
-  "globals": {
-    "JSX": "readonly",
-    "React": "readonly"
-  },
   "rules": {
     "no-unused-vars": "error",
     "unused-imports/no-unused-imports": "error",
