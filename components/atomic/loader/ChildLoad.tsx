@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react';
 import nprogress from 'nprogress';
+import React, { useContext, useEffect } from 'react';
 import { Atom } from 'react-loading-indicators';
 import { LayoutContext } from 'src/static/context';
 

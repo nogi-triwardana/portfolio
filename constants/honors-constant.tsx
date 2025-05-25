@@ -7,6 +7,6 @@ export const honorsConstant = [
     description:
       "I'am and the teammates got tasks to solving issue listed to us at application of PadiUMKM.",
     platform: 'PadiUMKM',
-    years: 'Augustus 2023'
-  }
+    years: 'Augustus 2023',
+  },
 ];

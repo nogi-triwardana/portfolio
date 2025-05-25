@@ -1,8 +1,6 @@
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode;
-}) {
+import React from 'react';
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -22,7 +20,7 @@ export default function RootLayout({
               gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
                 page_path: window.location.pathname,
               });
-            `
+            `,
           }}
         />
       </head>

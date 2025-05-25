@@ -1,8 +1,9 @@
-import React, { useEffect, useState, ReactNode } from 'react';
-import { LayoutContext, objIdentity, utilitiesType } from 'src/static/context';
-import { constants } from '../../../constants';
 import { db } from 'core/firebase';
 import { onValue, ref } from 'firebase/database';
+import React, { ReactNode, useEffect, useState } from 'react';
+import { LayoutContext, objIdentity, utilitiesType } from 'src/static/context';
+
+import { constants } from '../../../constants';
 
 type PropsType = {
   children: ReactNode;
@@ -16,23 +17,21 @@ export default function Layout({ children }: PropsType) {
     name: '',
     role: '',
     desc: '',
-    img: ''
+    img: '',
   });
   const [headersTitle, setHeadersTitle] = useState([]);
   const [utilities, setUtilities] = useState<utilitiesType>({
     button_download_file: {
       is_on: false,
       link: '',
-      text_button: ''
-    }
+      text_button: '',
+    },
   });
   const [certificate, setCertificate] = useState([]);
 
   /** Change theme mode based from user browser */
   useEffect(() => {
-    const darkModeMediaQuery = window.matchMedia(
-      `(prefers-color-scheme: dark)`
-    );
+    const darkModeMediaQuery = window.matchMedia(`(prefers-color-scheme: dark)`);
 
     const handleDarkModeMediaQuery = (e: any) => {
       setIsDarkMode(e.matches);
@@ -42,10 +41,7 @@ export default function Layout({ children }: PropsType) {
     setIsDarkMode(darkModeMediaQuery.matches);
 
     return () => {
-      darkModeMediaQuery.removeEventListener(
-        'change',
-        handleDarkModeMediaQuery
-      );
+      darkModeMediaQuery.removeEventListener('change', handleDarkModeMediaQuery);
     };
   }, []);
 
@@ -60,20 +56,21 @@ export default function Layout({ children }: PropsType) {
           const data = snapshot.val();
 
           if (data?.experiences) setExperiences(data?.experiences);
-          if (data?.projects)
-            setProjects(data?.projects.filter((el: any) => el !== null));
+          if (data?.projects) setProjects(data?.projects.filter((el: any) => el !== null));
           if (data?.identity) setIdentity(data?.identity);
           if (data?.header_title) setHeadersTitle(data?.header_title);
           if (data?.utilities) setUtilities(data?.utilities);
           if (data?.certificate) setCertificate(data?.certificate);
         }
       },
-      (err) => console.log(err)
+      (err) => console.log(err),
     );
 
     return () => {
       subscribe();
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [db]);
 
   const contextValue = {
@@ -88,7 +85,7 @@ export default function Layout({ children }: PropsType) {
     skills: constants.skills,
     contact: constants.contact,
     honors: constants.honors,
-    utilities: utilities
+    utilities: utilities,
   };
 
   return (

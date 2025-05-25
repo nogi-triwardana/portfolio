@@ -1,15 +1,16 @@
+import PasPhoto from 'public/assets/img/pas_photo_2.jpg';
+
+import { certificateConstant } from './certificate-constanst';
+import { contactConstant } from './contact-constants';
 import { educationConstants } from './education-constants';
+import { experienceConstants } from './experience-constants';
+import { honorsConstant } from './honors-constant';
 import { projectsConstant } from './projects-constants';
 import { skillConstants } from './skills-constants';
-import { experienceConstants } from './experience-constants';
-import { contactConstant } from './contact-constants';
-import { certificateConstant } from './certificate-constanst';
-import { honorsConstant } from './honors-constant';
-import PasPhoto from 'public/assets/img/pas_photo_2.jpg';
 
 export const constants = {
   isDarkMode: false,
-  setIsDarkMode: (darkMode: any) => {},
+  setIsDarkMode: () => {},
   headers_title: [
     'Home',
     'Experiences',
@@ -17,7 +18,7 @@ export const constants = {
     'Certificates',
     'Honors',
     'Skills',
-    'Contacts'
+    'Contacts',
   ],
   identity: {
     name: 'Nogi Ragil Triwardana',
@@ -29,7 +30,7 @@ export const constants = {
       solution to various problems, enthusiastic to learning new things
       and prioritizing stakeholders satisfaction.
 		`,
-    img: PasPhoto
+    img: PasPhoto,
   },
   education: educationConstants,
   projects: projectsConstant,
@@ -42,7 +43,7 @@ export const constants = {
     button_download_file: {
       is_on: true,
       link: 'https://drive.google.com/drive/folders/1a-Htq-rqbUAjatAKCBNhmymmt4cOyawv?usp=drive_link',
-      text_button: 'Download Resume'
-    }
-  }
+      text_button: 'Download Resume',
+    },
+  },
 };

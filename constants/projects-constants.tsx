@@ -6,9 +6,9 @@ export const projectsConstant = [
       'Creating generator website for printing several type of letter or type of data at cooperative',
     responsibilities: [
       'Slicing and Implement API CRUD all of feature',
-      'Implement printing report several type of data at cooperative from API'
+      'Implement printing report several type of data at cooperative from API',
     ],
-    technologies: 'Lumen,\xa0MySQL, \xa0ReactJS, \xa0Axios, \xa0TailwindCSS'
+    technologies: 'Lumen,\xa0MySQL, \xa0ReactJS, \xa0Axios, \xa0TailwindCSS',
   },
   {
     key: 1,
@@ -19,22 +19,21 @@ export const projectsConstant = [
       'Slicing page and Implement API all of feature at buyer platform',
       'Create feature like implement cart at all of page, add to cart, checkout, payment, transaction, general setting user and message chat to admin/owner store.',
       'Slicing page and Implement API all of requirement data for CMS as superadmin from owner store',
-      'Support back end for adjust requirement API and database like add new query for additional API'
+      'Support back end for adjust requirement API and database like add new query for additional API',
     ],
     technologies:
-      'Lumen, \xa0MySQL, \xa0NextJS, \xa0ReactJS, \xa0Axios, \xa0TailwindCSS, \xa0Socket.io, \xa0Redis'
+      'Lumen, \xa0MySQL, \xa0NextJS, \xa0ReactJS, \xa0Axios, \xa0TailwindCSS, \xa0Socket.io, \xa0Redis',
   },
   {
     key: 2,
     title: 'Recommendation of Product Catalog',
-    description:
-      'Create landing page website with system of recommendation products for user',
+    description: 'Create landing page website with system of recommendation products for user',
     responsibilities: [
       'Slicing page and implement API for all requirement at user and admin side',
       'Create overall API for requirement of application',
-      'Create system of recommendation products with algorithm of collaborative filtering based machine learning from back end side'
+      'Create system of recommendation products with algorithm of collaborative filtering based machine learning from back end side',
     ],
-    technologies: 'PHP Native, \xa0MySQL, \xa0Boostrap'
+    technologies: 'PHP Native, \xa0MySQL, \xa0Boostrap',
   },
   {
     key: 3,
@@ -45,9 +44,9 @@ export const projectsConstant = [
       'Slicing page and Implement API like CRUD for all feature at superadmin for manage requirement data and customer',
       'Build generator invitation page for customer with various theme of invitation',
       'Create general setting for requirement landing page owned by invinitee',
-      'Build a special feature owned by invinitee like check-in guest from customer, broadcast email & whatsapp, and buy a theme for invitation customer for sending to candidate guest'
+      'Build a special feature owned by invinitee like check-in guest from customer, broadcast email & whatsapp, and buy a theme for invitation customer for sending to candidate guest',
     ],
-    technologies: 'NextJS, \xa0Laravel, \xa0MySQL, \xa0Axios, \xa0TailwindCSS'
+    technologies: 'NextJS, \xa0Laravel, \xa0MySQL, \xa0Axios, \xa0TailwindCSS',
   },
   {
     key: 4,
@@ -56,23 +55,22 @@ export const projectsConstant = [
       'Create web survey for student of informatics engineering departement of UIN Sunan Gunung Djati Bandung',
     responsibilities: [
       'Slicing page with Single Application Page(SPA) and implement API for all feature like fetch every questions and post answer participant',
-      'Create all over API for all feature and connecting with database'
+      'Create all over API for all feature and connecting with database',
     ],
-    technologies: 'ReactJS, \xa0Laravel, \xa0Axios, \xa0MySQL, \xa0CSS3'
+    technologies: 'ReactJS, \xa0Laravel, \xa0Axios, \xa0MySQL, \xa0CSS3',
   },
   {
     key: 5,
     title: 'Pagii HR',
-    description:
-      'Attendance Apps management for multiple organization of office',
+    description: 'Attendance Apps management for multiple organization of office',
     responsibilities: [
       'Maintaining scalibility application and fixing bugs which found by QA',
       'Guiding and giving tasks for internship team which join as a part of Pagii HR team',
       'Slicing UI and implement/adjust API for a feature',
-      'Doing deployment using gitlab CI/CD'
+      'Doing deployment using gitlab CI/CD',
     ],
     technologies:
-      'React JS, \xa0NodeJS, \xa0Mysql, \xa0Axios, \xa0Redux, \xa0Minio, \xa0Styled Component, \xa0MaterialUI'
+      'React JS, \xa0NodeJS, \xa0Mysql, \xa0Axios, \xa0Redux, \xa0Minio, \xa0Styled Component, \xa0MaterialUI',
   },
   {
     key: 6,
@@ -82,9 +80,9 @@ export const projectsConstant = [
     responsibilities: [
       'Slicing page and implement API for all requirement at user and admin side',
       'Support back end for adjust of fixing back end source code and database',
-      'Setup deployment with firebase hosting for staging'
+      'Setup deployment with firebase hosting for staging',
     ],
-    technologies: 'ReactJS, \xa0Firebase, \xa0Axios, \xa0TailwindCSS'
+    technologies: 'ReactJS, \xa0Firebase, \xa0Axios, \xa0TailwindCSS',
   },
   {
     key: 7,
@@ -99,10 +97,10 @@ export const projectsConstant = [
       'Improvement SEO for product detail page at google search engine',
       'Implement integration to external service like sendbird, google analytics, captcha, google tag manager, amplitude, zendesk, freshchat, adding PaDi web to mobile view other vendor and adding PaDi web to iFrame LKPP',
       'Become PIC to review, approve, and merge code from other developer before deploy to staging and production',
-      'Guide to understanding workflow code to new developer joined'
+      'Guide to understanding workflow code to new developer joined',
     ],
     technologies:
-      'NextJS, \xa0Redux Toolkit, \xa0TailwindCSS, \xa0Jest, \xa0Axios, \xa0Docker, \xa0Datadog, \xa0Jenkins, \xa0Rancher'
+      'NextJS, \xa0Redux Toolkit, \xa0TailwindCSS, \xa0Jest, \xa0Axios, \xa0Docker, \xa0Datadog, \xa0Jenkins, \xa0Rancher',
   },
   {
     key: 8,
@@ -114,10 +112,10 @@ export const projectsConstant = [
       'Using methodology atomic design pattern when creating or modifying component',
       'Doing deployment using gitlab CI/CD',
       'Become PIC to review, approve, and merge code from other developer for deployment',
-      'Guide to understanding workflow code to new developer joined'
+      'Guide to understanding workflow code to new developer joined',
     ],
     technologies:
-      'ReactJS, \xa0Redux Toolkit, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0Gitlab CI/CD'
+      'ReactJS, \xa0Redux Toolkit, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0Gitlab CI/CD',
   },
   {
     key: 8,
@@ -127,9 +125,9 @@ export const projectsConstant = [
     responsibilities: [
       'Fixing bug from UI/UX to several pages at customer platform and merchant platform',
       'Slicing UI and implement/adjust API for a feature',
-      'Doing deployment from SSH and Git'
+      'Doing deployment from SSH and Git',
     ],
     technologies:
-      'ReactJS, \xa0NextJS, \xa0Zustand, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0MaterialUI'
-  }
+      'ReactJS, \xa0NextJS, \xa0Zustand, \xa0Axios, \xa0React Query, \xa0TailwindCSS, \xa0MaterialUI',
+  },
 ];

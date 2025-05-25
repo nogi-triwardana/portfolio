@@ -1,12 +1,6 @@
-import React, {
-  useState,
-  useContext,
-  forwardRef,
-  useEffect,
-  useRef
-} from 'react';
-import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
+import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
+import { LayoutContext } from 'src/static/context';
 
 declare global {
   interface Window {
@@ -15,17 +9,16 @@ declare global {
   }
 }
 
-const Certificate = forwardRef(function Certificate(
-  props: any,
-  ref: React.Ref<HTMLDivElement>
-) {
+const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<HTMLDivElement>) {
   const [firstPort, setFirstPort] = useState(false);
   const { certificate, isDarkMode } = useContext(LayoutContext);
   const firstRef = useRef(null);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const option = {
     root: null,
     rootMargin: '0px',
-    threshold: 1.0
+    threshold: 1.0,
   };
 
   useEffect(() => {
@@ -37,9 +30,12 @@ const Certificate = forwardRef(function Certificate(
     if (firstRef?.current) observer.observe(firstRef?.current);
 
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if (firstRef?.current) observer.unobserve(firstRef?.current);
     };
-  }, [firstRef, option]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstRef?.current, option]);
 
   useEffect(() => {
     const init = async () => {
@@ -53,7 +49,7 @@ const Certificate = forwardRef(function Certificate(
   const sendEventImgCertificateHandler = (param: any) => {
     if (typeof window !== 'undefined') {
       window.gtag('event', 'click_image_certificate', {
-        certificate_name: param.name
+        certificate_name: param.name,
       });
     }
   };
@@ -71,10 +67,7 @@ const Certificate = forwardRef(function Certificate(
           d="M0,64L34.3,85.3C68.6,107,137,149,206,170.7C274.3,192,343,192,411,186.7C480,181,549,171,617,192C685.7,213,754,267,823,288C891.4,309,960,299,1029,288C1097.1,277,1166,267,1234,266.7C1302.9,267,1371,277,1406,282.7L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"
         ></path>
       </svg>
-      <div
-        className={`flex flex-col justify-center w-full space-y-8 relative py-16`}
-        ref={ref}
-      >
+      <div className={`flex flex-col justify-center w-full space-y-8 relative py-16`} ref={ref}>
         <div
           className={`h-14 ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}
           ref={firstRef}
@@ -108,9 +101,11 @@ const Certificate = forwardRef(function Certificate(
                       <span
                         className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-light-800` : `bg-paletteText-primary`} absolute z-10 rounded-md inline w-full h-full`}`}
                       />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={item.image}
                         className="w-full h-full object-cover absolute rounded-lg"
+                        alt=""
                       />
                     </div>
                   </div>

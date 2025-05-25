@@ -1,13 +1,9 @@
 import Image from 'next/image';
-import React, { useContext, forwardRef, useEffect } from 'react';
+import React, { forwardRef, useContext, useEffect } from 'react';
 import { LayoutContext } from 'src/static/context';
-import DefaultImg from 'public/assets/img/unknown-people.png';
 
-const Introduction = forwardRef(function Introduction(
-  props: any,
-  ref: React.Ref<HTMLDivElement>
-) {
-  const { identity, setIsDarkMode, isDarkMode } = useContext(LayoutContext);
+const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref<HTMLDivElement>) {
+  const { identity, isDarkMode } = useContext(LayoutContext);
 
   useEffect(() => {
     const init = async () => {
@@ -25,12 +21,9 @@ const Introduction = forwardRef(function Introduction(
         ref={ref}
       >
         <div className={`flex justify-center sm:justify-end w-full`}>
-          <div
-            data-twe-ripple-init
-            className="w-[256px] h-[256px] rounded-full cursor-pointer"
-          >
+          <div data-twe-ripple-init className="w-[256px] h-[256px] rounded-full cursor-pointer">
             <Image
-              src={identity.img ? identity.img : DefaultImg}
+              src={identity.img ? identity.img : '/assets/img/unknown-people.png'}
               width={'0'}
               height={'0'}
               sizes="100vh"
@@ -51,11 +44,7 @@ const Introduction = forwardRef(function Introduction(
           </p>
         </div>
       </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-        className=""
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="">
         <path
           fill={`${isDarkMode ? `#1f0a4d` : `#d1d0cd`}`}
           fillOpacity="1"

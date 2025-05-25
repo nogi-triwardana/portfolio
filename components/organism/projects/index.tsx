@@ -1,24 +1,21 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useContext,
-  forwardRef,
-  Fragment
-} from 'react';
-import { LayoutContext } from 'src/static/context';
-import _ from 'lodash';
-import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
+import 'react-tooltip/dist/react-tooltip.css';
+
+import _ from 'lodash';
+import React, { forwardRef, Fragment, useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { Tooltip } from 'react-tooltip';
+import { LayoutContext } from 'src/static/context';
 
 function Projects(props: any, ref: any) {
   const [firstPort, setFirstPort] = useState(false);
   const firstRef = useRef(null);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const option = {
     root: null,
     rootMargin: '0px',
-    threshold: 1.0
+    threshold: 1.0,
   };
   const { projects, isDarkMode } = useContext(LayoutContext);
 
@@ -31,9 +28,12 @@ function Projects(props: any, ref: any) {
     if (firstRef?.current) observer.observe(firstRef?.current);
 
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if (firstRef?.current) observer.unobserve(firstRef?.current);
     };
-  }, [firstRef, option]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstRef?.current, option]);
 
   const redirectUrlProject = (project: any) => {
     window.open(project.url, '_blank');
@@ -96,9 +96,7 @@ function Projects(props: any, ref: any) {
                   </div>
                   {!_.isEmpty(item?.responsibilities) && (
                     <div className={``}>
-                      <div
-                        className={`relative inline-block text-sm sm:text-base`}
-                      >
+                      <div className={`relative inline-block text-sm sm:text-base`}>
                         <span
                           className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
                         />
@@ -121,18 +119,14 @@ function Projects(props: any, ref: any) {
                   )}
                   {!_.isEmpty(item?.technologies) && (
                     <div className={``}>
-                      <div
-                        className={`relative inline-block text-sm sm:text-base`}
-                      >
+                      <div className={`relative inline-block text-sm sm:text-base`}>
                         <span
                           className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
                         />
                         Technologies:
                       </div>
                       <div>
-                        <div
-                          className={`relative inline-block text-sm sm:text-base`}
-                        >
+                        <div className={`relative inline-block text-sm sm:text-base`}>
                           <span
                             className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
                           />
@@ -146,14 +140,13 @@ function Projects(props: any, ref: any) {
                   <Tooltip
                     id={'tooltip-title-project-detail'}
                     render={({ content, activeAnchor }) =>
-                      activeAnchor?.getAttribute('data-tooltip-is-show') ===
-                      'false' ? (
+                      activeAnchor?.getAttribute('data-tooltip-is-show') === 'false' ? (
                         <div className="max-w-[400px]">{content}</div>
                       ) : null
                     }
                   />,
                   document.body,
-                  'tooltip-title-project'
+                  'tooltip-title-project',
                 )}
               </Fragment>
             ))}

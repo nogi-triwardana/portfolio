@@ -1,29 +1,15 @@
-import React, { useContext, forwardRef, Fragment } from 'react';
-import { LayoutContext } from 'src/static/context';
+// eslint-disable @next/next/no-img-element
+
 import _ from 'lodash';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { forwardRef, Fragment, useContext } from 'react';
+import { LayoutContext } from 'src/static/context';
 
 function Skills(props: any, ref: any) {
   const { skills, isDarkMode } = useContext(LayoutContext);
 
-  const snakeCaseToTitleCase = (input: string) => {
-    if (input.includes('_')) {
-      // Split the snake_case string into an array of words
-      const words = _.snakeCase(input).split('_');
-
-      // Capitalize the first letter of each word and join them back into a string
-      const titleCase = words.map((word) => _.capitalize(word)).join(' ');
-
-      return titleCase;
-    } else return input;
-  };
-
   return (
     <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
-      <div
-        className={`flex flex-col justify-center w-full space-y-8 relative py-16`}
-        ref={ref}
-      >
+      <div className={`flex flex-col justify-center w-full space-y-8 relative py-16`} ref={ref}>
         <div
           className={`h-14 ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}
         >
@@ -45,9 +31,11 @@ function Skills(props: any, ref: any) {
                     key={'SKILL-' + key}
                     className="flex items-center flex-col justify-center space-y-2 text-center"
                   >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={item?.image?.src}
                       className="w-12 h-12 sm:h-16 mx-auto object-contain"
+                      alt=""
                     />
                     <div className="font-semibold">{item?.title}</div>
                   </div>

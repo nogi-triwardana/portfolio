@@ -14,7 +14,7 @@ export const certificateConstant = [
     description:
       "I'am join at this course and learn how to develop web basically at dicoding platform.",
     platform: 'Dicoding',
-    years: 'Augustus 2020'
+    years: 'Augustus 2020',
   },
   {
     name: 'Belajar Fundamental Front End Web Development',
@@ -23,7 +23,7 @@ export const certificateConstant = [
     description:
       "From this course I'am learn how to developing Front-End Web from fundamental with dicoding platform.",
     platform: 'Dicoding',
-    years: 'Augustus 2020'
+    years: 'Augustus 2020',
   },
   {
     name: 'Tech Hackaton PaDiUMKM',
@@ -32,7 +32,7 @@ export const certificateConstant = [
     description:
       "I'am join tech hackathon event at PaDiUMKM which is a platform E-Commerce from BUMN.",
     platform: 'PadiUMKM',
-    years: 'Augustus 2023'
+    years: 'Augustus 2023',
   },
   {
     name: 'React Native - The Practical Guide',
@@ -41,7 +41,7 @@ export const certificateConstant = [
     description:
       "I'am join a course of mobile development with React Native from basic to expert at udemy platform.",
     platform: 'Udemy',
-    years: 'November 2023'
+    years: 'November 2023',
   },
   {
     name: 'Belajar Pemrograman Prosedural dengan Python',
@@ -50,7 +50,7 @@ export const certificateConstant = [
     description:
       "At this course I'am learn how about a basic programming with procedural paradigm using python at dicoding platform.",
     platform: 'Dicoding',
-    years: 'February 2024'
+    years: 'February 2024',
   },
   {
     name: 'Javascript Basic',
@@ -59,15 +59,14 @@ export const certificateConstant = [
     description:
       'This is a test about Javascript Basic which covers topics like Functions, Currying, Hoisting, Scope, Inheritance, Events and Error Handling.',
     platform: 'HackerRank',
-    years: 'May 2024'
+    years: 'May 2024',
   },
   {
     name: 'Secure Programming of Web Applications - Developers and TPMs',
     link: 'https://www.udemy.com/certificate/UC-67b4587d-18db-4256-a2b2-93dba6630dc0/',
     image: CertificateThumbnail7,
-    description:
-      'Learn how to build web development from security perspective.',
+    description: 'Learn how to build web development from security perspective.',
     platform: 'Udemy',
-    years: 'July 2024'
-  }
+    years: 'July 2024',
+  },
 ];

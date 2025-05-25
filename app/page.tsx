@@ -1,13 +1,5 @@
 'use client';
 
-import React, {
-  useRef,
-  useState,
-  useLayoutEffect,
-  Suspense,
-  lazy
-} from 'react';
-import dynamic from 'next/dynamic';
 import 'styles/Home.module.css';
 import 'styles/globals.css';
 import 'nprogress/nprogress.css';
@@ -15,6 +7,8 @@ import 'react-tooltip/dist/react-tooltip.css';
 
 import LazyLoad from 'components/atomic/loader/ChildLoad';
 import ParentLoad from 'components/atomic/loader/ParentLoad';
+import dynamic from 'next/dynamic';
+import React, { lazy, Suspense, useLayoutEffect, useRef, useState } from 'react';
 const Header = lazy(() => import('components/organism/headers'));
 const Footer = lazy(() => import('components/atomic/footers'));
 const Introduction = lazy(() => import('components/organism/introduction'));
@@ -56,7 +50,7 @@ function Home() {
     setSlideActive(section);
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
     if (window.innerWidth < 640) setToggleDropdown(true);
     else setToggleDropdown(false);
@@ -74,9 +68,7 @@ function Home() {
           {slideActive === 'Home' && <Introduction ref={introductionRef} />}
           {slideActive === 'Experiences' && <Experience ref={experienceRef} />}
           {slideActive === 'Projects' && <Projects ref={projectsRef} />}
-          {slideActive === 'Certificates' && (
-            <Certificate ref={certificateRef} />
-          )}
+          {slideActive === 'Certificates' && <Certificate ref={certificateRef} />}
           {slideActive === 'Honors' && <Honors ref={honorsRef} />}
           {slideActive === 'Skills' && <Skills ref={skillsRef} />}
           {(slideActive === 'Contacts' || slideActive === 'Download') && (
@@ -90,7 +82,7 @@ function Home() {
 }
 
 const NoSSRGlobalComponent = dynamic(() => Promise.resolve(Home), {
-  ssr: false
+  ssr: false,
 });
 
 export default NoSSRGlobalComponent;

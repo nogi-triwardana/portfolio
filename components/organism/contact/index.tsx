@@ -1,11 +1,8 @@
-import React, { useContext, forwardRef, useEffect } from 'react';
-import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
+import React, { forwardRef, useContext, useEffect } from 'react';
+import { LayoutContext } from 'src/static/context';
 
-const Contact = forwardRef(function Contact(
-  props: any,
-  ref: React.Ref<HTMLDivElement>
-) {
+const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivElement>) {
   const { contact, isDarkMode, utilities } = useContext(LayoutContext);
 
   useEffect(() => {
@@ -20,7 +17,7 @@ const Contact = forwardRef(function Contact(
   const sendEventClickContactHandler = (param: any) => {
     if (typeof window !== 'undefined') {
       window.gtag('event', 'click_contact', {
-        category_contact: param.name
+        category_contact: param.name,
       });
     }
   };
@@ -30,13 +27,8 @@ const Contact = forwardRef(function Contact(
   };
 
   return (
-    <div
-      className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`} h-screen`}
-    >
-      <div
-        className={`flex flex-col justify-center w-full space-y-8 relative py-16`}
-        ref={ref}
-      >
+    <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`} h-screen`}>
+      <div className={`flex flex-col justify-center w-full space-y-8 relative py-16`} ref={ref}>
         <div
           className={`h-14 ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}
         >

@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
 import _ from 'lodash';
-import { LayoutContext } from 'src/static/context';
-import Switch from 'react-switch';
-import { BsSun, BsMoonStars } from 'react-icons/bs';
+import React, { useContext, useEffect, useState } from 'react';
+import { BsMoonStars, BsSun } from 'react-icons/bs';
 import { PiListBold } from 'react-icons/pi';
+import Switch from 'react-switch';
+import { LayoutContext } from 'src/static/context';
 
 type TypeProps = {
   scrollSection: React.MouseEventHandler;
@@ -11,14 +11,9 @@ type TypeProps = {
   setToggleDropdown?: any;
 };
 
-export default function Header({
-  scrollSection,
-  toggleDropdown,
-  setToggleDropdown
-}: TypeProps) {
+export default function Header({ scrollSection, toggleDropdown, setToggleDropdown }: TypeProps) {
   const [sectionActive, setSectionActive] = useState('');
-  const { headers_title, isDarkMode, setIsDarkMode } =
-    useContext(LayoutContext);
+  const { headers_title, isDarkMode, setIsDarkMode } = useContext(LayoutContext);
 
   useEffect(() => {
     const init = async () => {

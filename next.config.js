@@ -3,13 +3,13 @@ const nextConfig = {
   // output: {
   //   path: path.resolve(__dirname, 'static'),
   // },
-  webpack: (config, options) => {
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.pdf/,
       type: 'asset/resource',
       generator: {
-        filename: 'static/[hash][ext]'
-      }
+        filename: 'static/[hash][ext]',
+      },
     });
 
     return config;
@@ -18,10 +18,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'firebasestorage.googleapis.com'
-      }
-    ]
-  }
+        hostname: 'firebasestorage.googleapis.com',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

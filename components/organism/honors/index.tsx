@@ -1,12 +1,6 @@
-import React, {
-  useState,
-  useContext,
-  forwardRef,
-  useEffect,
-  useRef
-} from 'react';
-import { LayoutContext } from 'src/static/context';
 import _ from 'lodash';
+import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
+import { LayoutContext } from 'src/static/context';
 declare global {
   interface Window {
     gtag: any;
@@ -14,17 +8,16 @@ declare global {
   }
 }
 
-const Honors = forwardRef(function Honors(
-  props: any,
-  ref: React.Ref<HTMLDivElement>
-) {
+const Honors = forwardRef(function Honors(props: any, ref: React.Ref<HTMLDivElement>) {
   const [firstPort, setFirstPort] = useState(false);
   const { honors, isDarkMode } = useContext(LayoutContext);
   const firstRef = useRef(null);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const option = {
     root: null,
     rootMargin: '0px',
-    threshold: 1.0
+    threshold: 1.0,
   };
 
   useEffect(() => {
@@ -36,14 +29,17 @@ const Honors = forwardRef(function Honors(
     if (firstRef?.current) observer.observe(firstRef?.current);
 
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if (firstRef?.current) observer.unobserve(firstRef?.current);
     };
-  }, [firstRef, option]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstRef?.current, option]);
 
   const sendEventImgHonorHandler = (param: any) => {
     if (typeof window !== 'undefined') {
       window.gtag('event', 'click_image_honor', {
-        honor_name: param.name
+        honor_name: param.name,
       });
     }
   };
@@ -76,10 +72,7 @@ const Honors = forwardRef(function Honors(
           d="M0,96L34.3,90.7C68.6,85,137,75,206,58.7C274.3,43,343,21,411,21.3C480,21,549,43,617,96C685.7,149,754,235,823,256C891.4,277,960,235,1029,218.7C1097.1,203,1166,213,1234,234.7C1302.9,256,1371,288,1406,304L1440,320L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"
         ></path>
       </svg>
-      <div
-        className={`flex flex-col justify-center w-full space-y-8 relative py-16`}
-        ref={ref}
-      >
+      <div className={`flex flex-col justify-center w-full space-y-8 relative py-16`} ref={ref}>
         <div
           className={`h-14 ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}
           ref={firstRef}
@@ -113,10 +106,12 @@ const Honors = forwardRef(function Honors(
                       <span
                         className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-light-800` : `bg-paletteText-primary`} absolute z-10 rounded-md inline w-full h-full`}`}
                       />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={item.image.src}
                         className="w-full h-full object-cover absolute rounded-lg pointer-events-none"
                         onMouseDown={onPreventDownloadImage}
+                        alt=""
                       />
                     </div>
                   </div>
