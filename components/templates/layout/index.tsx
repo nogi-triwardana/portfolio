@@ -69,6 +69,8 @@ export default function Layout({ children }: PropsType) {
     return () => {
       subscribe();
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [db]);
 
   const contextValue = {

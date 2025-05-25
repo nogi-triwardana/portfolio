@@ -1,3 +1,5 @@
+// eslint-disable @next/next/no-img-element
+
 import _ from 'lodash';
 import React, { forwardRef, Fragment, useContext } from 'react';
 import { LayoutContext } from 'src/static/context';
@@ -29,9 +31,11 @@ function Skills(props: any, ref: any) {
                     key={'SKILL-' + key}
                     className="flex items-center flex-col justify-center space-y-2 text-center"
                   >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={item?.image?.src}
                       className="w-12 h-12 sm:h-16 mx-auto object-contain"
+                      alt=""
                     />
                     <div className="font-semibold">{item?.title}</div>
                   </div>

@@ -10,6 +10,8 @@ import { LayoutContext } from 'src/static/context';
 function Projects(props: any, ref: any) {
   const [firstPort, setFirstPort] = useState(false);
   const firstRef = useRef(null);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const option = {
     root: null,
     rootMargin: '0px',
@@ -26,9 +28,12 @@ function Projects(props: any, ref: any) {
     if (firstRef?.current) observer.observe(firstRef?.current);
 
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if (firstRef?.current) observer.unobserve(firstRef?.current);
     };
-  }, [firstRef, option]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstRef?.current, option]);
 
   const redirectUrlProject = (project: any) => {
     window.open(project.url, '_blank');

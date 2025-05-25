@@ -13,6 +13,8 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
   const [firstPort, setFirstPort] = useState(false);
   const { certificate, isDarkMode } = useContext(LayoutContext);
   const firstRef = useRef(null);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const option = {
     root: null,
     rootMargin: '0px',
@@ -28,9 +30,12 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
     if (firstRef?.current) observer.observe(firstRef?.current);
 
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if (firstRef?.current) observer.unobserve(firstRef?.current);
     };
-  }, [firstRef, option]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstRef?.current, option]);
 
   useEffect(() => {
     const init = async () => {
@@ -96,9 +101,11 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
                       <span
                         className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-light-800` : `bg-paletteText-primary`} absolute z-10 rounded-md inline w-full h-full`}`}
                       />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={item.image}
                         className="w-full h-full object-cover absolute rounded-lg"
+                        alt=""
                       />
                     </div>
                   </div>

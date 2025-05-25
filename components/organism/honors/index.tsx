@@ -12,6 +12,8 @@ const Honors = forwardRef(function Honors(props: any, ref: React.Ref<HTMLDivElem
   const [firstPort, setFirstPort] = useState(false);
   const { honors, isDarkMode } = useContext(LayoutContext);
   const firstRef = useRef(null);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const option = {
     root: null,
     rootMargin: '0px',
@@ -27,9 +29,12 @@ const Honors = forwardRef(function Honors(props: any, ref: React.Ref<HTMLDivElem
     if (firstRef?.current) observer.observe(firstRef?.current);
 
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if (firstRef?.current) observer.unobserve(firstRef?.current);
     };
-  }, [firstRef, option]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstRef?.current, option]);
 
   const sendEventImgHonorHandler = (param: any) => {
     if (typeof window !== 'undefined') {
@@ -101,10 +106,12 @@ const Honors = forwardRef(function Honors(props: any, ref: React.Ref<HTMLDivElem
                       <span
                         className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-light-800` : `bg-paletteText-primary`} absolute z-10 rounded-md inline w-full h-full`}`}
                       />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={item.image.src}
                         className="w-full h-full object-cover absolute rounded-lg pointer-events-none"
                         onMouseDown={onPreventDownloadImage}
+                        alt=""
                       />
                     </div>
                   </div>

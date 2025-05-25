@@ -10,7 +10,7 @@ import { skillConstants } from './skills-constants';
 
 export const constants = {
   isDarkMode: false,
-  setIsDarkMode: (darkMode: any) => {},
+  setIsDarkMode: () => {},
   headers_title: [
     'Home',
     'Experiences',

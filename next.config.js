@@ -3,7 +3,7 @@ const nextConfig = {
   // output: {
   //   path: path.resolve(__dirname, 'static'),
   // },
-  webpack: (config, options) => {
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.pdf/,
       type: 'asset/resource',
