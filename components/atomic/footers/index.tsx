@@ -9,7 +9,7 @@ export default function Footer() {
       className={`${isDarkMode ? `bg-dark-900` : `bg-light-900`} text-xs sm:text-sm flex flex-col itens-center self-center justify-center text-center py-4`}
     >
       <div className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}>
-        &copy; Copyright 2023.
+        &copy; Copyright 2025.
       </div>
       <div className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}>
         All rights reserved. Made with {`</>`} by Nogi

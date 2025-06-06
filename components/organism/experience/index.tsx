@@ -1,4 +1,5 @@
 import FadeWhenVisible from 'components/organism/fader';
+import { map, orderBy } from 'lodash';
 import React, { forwardRef, useContext } from 'react';
 import { LayoutContext } from 'src/static/context';
 
@@ -27,7 +28,7 @@ function Experience(_: any, ref: React.Ref<HTMLDivElement>) {
           <div
             className={`flex flex-col w-auto p-4 sm:w-1/2 mx-auto justify-center ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}
           >
-            {_.map(_.orderBy(experience, ['key'], ['desc']), (item: any, key: any) => {
+            {map(orderBy(experience, ['key'], ['desc']), (item: any, key: any) => {
               return (
                 <div
                   className={`
