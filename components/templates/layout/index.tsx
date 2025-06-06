@@ -90,7 +90,7 @@ export default function Layout({ children }: PropsType) {
 
   return (
     <LayoutContext.Provider value={contextValue}>
-      <div>{children}</div>
+      <div className="min-h-screen">{children}</div>
     </LayoutContext.Provider>
   );
 }
