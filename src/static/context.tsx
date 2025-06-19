@@ -8,35 +8,38 @@ type ItemSkillType = {
   image: StaticImageData;
 };
 
-export interface objIdentity {
+export type objIdentity = {
   name: string;
   role: string;
   desc: string;
   img: StaticImageData | string | any;
-}
+};
 
-interface skillsType {
-  'Back End Framework': ItemSkillType[];
-  'Front End Framework': ItemSkillType[];
-  'Mobile Framework': ItemSkillType[];
-  'CSS Framework': ItemSkillType[];
-  'CI/CD': ItemSkillType[];
-  'State Management': ItemSkillType[];
-  'Data Fetching': ItemSkillType[];
-  Database: ItemSkillType[];
-  'Repository Control': ItemSkillType[];
-  Container: ItemSkillType[];
-}
+type KeyOfSkillType =
+  | 'Back End Framework'
+  | 'Front End Framework'
+  | 'Mobile Framework'
+  | 'CSS Framework'
+  | 'CI/CD'
+  | 'State Management'
+  | 'Data Fetching'
+  | 'Database'
+  | 'Repository Control'
+  | 'Container';
 
-export interface utilitiesType {
+type skillsType = {
+  [K in KeyOfSkillType]: ItemSkillType[];
+};
+
+export type utilitiesType = {
   button_download_file: {
     is_on: boolean;
     link: string;
     text_button: string;
   };
-}
+};
 
-interface InterfaceLayoutContext {
+type InterfaceLayoutContext = {
   isDarkMode?: any;
   setIsDarkMode?: any;
   headers_title: Array<string>;
@@ -49,6 +52,6 @@ interface InterfaceLayoutContext {
   contact: Array<object>;
   honors: Array<object>;
   utilities: utilitiesType;
-}
+};
 
 export const LayoutContext = createContext<InterfaceLayoutContext>(constants);
