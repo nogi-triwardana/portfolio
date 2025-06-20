@@ -1,6 +1,6 @@
+import { LayoutContext } from 'context';
 import _ from 'lodash';
 import React, { useContext } from 'react';
-import { LayoutContext } from 'src/static/context';
 
 export default function Education() {
   const { experience } = useContext(LayoutContext);

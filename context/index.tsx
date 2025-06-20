@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image';
 import { createContext } from 'react';
 
-import { constants } from '../../constants';
+import { constants } from '../constants';
 
 type ItemSkillType = {
   title: string;

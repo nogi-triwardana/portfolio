@@ -1,9 +1,9 @@
+import { LayoutContext } from 'context';
 import _ from 'lodash';
 import React, { useContext, useEffect, useState } from 'react';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
 import { PiListBold } from 'react-icons/pi';
 import Switch from 'react-switch';
-import { LayoutContext } from 'src/static/context';
 
 type TypeProps = {
   scrollSection: React.MouseEventHandler;
