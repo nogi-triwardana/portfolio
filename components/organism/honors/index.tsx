@@ -60,7 +60,9 @@ const Honors = forwardRef(function Honors(props: any, ref: React.Ref<HTMLDivElem
   }, []);
 
   return (
-    <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
+    <div
+      className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`} flex flex-col justify-between h-screen`}
+    >
       <svg
         className="absolute -top-[1px]"
         xmlns="http://www.w3.org/2000/svg"

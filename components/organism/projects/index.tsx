@@ -88,7 +88,7 @@ function Projects(props: any, ref: any) {
                     />
                     {item?.identity}
                   </div>
-                  <div className={`relative inline-block text-sm sm:text-base`}>
+                  <div className={`relative block text-sm sm:text-base`}>
                     <span
                       className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
                     />
@@ -106,7 +106,7 @@ function Projects(props: any, ref: any) {
                         {_.map(item?.responsibilities, (val: any, key: any) => (
                           <li
                             key={'responsibilities-' + key}
-                            className={`relative inline-block text-sm sm:text-base min-w-full sm:min-w-[500px]`}
+                            className={`relative block text-sm sm:text-base min-w-full sm:min-w-[500px]`}
                           >
                             <div
                               className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
