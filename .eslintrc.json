@@ -1,5 +1,5 @@
 {
-  "extends": ["next", "next/core-web-vitals", "eslint:recommended", "plugin:prettier/recommended"],
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
   "plugins": ["unused-imports", "simple-import-sort", "prettier"],
   "rules": {
     "no-unused-vars": "off",
