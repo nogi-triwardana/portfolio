@@ -1,5 +1,5 @@
+import { LayoutContext } from 'context';
 import React, { useContext } from 'react';
-import { LayoutContext } from 'src/static/context';
 
 export default function Footer() {
   const { isDarkMode } = useContext(LayoutContext);

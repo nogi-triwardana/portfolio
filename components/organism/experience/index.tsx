@@ -1,7 +1,7 @@
 import FadeWhenVisible from 'components/organism/fader';
+import { LayoutContext } from 'context';
 import { map, orderBy } from 'lodash';
 import React, { forwardRef, useContext } from 'react';
-import { LayoutContext } from 'src/static/context';
 
 function Experience(_: any, ref: React.Ref<HTMLDivElement>) {
   const { experience, isDarkMode } = useContext(LayoutContext);

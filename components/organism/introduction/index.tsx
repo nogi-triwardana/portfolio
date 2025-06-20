@@ -1,6 +1,6 @@
+import { LayoutContext } from 'context';
 import Image from 'next/image';
 import React, { forwardRef, useContext, useEffect } from 'react';
-import { LayoutContext } from 'src/static/context';
 
 const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref<HTMLDivElement>) {
   const { identity, isDarkMode } = useContext(LayoutContext);

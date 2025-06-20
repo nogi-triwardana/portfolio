@@ -1,54 +1,57 @@
 import { StaticImageData } from 'next/image';
 import { createContext } from 'react';
 
-import { constants } from '../../constants';
+import { constants } from '../constants';
 
 type ItemSkillType = {
   title: string;
   image: StaticImageData;
 };
 
-export interface objIdentity {
+export type ObjIdentityType = {
   name: string;
   role: string;
   desc: string;
   img: StaticImageData | string | any;
-}
+};
 
-interface skillsType {
-  'Back End Framework': ItemSkillType[];
-  'Front End Framework': ItemSkillType[];
-  'Mobile Framework': ItemSkillType[];
-  'CSS Framework': ItemSkillType[];
-  'CI/CD': ItemSkillType[];
-  'State Management': ItemSkillType[];
-  'Data Fetching': ItemSkillType[];
-  Database: ItemSkillType[];
-  'Repository Control': ItemSkillType[];
-  Container: ItemSkillType[];
-}
+type KeyOfSkillType =
+  | 'Back End Framework'
+  | 'Front End Framework'
+  | 'Mobile Framework'
+  | 'CSS Framework'
+  | 'CI/CD'
+  | 'State Management'
+  | 'Data Fetching'
+  | 'Database'
+  | 'Repository Control'
+  | 'Container';
 
-export interface utilitiesType {
+type SkillsType = {
+  [K in Capitalize<KeyOfSkillType>]: ItemSkillType[];
+};
+
+export type UtilitiesType = {
   button_download_file: {
     is_on: boolean;
     link: string;
     text_button: string;
   };
-}
+};
 
-interface InterfaceLayoutContext {
+type InterfaceLayoutContext = {
   isDarkMode?: any;
   setIsDarkMode?: any;
   headers_title: Array<string>;
-  identity: objIdentity;
+  identity: ObjIdentityType;
   education: Array<object>;
   experience: Array<object>;
   projects: Array<object>;
   certificate: Array<object>;
-  skills: skillsType;
+  skills: SkillsType;
   contact: Array<object>;
   honors: Array<object>;
-  utilities: utilitiesType;
-}
+  utilities: UtilitiesType;
+};
 
 export const LayoutContext = createContext<InterfaceLayoutContext>(constants);

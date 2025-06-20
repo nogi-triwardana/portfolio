@@ -1,8 +1,8 @@
 // eslint-disable @next/next/no-img-element
 
+import { LayoutContext } from 'context';
 import _ from 'lodash';
 import React, { forwardRef, Fragment, useContext } from 'react';
-import { LayoutContext } from 'src/static/context';
 
 function Skills(props: any, ref: any) {
   const { skills, isDarkMode } = useContext(LayoutContext);

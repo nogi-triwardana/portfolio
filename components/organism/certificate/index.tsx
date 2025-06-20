@@ -1,6 +1,6 @@
+import { LayoutContext } from 'context';
 import _ from 'lodash';
 import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
-import { LayoutContext } from 'src/static/context';
 
 declare global {
   interface Window {

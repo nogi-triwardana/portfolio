@@ -1,7 +1,7 @@
+import { LayoutContext } from 'context';
 import nprogress from 'nprogress';
 import React, { useContext, useEffect } from 'react';
 import { Mosaic } from 'react-loading-indicators';
-import { LayoutContext } from 'src/static/context';
 
 function ParentLoad() {
   const { isDarkMode } = useContext(LayoutContext);

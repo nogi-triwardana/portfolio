@@ -1,7 +1,7 @@
+import { LayoutContext, ObjIdentityType, UtilitiesType } from 'context';
 import { db } from 'core/firebase';
 import { onValue, ref } from 'firebase/database';
 import React, { ReactNode, useEffect, useState } from 'react';
-import { LayoutContext, objIdentity, utilitiesType } from 'src/static/context';
 
 import { constants } from '../../../constants';
 
@@ -13,14 +13,14 @@ export default function Layout({ children }: PropsType) {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [projects, setProjects] = useState([]);
   const [experiences, setExperiences] = useState([]);
-  const [identity, setIdentity] = useState<objIdentity>({
+  const [identity, setIdentity] = useState<ObjIdentityType>({
     name: '',
     role: '',
     desc: '',
     img: '',
   });
   const [headersTitle, setHeadersTitle] = useState([]);
-  const [utilities, setUtilities] = useState<utilitiesType>({
+  const [utilities, setUtilities] = useState<UtilitiesType>({
     button_download_file: {
       is_on: false,
       link: '',

@@ -1,11 +1,11 @@
 import 'react-tooltip/dist/react-tooltip.css';
 import 'react-tooltip/dist/react-tooltip.css';
 
+import { LayoutContext } from 'context';
 import _ from 'lodash';
 import React, { forwardRef, Fragment, useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Tooltip } from 'react-tooltip';
-import { LayoutContext } from 'src/static/context';
 
 function Projects(props: any, ref: any) {
   const [firstPort, setFirstPort] = useState(false);
