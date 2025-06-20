@@ -8,7 +8,7 @@ type ItemSkillType = {
   image: StaticImageData;
 };
 
-export type objIdentity = {
+export type ObjIdentityType = {
   name: string;
   role: string;
   desc: string;
@@ -27,11 +27,11 @@ type KeyOfSkillType =
   | 'Repository Control'
   | 'Container';
 
-type skillsType = {
-  [K in KeyOfSkillType]: ItemSkillType[];
+type SkillsType = {
+  [K in Capitalize<KeyOfSkillType>]: ItemSkillType[];
 };
 
-export type utilitiesType = {
+export type UtilitiesType = {
   button_download_file: {
     is_on: boolean;
     link: string;
@@ -43,15 +43,15 @@ type InterfaceLayoutContext = {
   isDarkMode?: any;
   setIsDarkMode?: any;
   headers_title: Array<string>;
-  identity: objIdentity;
+  identity: ObjIdentityType;
   education: Array<object>;
   experience: Array<object>;
   projects: Array<object>;
   certificate: Array<object>;
-  skills: skillsType;
+  skills: SkillsType;
   contact: Array<object>;
   honors: Array<object>;
-  utilities: utilitiesType;
+  utilities: UtilitiesType;
 };
 
 export const LayoutContext = createContext<InterfaceLayoutContext>(constants);
