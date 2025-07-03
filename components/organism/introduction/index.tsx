@@ -19,7 +19,7 @@ const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref
       className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`} flex flex-col justify-between h-screen`}
     >
       <div
-        className={`grid gap-8 grid-rows-2 sm:grid-rows-none grid-cols-none sm:grid-cols-2 w-fit py-8 px-8 sm:px-24 relative`}
+        className={`grid gap-8 grid-rows-2 sm:grid-rows-none grid-cols-none sm:grid-cols-2 w-fit py-8 px-8 sm:px-24 relative w-full`}
         ref={ref}
       >
         <div className={`flex justify-center sm:justify-end w-full`}>
