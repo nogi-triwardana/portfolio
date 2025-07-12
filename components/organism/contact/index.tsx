@@ -2,6 +2,25 @@ import { LayoutContext } from 'context';
 import _ from 'lodash';
 import Link from 'next/link';
 import React, { forwardRef, useContext, useEffect } from 'react';
+import { AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { FaWhatsappSquare } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { ExtractObjectFromArray } from 'types';
+
+const contactIcons = (type: string) => {
+  switch (type) {
+    case 'instagram':
+      return <AiFillInstagram />;
+    case 'linkedin':
+      return <AiFillLinkedin />;
+    case 'email':
+      return <MdEmail />;
+    case 'whatsapp':
+      return <FaWhatsappSquare />;
+    default:
+      return <></>;
+  }
+};
 
 const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivElement>) {
   const { contact, isDarkMode, utilities } = useContext(LayoutContext);
@@ -15,7 +34,7 @@ const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivEl
     init();
   }, []);
 
-  const sendEventClickContactHandler = (param: any) => {
+  const sendEventClickContactHandler = (param: ExtractObjectFromArray<ContactType>) => {
     if (typeof window !== 'undefined') {
       window.gtag('event', 'click_contact', {
         category_contact: param.name,
@@ -32,17 +51,17 @@ const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivEl
           <span className={`relative`}>Contact</span>
         </div>
         <div
-          className={`grid grid-cols-4 pb-16 w-2/3 h-fit mx-auto justify-center ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}
+          className={`grid grid-cols-4 pb-16 w-fit h-fit mx-auto justify-center ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}
         >
-          {_.map(contact, (item: any, key: any) => (
+          {_.map(contact, (item, key) => (
             <a
-              href={item?.link}
+              href={item.link}
               target="_blank"
-              className={`flex justify-center focus:outline-none h-fit`}
+              className={`flex justify-center focus:outline-none h-fit mx-16`}
               key={'CONTACT-' + key}
               onClick={() => sendEventClickContactHandler(item)}
             >
-              <div className={`text-4xl sm:text-6xl`}>{item?.icon}</div>
+              <div className={`text-4xl sm:text-6xl`}>{contactIcons(item.name)}</div>
             </a>
           ))}
         </div>

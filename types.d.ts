@@ -14,3 +14,5 @@ export type KeyValueSplitter<T extends string> = T extends `${infer K}:${infer V
 export type UserTransformed<T extends Record<string, unknown>> = {
   [K in keyof T as `get${Capitalize<K & string>}`]: () => T[K];
 };
+
+type ExtractObjectFromArray<T> = T extends (infer U)[] ? U : never;

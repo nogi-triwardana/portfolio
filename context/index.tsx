@@ -49,7 +49,7 @@ type InterfaceLayoutContext = {
   projects: Array<object>;
   certificate: Array<object>;
   skills: SkillsType;
-  contact: Array<object>;
+  contact: ContactType;
   honors: Array<object>;
   utilities: UtilitiesType;
 };

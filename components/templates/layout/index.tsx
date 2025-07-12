@@ -28,6 +28,7 @@ export default function Layout({ children }: PropsType) {
     },
   });
   const [certificate, setCertificate] = useState([]);
+  const [contacts, setContacts] = useState([]);
 
   /** Change theme mode based from user browser */
   useEffect(() => {
@@ -61,6 +62,7 @@ export default function Layout({ children }: PropsType) {
           if (data?.header_title) setHeadersTitle(data?.header_title);
           if (data?.utilities) setUtilities(data?.utilities);
           if (data?.certificate) setCertificate(data?.certificate);
+          if (data?.contacts) setContacts(data?.contacts);
         }
       },
       (err) => console.log(err),
@@ -83,7 +85,7 @@ export default function Layout({ children }: PropsType) {
     projects: projects,
     certificate,
     skills: constants.skills,
-    contact: constants.contact,
+    contact: contacts,
     honors: constants.honors,
     utilities: utilities,
   };
