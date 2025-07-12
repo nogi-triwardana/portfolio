@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
+    "typeRoots": ["types/*.d.ts", "types.d.ts"],
     "plugins": [
       {
         "name": "next"
@@ -26,9 +27,10 @@
     "environment.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/static/menus.tsx",
     ".next/types/**/*.ts",
-    "constants/*.tsx"
+    "constants/*.tsx",
+    "types/*.d.ts",
+    "types.d.ts"
   ],
   "exclude": ["node_modules"]
 }
