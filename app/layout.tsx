@@ -1,10 +1,16 @@
+import { Metadata } from 'next';
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: 'Nogi Ragil Triwardana Portfolio',
+  description:
+    'Front End Developer with focus for performance, user experience and scalable interface development',
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <title>Nogi Ragil Triwardana&apos;s Portfolio</title>
         <link rel="icon" href="/favicon.png" />
         <script
           async
