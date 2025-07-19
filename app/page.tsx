@@ -5,20 +5,20 @@ import 'styles/globals.css';
 import 'nprogress/nprogress.css';
 import 'react-tooltip/dist/react-tooltip.css';
 
-import LazyLoad from 'components/atomic/loader/ChildLoad';
-import ParentLoad from 'components/atomic/loader/ParentLoad';
+import LazyLoad from 'components/ui/loader/ChildLoad';
+import ParentLoad from 'components/ui/loader/ParentLoad';
 import dynamic from 'next/dynamic';
 import React, { lazy, Suspense, useLayoutEffect, useRef, useState } from 'react';
-const Header = lazy(() => import('components/organism/headers'));
-const Footer = lazy(() => import('components/atomic/footers'));
-const Introduction = lazy(() => import('components/organism/introduction'));
-const Experience = lazy(() => import('components/organism/experience'));
-const Projects = lazy(() => import('components/organism/projects'));
-const Certificate = lazy(() => import('components/organism/certificate'));
-const Honors = lazy(() => import('components/organism/honors'));
-const Skills = lazy(() => import('components/organism/skills'));
-const Contact = lazy(() => import('components/organism/contact'));
-const Layout = lazy(() => import('components/templates/layout'));
+const Header = lazy(() => import('components/ui/headers'));
+const Footer = lazy(() => import('components/ui/footers'));
+const Introduction = lazy(() => import('modules/introduction'));
+const Experience = lazy(() => import('modules/experience'));
+const Projects = lazy(() => import('modules/projects'));
+const Certificate = lazy(() => import('modules/certificate'));
+const Honors = lazy(() => import('modules/honors'));
+const Skills = lazy(() => import('modules/skills'));
+const Contact = lazy(() => import('modules/contact'));
+const Layout = lazy(() => import('components/layout'));
 
 function Home() {
   const [toggleDropdown, setToggleDropdown] = useState(false);
