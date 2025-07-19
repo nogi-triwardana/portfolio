@@ -1,4 +1,4 @@
-import FadeWhenVisible from 'components/organism/fader';
+import FadeWhenVisible from 'components/ui/fader';
 import { LayoutContext } from 'context';
 import { map, orderBy } from 'lodash';
 import React, { forwardRef, useContext } from 'react';

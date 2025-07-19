@@ -3,7 +3,7 @@ import { db } from 'core/firebase';
 import { onValue, ref } from 'firebase/database';
 import React, { ReactNode, useEffect, useState } from 'react';
 
-import { constants } from '../../../constants';
+import { constants } from '../../constants';
 
 type PropsType = {
   children: ReactNode;
