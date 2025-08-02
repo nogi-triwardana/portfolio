@@ -46,7 +46,7 @@ type InterfaceLayoutContext = {
   identity: ObjIdentityType;
   education: Array<object>;
   experience: ExperienceData[];
-  projects: Array<object>;
+  projects: ProjectData[];
   certificate: Array<object>;
   skills: SkillsType;
   contact: ContactType;

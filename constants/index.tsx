@@ -3,9 +3,7 @@ import PasPhoto from 'public/assets/img/pas_photo_2.jpg';
 import { certificateConstant } from './certificate-constanst';
 import { contactConstant } from './contact-constants';
 import { educationConstants } from './education-constants';
-import { experienceConstants } from './experience-constants';
 import { honorsConstant } from './honors-constant';
-import { projectsConstant } from './projects-constants';
 import { skillConstants } from './skills-constants';
 
 export const constants = {
@@ -33,9 +31,9 @@ export const constants = {
     img: PasPhoto,
   },
   education: educationConstants,
-  projects: projectsConstant,
+  projects: [],
   certificate: certificateConstant,
-  experience: experienceConstants,
+  experience: [],
   skills: skillConstants,
   contact: contactConstant,
   honors: honorsConstant,
