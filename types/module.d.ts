@@ -15,3 +15,13 @@ type ProjectData = {
   technologies: string;
   url: string;
 };
+
+type CertificateItem = {
+  index: number;
+  description: string;
+  image: string;
+  link: string;
+  name: string;
+  platform: string;
+  years: string;
+};

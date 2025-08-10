@@ -1,6 +1,11 @@
 import { LayoutContext } from 'context';
+import { cn } from 'lib/utils';
 import _ from 'lodash';
 import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
+
+import BackgroundVector from './components/BackgroundVector';
+import CertificateItem from './components/CertificateItem';
+import Title from './components/Title';
 
 declare global {
   interface Window {
@@ -46,92 +51,29 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
     init();
   }, []);
 
-  const sendEventImgCertificateHandler = (param: any) => {
-    if (typeof window !== 'undefined') {
-      window.gtag('event', 'click_image_certificate', {
-        certificate_name: param.name,
-      });
-    }
-  };
-
   return (
-    <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
-      <svg
-        className="absolute -top-[1px]"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
-        <path
-          fill={`${isDarkMode ? `#1f0a4d` : `#d1d0cd`}`}
-          fillOpacity="1"
-          d="M0,64L34.3,85.3C68.6,107,137,149,206,170.7C274.3,192,343,192,411,186.7C480,181,549,171,617,192C685.7,213,754,267,823,288C891.4,309,960,299,1029,288C1097.1,277,1166,267,1234,266.7C1302.9,267,1371,277,1406,282.7L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"
-        ></path>
-      </svg>
+    <div className={cn(`relative`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>
+      <BackgroundVector />
       <div className={`flex flex-col justify-center w-full space-y-8 relative py-16`} ref={ref}>
+        <Title ref={firstRef} firstPort={firstPort}>
+          Certificates
+        </Title>
         <div
-          className={`h-14 ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} font-bold text-center text-2xl sm:text-3xl`}
-          ref={firstRef}
+          className={cn(
+            `flex flex-col w-2/3 mx-auto space-y-16`,
+            isDarkMode ? `text-light-800` : `text-paletteText-primary`,
+          )}
         >
-          <span className={`relative`}>
-            <span
-              className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} w-full h-full absolute rounded-full`}`}
-            />
-            Certificates
-          </span>
-        </div>
-        <div
-          className={`flex flex-col w-2/3 mx-auto space-y-16 ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}
-        >
-          {_.map(certificate, (item: any, key: any) => (
-            <div
+          {_.map(certificate, (item: CertificateItem, key: number) => (
+            <CertificateItem.Root
               key={'CERTIFICATE-' + key}
-              className="flex flex-col gap-y-4 md:flex-row space-x-0 md:space-x-4"
+              certificate={item}
+              firstPort={firstPort}
+              isDarkMode={isDarkMode}
             >
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex justify-center"
-                onClick={() => sendEventImgCertificateHandler(item)}
-                data-twe-ripple-init
-              >
-                <div className="relative inline-block">
-                  <div className="relative w-[270px] xs:w-[320px] sm:w-[480px] h-fit">
-                    <div className="pb-[70%]">
-                      <span
-                        className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-light-800` : `bg-paletteText-primary`} absolute z-10 rounded-md inline w-full h-full`}`}
-                      />
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={item.image}
-                        className="w-full h-full object-cover absolute rounded-lg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <div className="pb-0 md:pb-8">
-                <div
-                  className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`} text-center md:text-left font-bold text-base sm:text-lg`}
-                >
-                  {item.name}
-                </div>
-                <div
-                  className={`${isDarkMode ? `text-light-800` : `text-paletteText-primary`} text-center md:text-left font-medium text-sm sm:text-base`}
-                >
-                  {item.platform} | {item.years}
-                </div>
-                <div
-                  className={`relative inline-block text-center md:text-left text-sm sm:text-base`}
-                >
-                  <span
-                    className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-light-800` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
-                  />
-                  {item.description}
-                </div>
-              </div>
-            </div>
+              <CertificateItem.Image />
+              <CertificateItem.Description />
+            </CertificateItem.Root>
           ))}
         </div>
       </div>
