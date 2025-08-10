@@ -3,6 +3,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 
 import { LayoutContext } from 'context';
 import { cn } from 'lib/utils';
+import { map } from 'lodash';
 import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
 
 import BackgroundVector from './components/BackgroundVector';
@@ -37,9 +38,7 @@ function Projects(_: any, ref: React.Ref<HTMLDivElement>) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [firstRef?.current, option]);
 
-  const redirectUrlProject = (project: any) => {
-    window.open(project.url, '_blank');
-  };
+  console.log({ projects });
 
   return (
     <div className={cn(`relative`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>
@@ -54,7 +53,7 @@ function Projects(_: any, ref: React.Ref<HTMLDivElement>) {
           className={`flex flex-col p-4 w-auto sm:w-2/3 mx-auto justify-start ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}
         >
           <div className={`flex flex-col space-y-4 justify-center`}>
-            {_.map(projects, (item: ProjectData, index: number) => (
+            {map(projects, (item: ProjectData, index: number) => (
               <ProjectItem.Root
                 key={'PROJECT-' + index}
                 project={{ ...item, index }}
