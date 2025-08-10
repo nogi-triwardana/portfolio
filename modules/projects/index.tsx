@@ -2,6 +2,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 import 'react-tooltip/dist/react-tooltip.css';
 
 import { LayoutContext } from 'context';
+import { cn } from 'lib/utils';
 import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
 
 import BackgroundVector from './components/BackgroundVector';
@@ -41,7 +42,7 @@ function Projects(_: any, ref: React.Ref<HTMLDivElement>) {
   };
 
   return (
-    <div className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`}`}>
+    <div className={cn(`relative`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>
       <div
         className={`flex flex-col justify-center w-full space-y-8 sm:space-y-16 relative py-16`}
         ref={ref}

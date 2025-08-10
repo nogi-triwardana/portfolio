@@ -1,3 +1,4 @@
+import { cn } from 'lib/utils';
 import { isEmpty, map } from 'lodash';
 import { createContext, memo, useContext } from 'react';
 import { createPortal } from 'react-dom';
@@ -66,7 +67,12 @@ const Title = () => {
         className={`relative inline-block group hover:cursor-pointer hover:underline hover:text-blue-400`}
       >
         <span
-          className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
+          className={cn(
+            'absolute rounded-md inline w-full h-full',
+            firstPort
+              ? `animate-scanning`
+              : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`}`,
+          )}
         />
         {index + 1}. {title}
       </div>
@@ -81,7 +87,12 @@ const Identity = () => {
   return (
     <div className={`relative inline-block text-sm italic`}>
       <span
-        className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
+        className={cn(
+          'absolute rounded-md inline w-full h-full',
+          firstPort
+            ? `animate-scanning`
+            : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`}`,
+        )}
       />
       {identity}
     </div>
@@ -95,7 +106,12 @@ const Description = () => {
   return (
     <div className={`relative block text-sm sm:text-base`}>
       <span
-        className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
+        className={cn(
+          'absolute rounded-md inline w-full h-full',
+          firstPort
+            ? `animate-scanning`
+            : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`}`,
+        )}
       />
       {description}.
     </div>
@@ -114,7 +130,12 @@ const Responsibilites = () => {
     <div className={``}>
       <div className={`relative inline-block text-sm sm:text-base`}>
         <span
-          className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
+          className={cn(
+            'absolute rounded-md inline w-full h-full',
+            firstPort
+              ? `animate-scanning`
+              : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`}`,
+          )}
         />
         Responsibilites:
       </div>
@@ -125,7 +146,12 @@ const Responsibilites = () => {
             className={`relative block text-sm sm:text-base min-w-full sm:min-w-[500px]`}
           >
             <div
-              className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
+              className={cn(
+                'absolute rounded-md inline w-full h-full',
+                firstPort
+                  ? `animate-scanning`
+                  : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`}`,
+              )}
             />
             &bull; {val}
           </li>
@@ -147,14 +173,24 @@ const Technologies = () => {
     <div className={``}>
       <div className={`relative inline-block text-sm sm:text-base`}>
         <span
-          className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
+          className={cn(
+            'absolute rounded-md inline w-full h-full',
+            firstPort
+              ? `animate-scanning`
+              : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`}`,
+          )}
         />
         Technologies:
       </div>
       <div>
         <div className={`relative inline-block text-sm sm:text-base`}>
           <span
-            className={`${firstPort ? `animate-scanning` : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`} absolute rounded-md inline w-full h-full`}`}
+            className={cn(
+              'absolute rounded-md inline w-full h-full',
+              firstPort
+                ? `animate-scanning`
+                : `${isDarkMode ? `bg-dark-900` : `bg-paletteText-primary`}`,
+            )}
           />
           {technologies}
         </div>
