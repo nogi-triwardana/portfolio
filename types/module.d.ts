@@ -25,3 +25,15 @@ type CertificateItem = {
   platform: string;
   years: string;
 };
+
+type HonorItem = {
+  index: number;
+  name: string;
+  link: string;
+  platform: string;
+  years: string;
+  description: string;
+  image: {
+    src: string;
+  };
+};
