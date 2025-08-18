@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Maven_Pro } from 'next/font/google';
 import React from 'react';
 
 export const metadata: Metadata = {
@@ -7,9 +8,13 @@ export const metadata: Metadata = {
     'Front End Developer with focus for performance, user experience and scalable interface development',
 };
 
+const mavenPro = Maven_Pro({
+  subsets: ['latin'],
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={mavenPro.className}>
       <head>
         <link rel="icon" href="/favicon.png" />
         <script
