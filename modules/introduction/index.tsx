@@ -1,8 +1,9 @@
 import { LayoutContext } from 'context';
+import { cn } from 'lib/utils';
 import Image from 'next/image';
 import React, { forwardRef, useContext, useEffect } from 'react';
 
-const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref<HTMLDivElement>) {
+const Introduction = (_: unknown, ref: React.Ref<HTMLDivElement>) => {
   const { identity, isDarkMode } = useContext(LayoutContext);
 
   useEffect(() => {
@@ -16,7 +17,10 @@ const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref
 
   return (
     <div
-      className={`relative ${isDarkMode ? `bg-dark-900` : `bg-light-900`} flex flex-col justify-between h-screen`}
+      className={cn(
+        `relative flex flex-col justify-between h-screen`,
+        isDarkMode ? `bg-dark-900` : `bg-light-900`,
+      )}
     >
       <div
         className={`grid gap-8 grid-rows-2 sm:grid-rows-none grid-cols-none sm:grid-cols-2 w-fit py-8 px-8 sm:px-24 relative w-full`}
@@ -35,7 +39,10 @@ const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref
           </div>
         </div>
         <div
-          className={`text-xl ${isDarkMode ? `text-light-800` : `text-paletteText-primary`} ml-0 sm:ml-8 space-y-2 font-semibold items-center sm:items-start flex flex-col justify-center`}
+          className={cn(
+            `text-xl ml-0 sm:ml-8 space-y-2 font-semibold items-center sm:items-start flex flex-col justify-center`,
+            isDarkMode ? `text-light-800` : `text-paletteText-primary`,
+          )}
         >
           <h1>{identity?.name}</h1>
           <h1>{identity?.role}</h1>
@@ -55,6 +62,6 @@ const Introduction = forwardRef(function Introduction(props: any, ref: React.Ref
       </svg>
     </div>
   );
-});
+};
 
-export default Introduction;
+export default forwardRef(Introduction);
