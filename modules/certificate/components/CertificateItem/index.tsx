@@ -81,7 +81,7 @@ const Image = () => {
 
 const Description = () => {
   const { name, platform, years, description } = useCertificateContext();
-  const { isDarkMode, firstPort } = useUtilitiesContext();
+  const { firstPort, isDarkMode } = useUtilitiesContext();
 
   return (
     <div className="pb-0 md:pb-8">

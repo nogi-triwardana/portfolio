@@ -1,6 +1,7 @@
 import { LayoutContext, ObjIdentityType, UtilitiesType } from 'context';
 import { db } from 'core/firebase';
 import { onValue, ref } from 'firebase/database';
+import ThemeProvider from 'provider/ThemeProvider';
 import React, { ReactNode, useEffect, useState } from 'react';
 
 import { constants } from '../../constants';
@@ -10,7 +11,7 @@ type PropsType = {
 };
 
 export default function Layout({ children }: PropsType) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
   const [projects, setProjects] = useState([]);
   const [experiences, setExperiences] = useState([]);
   const [identity, setIdentity] = useState<ObjIdentityType>({
@@ -30,21 +31,21 @@ export default function Layout({ children }: PropsType) {
   const [certificate, setCertificate] = useState([]);
   const [contacts, setContacts] = useState([]);
 
-  /** Change theme mode based from user browser */
-  useEffect(() => {
-    const darkModeMediaQuery = window.matchMedia(`(prefers-color-scheme: dark)`);
+  // /** Change theme mode based from user browser */
+  // useEffect(() => {
+  //   const darkModeMediaQuery = window.matchMedia(`(prefers-color-scheme: dark)`);
 
-    const handleDarkModeMediaQuery = (e: any) => {
-      setIsDarkMode(e.matches);
-    };
+  //   const handleDarkModeMediaQuery = (e: any) => {
+  //     setIsDarkMode(e.matches);
+  //   };
 
-    darkModeMediaQuery.addEventListener('change', handleDarkModeMediaQuery);
-    setIsDarkMode(darkModeMediaQuery.matches);
+  //   darkModeMediaQuery.addEventListener('change', handleDarkModeMediaQuery);
+  //   setIsDarkMode(darkModeMediaQuery.matches);
 
-    return () => {
-      darkModeMediaQuery.removeEventListener('change', handleDarkModeMediaQuery);
-    };
-  }, []);
+  //   return () => {
+  //     darkModeMediaQuery.removeEventListener('change', handleDarkModeMediaQuery);
+  //   };
+  // }, []);
 
   /** Retrieving data from realtime database firebase */
   useEffect(() => {
@@ -76,8 +77,8 @@ export default function Layout({ children }: PropsType) {
   }, [db]);
 
   const contextValue = {
-    isDarkMode,
-    setIsDarkMode,
+    // isDarkMode,
+    // setIsDarkMode,
     headers_title: headersTitle,
     identity: identity,
     education: constants.education,
@@ -92,7 +93,9 @@ export default function Layout({ children }: PropsType) {
 
   return (
     <LayoutContext.Provider value={contextValue}>
-      <div className="min-h-screen">{children}</div>
+      <ThemeProvider>
+        <div className="min-h-screen">{children}</div>
+      </ThemeProvider>
     </LayoutContext.Provider>
   );
 }

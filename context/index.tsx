@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+import type { Dispatch, SetStateAction } from 'react';
 import { createContext } from 'react';
 
 import { constants } from '../constants';
@@ -40,8 +41,8 @@ export type UtilitiesType = {
 };
 
 type InterfaceLayoutContext = {
-  isDarkMode?: any;
-  setIsDarkMode?: any;
+  // isDarkMode?: any;
+  // setIsDarkMode?: any;
   headers_title: Array<string>;
   identity: ObjIdentityType;
   education: Array<object>;
@@ -53,5 +54,13 @@ type InterfaceLayoutContext = {
   honors: Array<object>;
   utilities: UtilitiesType;
 };
+
+export const ThemeContext = createContext<{
+  isDarkMode: boolean;
+  setIsDarkMode: Dispatch<SetStateAction<boolean>>;
+}>({
+  isDarkMode: false,
+  setIsDarkMode: () => {},
+});
 
 export const LayoutContext = createContext<InterfaceLayoutContext>(constants);

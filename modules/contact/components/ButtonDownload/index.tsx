@@ -1,10 +1,12 @@
 import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import Link from 'next/link';
 import { useContext } from 'react';
 
 const ButtonDownload = () => {
-  const { isDarkMode, utilities } = useContext(LayoutContext);
+  const { utilities } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   return (
     <div className="flex justify-center items-center pb-16">

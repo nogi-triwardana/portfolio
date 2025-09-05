@@ -1,8 +1,7 @@
-import { LayoutContext } from 'context';
-import { useContext } from 'react';
+import useTheme from 'hooks/useTheme';
 
 const BackgroundVector = () => {
-  const { isDarkMode } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   return (
     <svg className="absolute -top-[1px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

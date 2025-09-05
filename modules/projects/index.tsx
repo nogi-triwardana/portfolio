@@ -2,6 +2,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 import 'react-tooltip/dist/react-tooltip.css';
 
 import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import { map } from 'lodash';
 import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
@@ -20,7 +21,8 @@ function Projects(_: any, ref: React.Ref<HTMLDivElement>) {
     rootMargin: '0px',
     threshold: 1.0,
   };
-  const { projects, isDarkMode } = useContext(LayoutContext);
+  const { projects } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {

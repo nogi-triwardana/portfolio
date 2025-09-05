@@ -1,4 +1,4 @@
-import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import { map } from 'lodash';
 import React, { createContext, memo, useContext } from 'react';
@@ -39,7 +39,7 @@ const Root = ({
 
 const Category = () => {
   const { category } = useSkillContext();
-  const { isDarkMode } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   return (
     <div
@@ -55,7 +55,7 @@ const Category = () => {
 
 const Item = () => {
   const { item } = useSkillContext();
-  const { isDarkMode } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   return (
     <div

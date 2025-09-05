@@ -1,4 +1,5 @@
 import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import _ from 'lodash';
 import React, { useContext, useEffect, useState } from 'react';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
@@ -13,7 +14,8 @@ type TypeProps = {
 
 export default function Header({ scrollSection, toggleDropdown, setToggleDropdown }: TypeProps) {
   const [sectionActive, setSectionActive] = useState('');
-  const { headers_title, isDarkMode, setIsDarkMode } = useContext(LayoutContext);
+  const { headers_title } = useContext(LayoutContext);
+  const { isDarkMode, setIsDarkMode } = useTheme();
 
   useEffect(() => {
     const init = async () => {

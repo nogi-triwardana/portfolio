@@ -1,4 +1,5 @@
 import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import _ from 'lodash';
 import React, { forwardRef, useContext, useEffect } from 'react';
@@ -27,7 +28,8 @@ const contactIcons = (type: string) => {
 };
 
 const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivElement>) {
-  const { contact, isDarkMode, utilities } = useContext(LayoutContext);
+  const { contact, utilities } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const init = async () => {
