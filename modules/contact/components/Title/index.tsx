@@ -1,9 +1,8 @@
-import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
-import { useContext } from 'react';
 
 const Title = () => {
-  const { isDarkMode } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   return (
     <div

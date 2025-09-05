@@ -1,4 +1,5 @@
 import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import _ from 'lodash';
 import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
@@ -16,7 +17,8 @@ declare global {
 
 const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<HTMLDivElement>) {
   const [firstPort, setFirstPort] = useState(false);
-  const { certificate, isDarkMode } = useContext(LayoutContext);
+  const { certificate } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
   const firstRef = useRef(null);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

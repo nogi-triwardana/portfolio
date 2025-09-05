@@ -1,6 +1,7 @@
 // eslint-disable @next/next/no-img-element
 
 import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import { map } from 'lodash';
 import React, { forwardRef, useContext } from 'react';
@@ -8,7 +9,8 @@ import React, { forwardRef, useContext } from 'react';
 import SkillItem from './components/SkillItem';
 
 function Skills(_: unknown, ref: React.Ref<HTMLDivElement>) {
-  const { skills, isDarkMode } = useContext(LayoutContext);
+  const { skills } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   return (
     <div className={cn(`relative`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>

@@ -1,5 +1,6 @@
 import FadeWhenVisible from 'components/ui/fader';
 import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import { map, orderBy } from 'lodash';
 import React, { forwardRef, useContext } from 'react';
@@ -9,7 +10,8 @@ import ExperienceItem from './components/ExperienceItem';
 import Title from './components/Title';
 
 function Experience(_: any, ref: React.Ref<HTMLDivElement>) {
-  const { experience, isDarkMode } = useContext(LayoutContext);
+  const { experience } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   return (
     <div className={cn(`relative h-screen`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>

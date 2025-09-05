@@ -1,6 +1,6 @@
-import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
-import { forwardRef, useContext } from 'react';
+import { forwardRef } from 'react';
 
 const Title = forwardRef(function Title(
   {
@@ -12,7 +12,7 @@ const Title = forwardRef(function Title(
   },
   ref: React.Ref<HTMLDivElement>,
 ) {
-  const { isDarkMode } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   return (
     <div

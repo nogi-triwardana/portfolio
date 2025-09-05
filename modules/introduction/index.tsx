@@ -1,10 +1,12 @@
 import { LayoutContext } from 'context';
+import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import Image from 'next/image';
 import React, { forwardRef, useContext, useEffect } from 'react';
 
 const Introduction = (_: unknown, ref: React.Ref<HTMLDivElement>) => {
-  const { identity, isDarkMode } = useContext(LayoutContext);
+  const { identity } = useContext(LayoutContext);
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const init = async () => {

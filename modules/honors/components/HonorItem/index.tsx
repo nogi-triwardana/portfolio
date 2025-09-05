@@ -47,7 +47,7 @@ const Root = ({
 
 const Image = () => {
   const { link, image, name } = useHonorContext();
-  const { isDarkMode, firstPort } = useUtilitiesContext();
+  const { firstPort, isDarkMode } = useUtilitiesContext();
 
   const sendEventImgHonorHandler = (name: string) => {
     if (typeof window !== 'undefined') {
