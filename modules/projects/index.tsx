@@ -40,8 +40,6 @@ function Projects(_: any, ref: React.Ref<HTMLDivElement>) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [firstRef?.current, option]);
 
-  console.log({ projects });
-
   return (
     <div className={cn(`relative`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>
       <div

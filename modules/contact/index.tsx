@@ -3,29 +3,10 @@ import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import _ from 'lodash';
 import React, { forwardRef, useContext, useEffect } from 'react';
-import { AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
-import { FaWhatsappSquare } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
-import { ExtractObjectFromArray } from 'types';
 
 import ButtonDownload from './components/ButtonDownload';
 import ContactItem from './components/ContactItem';
 import Title from './components/Title';
-
-const contactIcons = (type: string) => {
-  switch (type) {
-    case 'instagram':
-      return <AiFillInstagram />;
-    case 'linkedin':
-      return <AiFillLinkedin />;
-    case 'email':
-      return <MdEmail />;
-    case 'whatsapp':
-      return <FaWhatsappSquare />;
-    default:
-      return <></>;
-  }
-};
 
 const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivElement>) {
   const { contact, utilities } = useContext(LayoutContext);
@@ -39,14 +20,6 @@ const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivEl
 
     init();
   }, []);
-
-  const sendEventClickContactHandler = (param: ExtractObjectFromArray<ContactType>) => {
-    if (typeof window !== 'undefined') {
-      window.gtag('event', 'click_contact', {
-        category_contact: param.name,
-      });
-    }
-  };
 
   return (
     <div className={cn(`relative h-screen`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>
