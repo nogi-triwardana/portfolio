@@ -20,15 +20,15 @@ const Introduction = (_: unknown, ref: React.Ref<HTMLDivElement>) => {
   return (
     <div
       className={cn(
-        `relative flex flex-col justify-between h-screen`,
+        `relative flex flex-col items-center justify-between h-screen`,
         isDarkMode ? `bg-dark-900` : `bg-light-900`,
       )}
     >
       <div
-        className={`grid gap-8 grid-rows-2 sm:grid-rows-none grid-cols-none sm:grid-cols-2 w-fit py-8 px-8 sm:px-24 relative w-full`}
+        className="flex flex-col sm:flex-row gap-8 justify-between py-8 px-8 sm:px-24 relative w-full lg:w-[80%]"
         ref={ref}
       >
-        <div className={`flex justify-center sm:justify-end w-full`}>
+        <div className="flex justify-center sm:justify-end w-full">
           <div data-twe-ripple-init className="w-[256px] h-[256px] rounded-full cursor-pointer">
             <Image
               src={identity.img ? identity.img : '/assets/img/unknown-people.png'}

@@ -4,7 +4,7 @@ const BackgroundVector = () => {
   const { isDarkMode } = useTheme();
 
   return (
-    <svg className="absolute -top-[1px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg className="absolute -top-px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
         fill={`${isDarkMode ? `#1f0a4d` : `#d1d0cd`}`}
         fillOpacity="1"
