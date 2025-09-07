@@ -31,7 +31,7 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
   const handleChangeSection = (e: any) => {
     setSectionActive(e?.target?.innerText);
     scrollSection(e);
-    setToggleDropdown(true);
+    if (window.innerWidth < 640) setToggleDropdown(true);
   };
 
   return (
