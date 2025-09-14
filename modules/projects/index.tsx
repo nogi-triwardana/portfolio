@@ -41,7 +41,7 @@ function Projects(_: any, ref: React.Ref<HTMLDivElement>) {
   }, [firstRef?.current, option]);
 
   return (
-    <div className={cn(`relative`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>
+    <div className={cn(`relative h-full`, isDarkMode ? `bg-dark-gradient` : `bg-light-gradient`)}>
       <div
         className={`flex flex-col justify-center w-full space-y-8 sm:space-y-16 relative py-16`}
         ref={ref}
@@ -50,7 +50,10 @@ function Projects(_: any, ref: React.Ref<HTMLDivElement>) {
           Projects
         </Title>
         <div
-          className={`flex flex-col p-4 w-auto sm:w-2/3 mx-auto justify-start ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}
+          className={cn(
+            `flex flex-col p-4 w-auto sm:w-2/3 mx-auto justify-start`,
+            isDarkMode ? `text-light-800` : `text-paletteText-primary`,
+          )}
         >
           <div className={`flex flex-col space-y-4 justify-center`}>
             {map(projects, (item: ProjectData, index: number) => (

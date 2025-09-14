@@ -14,7 +14,7 @@ function Experience(_: any, ref: React.Ref<HTMLDivElement>) {
   const { isDarkMode } = useTheme();
 
   return (
-    <div className={cn(`relative h-screen`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>
+    <div className={cn(`relative h-screen`, isDarkMode ? `bg-dark-gradient` : `bg-light-gradient`)}>
       <BackgroundVector isDarkMode={isDarkMode} />
       <FadeWhenVisible>
         <div

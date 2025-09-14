@@ -1,7 +1,14 @@
 @import 'tailwindcss';
 @config "../tailwind.config.js";
 
-/** custom global scrollbar */
+:root {
+  --color-from-light-theme: #f7f7f5;
+  --color-via-light-theme: #e8e7e3;
+  --color-to-light-theme: #ebedf0;
+  --color-from-dark-theme: #1c1b1b;
+  --color-via-dark-theme: #292828;
+  --color-to-dark-theme: #121212;
+}
 
 @layer base {
   html {
@@ -21,6 +28,8 @@
 p {
   @apply leading-[1.6];
 }
+
+/** custom global scrollbar */
 
 /* width */
 ::-webkit-scrollbar {

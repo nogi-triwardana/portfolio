@@ -57,7 +57,7 @@ const Honors = forwardRef(function Honors(props: any, ref: React.Ref<HTMLDivElem
     <div
       className={cn(
         `relative flex flex-col justify-between h-screen`,
-        isDarkMode ? `bg-dark-900` : `bg-light-900`,
+        isDarkMode ? `bg-dark-gradient` : `bg-light-gradient`,
       )}
     >
       <BackgroundVector />

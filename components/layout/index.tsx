@@ -94,7 +94,7 @@ export default function Layout({ children }: PropsType) {
   return (
     <LayoutContext.Provider value={contextValue}>
       <ThemeProvider>
-        <div className="min-h-screen">{children}</div>
+        <div className="min-h-screen relative">{children}</div>
       </ThemeProvider>
     </LayoutContext.Provider>
   );

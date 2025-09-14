@@ -8,8 +8,8 @@ export default function Footer() {
   return (
     <div
       className={cn(
-        `text-xs sm:text-sm flex flex-col itens-center self-center justify-center text-center py-4`,
-        isDarkMode ? `bg-dark-900` : `bg-light-900`,
+        `text-xs sm:text-sm flex flex-col itens-center self-center justify-center absolute right-0 left-0 bottom-0 bg-transparent font-medium text-center py-4`,
+        // isDarkMode ? `bg-[#383737]` : `bg-[#d1d0cd]`,
       )}
     >
       <div className={cn(isDarkMode ? `text-light-800` : `text-paletteText-primary`)}>

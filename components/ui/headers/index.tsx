@@ -31,14 +31,16 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
   const handleChangeSection = (e: any) => {
     setSectionActive(e?.target?.innerText);
     scrollSection(e);
-    if (window.innerWidth < 640) setToggleDropdown(true);
+    if (window.innerWidth < 1024) setToggleDropdown(true);
   };
 
   return (
     <div
       className={cn(
         `flex relative justify-between w-full z-9999 sticky top-0 py-4 px-4 lg:px-8 h-20 shadow-lg`,
-        isDarkMode ? `bg-dark-900` : `bg-light-900`,
+        isDarkMode
+          ? `bg-linear-to-bl from-[var(--color-to-dark-theme)] to-[var(--color-via-dark-theme)]`
+          : `bg-linear-to-bl from-[var(--color-via-light-theme)] to-[var(--color-to-light-theme)]`,
       )}
     >
       <div className="flex items-center justify-center">
@@ -54,13 +56,13 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
       </div>
       <ul
         className={cn(
-          `lg:flex absolute lg:static top-full inset-x-0 w-full lg:w-auto text-center lg:text-left shadow-lg lg:shadow-none divide-y lg:divide-y-0 space-x-0 lg:space-x-4 text-lg font-semibold`,
+          `lg:flex absolute lg:static top-full inset-x-0 w-full lg:w-auto text-center lg:text-left shadow-lg lg:shadow-none lg:bg-none divide-y lg:divide-y-0 space-x-0 lg:space-x-4 text-lg font-semibold`,
           toggleDropdown
             ? `transition duration-300 ease-out -translate-x-full`
             : `transition duration-300 ease-out translate-x-0`,
           isDarkMode
-            ? `text-[#dce3de] divide-[#dce3de]`
-            : `divide-paletteText-primary text-paletteText-primary`,
+            ? `text-[#dce3de] divide-[#dce3de] bg-linear-to-t from-[#121212] to-[#292828]`
+            : `text-paletteText-primary divide-paletteText-primary bg-linear-to-t from-[#dcdfe3] to-[#ebedf0]`,
         )}
       >
         {_.map(headers_title, (item: any, key: number) => (
@@ -68,14 +70,14 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
             key={'header-' + key}
             data-twe-ripple-init
             className={cn(
-              `ripple items-center w-full`,
-              isDarkMode ? `bg-dark-900` : `bg-light-900`,
+              `ripple items-center w-full lg:bg-transparent`,
+              // isDarkMode ? `bg-dark-900` : `bg-light-900`,
             )}
           >
             <button
               className={cn(
                 `cursor-pointer p-4 lg:p-2 rounded-xl w-full`,
-                sectionActive === item ? `bg-black/20` : ``,
+                sectionActive === item ? `text-[#b5b1b1]` : ``,
               )}
               onClick={handleChangeSection}
             >

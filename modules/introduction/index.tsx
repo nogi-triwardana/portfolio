@@ -20,8 +20,8 @@ const Introduction = (_: unknown, ref: React.Ref<HTMLDivElement>) => {
   return (
     <div
       className={cn(
-        `relative flex flex-col items-center justify-between h-screen`,
-        isDarkMode ? `bg-dark-900` : `bg-light-900`,
+        `relative flex flex-col items-center justify-between min-h-dvh`,
+        isDarkMode ? `bg-dark-gradient` : `bg-light-gradient`,
       )}
     >
       <div
@@ -57,7 +57,7 @@ const Introduction = (_: unknown, ref: React.Ref<HTMLDivElement>) => {
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="">
         <path
-          fill={`${isDarkMode ? `#1f0a4d` : `#d1d0cd`}`}
+          fill={`${isDarkMode ? `#383737` : `#d1d0cd`}`}
           fillOpacity="1"
           d="M0,192L48,181.3C96,171,192,149,288,138.7C384,128,480,128,576,144C672,160,768,192,864,181.3C960,171,1056,117,1152,106.7C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
         ></path>
