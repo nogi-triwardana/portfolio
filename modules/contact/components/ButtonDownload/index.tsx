@@ -15,8 +15,10 @@ const ButtonDownload = () => {
         target="_blank"
         data-twe-ripple-init
         className={cn(
-          isDarkMode ? 'bg-[#1f0a4d]' : 'bg-paletteText-primary',
-          `text-light-800 font-semibold p-4 h-full rounded-lg text-lg shadow-lg`,
+          isDarkMode
+            ? 'bg-dark-gradient text-light-800'
+            : 'bg-light-gradient text-paletteText-primary',
+          `font-semibold p-4 h-full rounded-lg text-lg shadow-lg`,
         )}
       >
         {utilities.button_download_file.text_button}

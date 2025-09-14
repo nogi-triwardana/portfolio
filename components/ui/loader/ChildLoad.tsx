@@ -19,7 +19,7 @@ function ChildLoad() {
     <div
       className={cn(
         `flex justify-center items-center min-h-screen`,
-        isDarkMode ? `bg-dark-900` : `bg-light-900`,
+        isDarkMode ? `bg-dark-gradient` : `bg-light-gradient`,
       )}
     >
       <Atom color="#4287f5" size="large" text="" textColor="" />

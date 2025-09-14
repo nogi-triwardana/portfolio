@@ -18,6 +18,12 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      backgroundImage: {
+        'dark-gradient':
+          'linear-gradient(to bottom left, var(--color-from-dark-theme), var(--color-via-dark-theme), var(--color-to-dark-theme))',
+        'light-gradient':
+          'linear-gradient(to bottom left, var(--color-from-light-theme), var(--color-via-light-theme), var(--color-to-light-theme))',
+      },
       keyframes: {
         scanningText: {
           '0%': {

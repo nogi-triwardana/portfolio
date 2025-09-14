@@ -13,7 +13,7 @@ function Skills(_: unknown, ref: React.Ref<HTMLDivElement>) {
   const { isDarkMode } = useTheme();
 
   return (
-    <div className={cn(`relative`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>
+    <div className={cn(`relative`, isDarkMode ? `bg-dark-gradient` : `bg-light-gradient`)}>
       <div className={`flex flex-col justify-center w-full space-y-8 relative py-16`} ref={ref}>
         <div
           className={cn(

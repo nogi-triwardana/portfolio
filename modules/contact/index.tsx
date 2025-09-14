@@ -22,11 +22,14 @@ const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivEl
   }, []);
 
   return (
-    <div className={cn(`relative h-screen`, isDarkMode ? `bg-dark-900` : `bg-light-900`)}>
+    <div className={cn(`relative h-screen`, isDarkMode ? `bg-dark-gradient` : `bg-light-gradient`)}>
       <div className={`flex flex-col justify-center w-full space-y-8 relative py-16`} ref={ref}>
         <Title />
         <div
-          className={`grid grid-cols-4 pb-16 w-fit h-fit mx-auto justify-center ${isDarkMode ? `text-light-800` : `text-paletteText-primary`}`}
+          className={cn(
+            `grid grid-cols-4 pb-16 w-fit h-fit mx-auto justify-center`,
+            isDarkMode ? `text-light-800` : `text-paletteText-primary`,
+          )}
         >
           {_.map(contact, (item, key) => (
             <ContactItem key={'CONTACT-' + key} item={item} />
