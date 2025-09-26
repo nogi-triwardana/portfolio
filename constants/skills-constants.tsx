@@ -1,3 +1,4 @@
+import ArgoCDIcon from 'public/assets/icon/argocd.webp';
 import AxiosIcon from 'public/assets/icon/axios.png';
 import Boostrap from 'public/assets/icon/boostrap.svg';
 import DockerIcon from 'public/assets/icon/docker.png';
@@ -97,6 +98,10 @@ export const skillConstants = {
     {
       title: 'Jenkins',
       image: JenkinsIcon,
+    },
+    {
+      title: 'Argo CD',
+      image: ArgoCDIcon,
     },
   ],
   'State Management': [
