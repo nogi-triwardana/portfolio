@@ -1,11 +1,12 @@
 import { ThemeContext } from 'context';
-import React, { useEffect, useState } from 'react';
+import { useIsomorphicLayoutEffect } from 'framer-motion';
+import React, { useState } from 'react';
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   /** Change theme mode based from user browser */
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const darkModeMediaQuery = window.matchMedia(`(prefers-color-scheme: dark)`);
 
     const handleDarkModeMediaQuery = (e: any) => {

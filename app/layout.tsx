@@ -1,3 +1,8 @@
+import 'styles/Home.module.css';
+import 'styles/globals.css';
+import 'nprogress/nprogress.css';
+import 'react-tooltip/dist/react-tooltip.css';
+
 import { Metadata } from 'next';
 import { Maven_Pro } from 'next/font/google';
 import React from 'react';

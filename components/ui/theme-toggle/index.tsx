@@ -1,3 +1,6 @@
+'use client';
+
+import useIsMounted from 'hooks/useIsMounted';
 import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import { createPortal } from 'react-dom';
@@ -5,6 +8,7 @@ import { Tooltip } from 'react-tooltip';
 
 const ThemeToggle = () => {
   const { isDarkMode, setIsDarkMode } = useTheme();
+  const isMounted = useIsMounted();
 
   return (
     <div className="flex items-center">
@@ -39,39 +43,20 @@ const ThemeToggle = () => {
           {isDarkMode ? '🌙' : '☀️'}
         </div>
       </div>
-      {createPortal(
-        <Tooltip
-          id={'tooltip-theme-portfolio'}
-          render={({ content }) => (
-            <span className="max-w-[50px] self-center flex justify-center items-center text-sm rounded-full whitespace-nowrap text-center !p-0">
-              {content}
-            </span>
-          )}
-        />,
-        document.body,
-        'tooltip-theme',
-      )}
-      {/**
-       * <Switch
-          checked={isDarkMode}
-          onChange={() => setIsDarkMode(!isDarkMode)}
-          className="flex items-center justify-center border border-[#f7f7f5]"
-          checkedIcon={
-            <div className="flex items-center justify-center h-full">
-              <BsMoonStars className="flex items-center justify-center self-center text-lg text-center text-white" />
-            </div>
-          }
-          uncheckedIcon={
-            <div className="flex items-center justify-center h-full">
-              <BsSun className="flex items-center justify-center self-center text-lg text-center text-[#a9bf17]" />
-            </div>
-          }
-          onColor="#4287f5"
-          offColor="#fff"
-          offHandleColor="#d3d4cd"
-          boxShadow="shadow-lg"
-        />
-       */}
+      {isMounted()
+        ? createPortal(
+            <Tooltip
+              id={'tooltip-theme-portfolio'}
+              render={({ content }) => (
+                <span className="max-w-[50px] self-center flex justify-center items-center text-sm rounded-full whitespace-nowrap text-center !p-0">
+                  {content}
+                </span>
+              )}
+            />,
+            document.body,
+            'tooltip-theme',
+          )
+        : null}
     </div>
   );
 };

@@ -1,3 +1,5 @@
+'use client';
+
 import { LayoutContext } from 'context';
 import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
