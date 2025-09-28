@@ -40,9 +40,7 @@ export type UtilitiesType = {
   };
 };
 
-type InterfaceLayoutContext = {
-  // isDarkMode?: any;
-  // setIsDarkMode?: any;
+export type InterfaceLayoutContext = {
   headers_title: Array<string>;
   identity: ObjIdentityType;
   education: Array<object>;
