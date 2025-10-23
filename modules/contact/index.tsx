@@ -2,7 +2,7 @@ import { LayoutContext } from 'context';
 import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import _ from 'lodash';
-import React, { forwardRef, useContext, useEffect } from 'react';
+import React, { forwardRef, useContext } from 'react';
 
 import ButtonDownload from './components/ButtonDownload';
 import ContactItem from './components/ContactItem';
@@ -11,15 +11,6 @@ import Title from './components/Title';
 const Contact = forwardRef(function Contact(props: any, ref: React.Ref<HTMLDivElement>) {
   const { contact, utilities } = useContext(LayoutContext);
   const { isDarkMode } = useTheme();
-
-  useEffect(() => {
-    const init = async () => {
-      const { Ripple, initTWE } = await import('tw-elements');
-      initTWE({ Ripple });
-    };
-
-    init();
-  }, []);
 
   return (
     <div className={cn(`relative h-screen`, isDarkMode ? `bg-dark-gradient` : `bg-light-gradient`)}>

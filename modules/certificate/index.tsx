@@ -44,15 +44,6 @@ const Certificate = forwardRef(function Certificate(props: any, ref: React.Ref<H
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [firstRef?.current, option]);
 
-  useEffect(() => {
-    const init = async () => {
-      const { Ripple, initTWE } = await import('tw-elements');
-      initTWE({ Ripple });
-    };
-
-    init();
-  }, []);
-
   return (
     <div className={cn(`relative`, isDarkMode ? `bg-dark-gradient` : `bg-light-gradient`)}>
       <BackgroundVector />

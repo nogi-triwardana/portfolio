@@ -64,14 +64,7 @@ const Image = () => {
   };
 
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex justify-center"
-      data-twe-ripple-init
-      onClick={() => sendEventImgHonorHandler(name)}
-    >
+    <div className="flex justify-center" onClick={() => sendEventImgHonorHandler(name)}>
       <div className="relative inline-block">
         <div className="relative w-[270px] xs:w-[320px] sm:w-[480px] h-fit">
           <div className="pb-[70%]">
@@ -95,7 +88,7 @@ const Image = () => {
           </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 

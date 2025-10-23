@@ -2,20 +2,11 @@ import { LayoutContext } from 'context';
 import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import Image from 'next/image';
-import React, { forwardRef, useContext, useEffect } from 'react';
+import React, { forwardRef, useContext } from 'react';
 
 const Introduction = (_: unknown, ref: React.Ref<HTMLDivElement>) => {
   const { identity } = useContext(LayoutContext);
   const { isDarkMode } = useTheme();
-
-  useEffect(() => {
-    const init = async () => {
-      const { Ripple, initTWE } = await import('tw-elements');
-      initTWE({ Ripple });
-    };
-
-    init();
-  }, []);
 
   return (
     <div
@@ -29,7 +20,7 @@ const Introduction = (_: unknown, ref: React.Ref<HTMLDivElement>) => {
         ref={ref}
       >
         <div className="flex justify-center sm:justify-end w-full">
-          <div data-twe-ripple-init className="w-[256px] h-[256px] rounded-full cursor-pointer">
+          <div className="w-[256px] h-[256px] rounded-full cursor-pointer">
             <Image
               src={identity.img ? identity.img : '/assets/img/unknown-people.png'}
               width={'0'}
