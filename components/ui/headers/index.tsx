@@ -5,7 +5,7 @@ import useTheme from 'hooks/useTheme';
 import { cn } from 'lib/utils';
 import _ from 'lodash';
 import type { Dispatch, SetStateAction } from 'react';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { PiListBold } from 'react-icons/pi';
 
 import ThemeToggle from '../theme-toggle';
@@ -20,15 +20,6 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
   const [sectionActive, setSectionActive] = useState('');
   const { headers_title } = useContext(LayoutContext);
   const { isDarkMode } = useTheme();
-
-  useEffect(() => {
-    const init = async () => {
-      const { Ripple, initTWE } = await import('tw-elements');
-      initTWE({ Ripple });
-    };
-
-    init();
-  }, []);
 
   const handleChangeSection = (e: any) => {
     setSectionActive(e?.target?.innerText);
@@ -68,14 +59,7 @@ export default function Header({ scrollSection, toggleDropdown, setToggleDropdow
         )}
       >
         {_.map(headers_title, (item: any, key: number) => (
-          <li
-            key={'header-' + key}
-            data-twe-ripple-init
-            className={cn(
-              `ripple items-center w-full lg:bg-transparent`,
-              // isDarkMode ? `bg-dark-900` : `bg-light-900`,
-            )}
-          >
+          <li key={'header-' + key} className={cn(`items-center w-full lg:bg-transparent`)}>
             <button
               className={cn(
                 `cursor-pointer p-4 lg:p-2 rounded-xl w-full`,

@@ -4,6 +4,7 @@ import Layout from 'components/layout';
 import Footer from 'components/ui/footers';
 import Header from 'components/ui/headers';
 import { InterfaceLayoutContext } from 'context';
+import useRippleEffect from 'hooks/useRippleEffect';
 import Certificate from 'modules/certificate';
 import Contact from 'modules/contact';
 import Experience from 'modules/experience';
@@ -23,6 +24,8 @@ function IndexPage({ extractedData }: { extractedData: InterfaceLayoutContext })
   const honorsRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+
+  useRippleEffect({ trigger: slideActive });
 
   const onResizeWindow = () => {
     if (typeof window !== 'undefined') {

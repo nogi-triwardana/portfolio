@@ -62,7 +62,6 @@ const Image = () => {
       rel="noopener noreferrer"
       className="flex justify-center"
       onClick={() => sendEventImgCertificateHandler(name)}
-      data-twe-ripple-init
     >
       <div className="relative inline-block">
         <div className="relative w-[270px] xs:w-[320px] sm:w-[480px] h-fit">

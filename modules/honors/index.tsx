@@ -44,15 +44,6 @@ const Honors = forwardRef(function Honors(props: any, ref: React.Ref<HTMLDivElem
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [firstRef?.current, option]);
 
-  useEffect(() => {
-    const init = async () => {
-      const { Ripple, initTWE } = await import('tw-elements');
-      initTWE({ Ripple });
-    };
-
-    init();
-  }, []);
-
   return (
     <div
       className={cn(
